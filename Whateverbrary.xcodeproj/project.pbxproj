@@ -23,6 +23,7 @@
 		E76F39A32678525F00368BC2 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76F39A22678525F00368BC2 /* UserModel.swift */; };
 		E76F39A52678555E00368BC2 /* ILoginScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76F39A42678555E00368BC2 /* ILoginScreenPresenter.swift */; };
 		E76F39A7267855C500368BC2 /* ILoginScreenViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76F39A6267855C500368BC2 /* ILoginScreenViewDelegate.swift */; };
+		E76F39AA26785B2E00368BC2 /* Interface.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76F39A926785B2E00368BC2 /* Interface.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		E76F39A22678525F00368BC2 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		E76F39A42678555E00368BC2 /* ILoginScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ILoginScreenPresenter.swift; sourceTree = "<group>"; };
 		E76F39A6267855C500368BC2 /* ILoginScreenViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ILoginScreenViewDelegate.swift; sourceTree = "<group>"; };
+		E76F39A926785B2E00368BC2 /* Interface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interface.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,7 @@
 				E76F398E26711BE300368BC2 /* LibraryScreen */,
 				E76F398D26711BBC00368BC2 /* UserScreen */,
 				E76F398C2670D11900368BC2 /* LoginScreen */,
+				E76F39A826785B0300368BC2 /* Interface */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -164,6 +167,14 @@
 				E76F39A22678525F00368BC2 /* UserModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		E76F39A826785B0300368BC2 /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				E76F39A926785B2E00368BC2 /* Interface.swift */,
+			);
+			path = Interface;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -288,6 +299,7 @@
 				E76F39962678509100368BC2 /* ILoginScreenView.swift in Sources */,
 				E76F399C2678515300368BC2 /* LoginScreenAssembly.swift in Sources */,
 				E76F39A7267855C500368BC2 /* ILoginScreenViewDelegate.swift in Sources */,
+				E76F39AA26785B2E00368BC2 /* Interface.swift in Sources */,
 				E76F39A52678555E00368BC2 /* ILoginScreenPresenter.swift in Sources */,
 				E76F3998267850A700368BC2 /* LoginScreenView.swift in Sources */,
 				E76F399226784FCB00368BC2 /* LoginScreenViewController.swift in Sources */,
