@@ -69,16 +69,19 @@ private extension LoginScreenView {
     }
 
     private func makeConstraints() {
-        self.container.snp.makeConstraints { make in
-            make.top.bottom.left.right.equalToSuperview()
+        self.container.snp.makeConstraints { maker in
+            maker.center.equalToSuperview()
+            maker.left.right.equalToSuperview().inset(50)
         }
     }
 
     @objc func onLoginClick() {
         self.delegate?.login(login: self.loginTextView.text, password: self.passwordTextView.text)
+        print("onLoginClick")
     }
 
     @objc func onSigninClick() {
         self.delegate?.signin(login: self.loginTextView.text, password: self.passwordTextView.text)
+        print("onSigninClick")
     }
 }

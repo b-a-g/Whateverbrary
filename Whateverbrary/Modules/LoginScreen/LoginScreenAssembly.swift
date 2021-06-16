@@ -9,8 +9,9 @@ import UIKit
 
 class LoginScreenAssembly {
     func build() -> UIViewController {
+        let userDefaultsStorage = AppDelegate.container.resolve(IUserDefaultsStorage.self)!
         let router = LoginScreenRouter()
-        let presenter = LoginScreenPresenter(router: router)
+        let presenter = LoginScreenPresenter(userDefaultsStorage: userDefaultsStorage, router: router)
         let controller = LoginScreenViewController(presenter: presenter)
         router.controller = controller
         return controller

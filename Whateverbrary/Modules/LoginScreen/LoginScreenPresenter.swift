@@ -10,9 +10,11 @@ import Foundation
 class LoginScreenPresenter: ILoginScreenPresenter {
     
     private weak var view: ILoginScreenView?
-    private let router: ILoginScreenRouter?
+    private let router: ILoginScreenRouter
+    private let userDefaultsStorage: IUserDefaultsStorage
     
-    init(router: ILoginScreenRouter) {
+    init(userDefaultsStorage: IUserDefaultsStorage, router: ILoginScreenRouter) {
+        self.userDefaultsStorage = userDefaultsStorage
         self.router = router
     }
     
@@ -21,7 +23,9 @@ class LoginScreenPresenter: ILoginScreenPresenter {
     }
     
     func login(login: String?, password: String?) {
-        //
+        let user = UserModel(email: "a.beljaev@cft.ru", password: "qwerty123")
+        self.router.openUserScreen(user: user)
+        print("login")
     }
     
     func signin(login: String?, password: String?) {
