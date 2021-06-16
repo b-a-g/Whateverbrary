@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol IUserScreenViewDelegate {
+protocol IUserScreenViewDelegate: AnyObject {
     
 }

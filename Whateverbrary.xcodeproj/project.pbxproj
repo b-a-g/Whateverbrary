@@ -35,6 +35,7 @@
 		E76F39C32679ACB200368BC2 /* IUserScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76F39C22679ACB200368BC2 /* IUserScreenRouter.swift */; };
 		E76F39C52679ACC300368BC2 /* IUserScreenViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76F39C42679ACC300368BC2 /* IUserScreenViewDelegate.swift */; };
 		E76F39C82679B02400368BC2 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76F39C72679B02400368BC2 /* AuthService.swift */; };
+		E76F39CA2679D8C100368BC2 /* UserScreenButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76F39C92679D8C100368BC2 /* UserScreenButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +71,7 @@
 		E76F39C22679ACB200368BC2 /* IUserScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IUserScreenRouter.swift; sourceTree = "<group>"; };
 		E76F39C42679ACC300368BC2 /* IUserScreenViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IUserScreenViewDelegate.swift; sourceTree = "<group>"; };
 		E76F39C72679B02400368BC2 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		E76F39C92679D8C100368BC2 /* UserScreenButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserScreenButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,6 +201,7 @@
 			isa = PBXGroup;
 			children = (
 				E76F39A926785B2E00368BC2 /* Interface.swift */,
+				E76F39C92679D8C100368BC2 /* UserScreenButton.swift */,
 			);
 			path = Interface;
 			sourceTree = "<group>";
@@ -357,6 +360,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E76F39B02678A2BD00368BC2 /* UserDefaultsStorage.swift in Sources */,
+				E76F39CA2679D8C100368BC2 /* UserScreenButton.swift in Sources */,
 				E76F399E267851E200368BC2 /* LoginScreenRouter.swift in Sources */,
 				E76F39BE2679AC6400368BC2 /* UserScreenPresenter.swift in Sources */,
 				E76F39A0267851FC00368BC2 /* ILoginScreenRouter.swift in Sources */,

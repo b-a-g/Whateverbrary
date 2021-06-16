@@ -21,27 +21,27 @@ class LoginScreenView: UIView {
     private lazy var loginTextView: UITextField = {
         var view = TextFieldWithPadding()
         view.backgroundColor = InterfaceConstants.defaultBackgroundColor
-        view.placeholder = "Email"
+        view.placeholder = InterfaceConstants.emailInputFieldPlaceholder
         return view
     }()
 
     private lazy var passwordTextView: UITextField = {
         var view = TextFieldWithPadding()
         view.backgroundColor = InterfaceConstants.defaultBackgroundColor
-        view.placeholder = "Password"
+        view.placeholder = InterfaceConstants.passwordInputfieldPlaceholder
         return view
     }()
 
-    private lazy var loginButton: UIButton = {
+    private lazy var signInButton: UIButton = {
         var view = UIButton(type: .system)
-        view.setTitle("Log in", for: .normal)
+        view.setTitle(InterfaceConstants.signInButtonTitle, for: .normal)
         view.addTarget(self, action: #selector(self.onLoginClick), for: .touchUpInside)
         return view
     }()
 
-    private lazy var signinButton: UIButton = {
+    private lazy var signUpButton: UIButton = {
         var view = UIButton(type: .system)
-        view.setTitle("Sign in", for: .normal)
+        view.setTitle(InterfaceConstants.signUpButtonTitle, for: .normal)
         view.addTarget(self, action: #selector(self.onSigninClick), for: .touchUpInside)
         return view
     }()
@@ -64,8 +64,8 @@ private extension LoginScreenView {
         self.addSubview(self.container)
         self.container.addArrangedSubview(self.loginTextView)
         self.container.addArrangedSubview(self.passwordTextView)
-        self.container.addArrangedSubview(self.loginButton)
-        self.container.addArrangedSubview(self.signinButton)
+        self.container.addArrangedSubview(self.signInButton)
+        self.container.addArrangedSubview(self.signUpButton)
     }
 
     private func makeConstraints() {
