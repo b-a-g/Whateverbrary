@@ -13,7 +13,7 @@ class LoginScreenAssembly {
         let router = LoginScreenRouter()
         let presenter = LoginScreenPresenter(userDefaultsStorage: userDefaultsStorage, router: router)
         let controller = LoginScreenViewController(presenter: presenter)
-        router.controller = controller
+//        router.controller = controller
         return controller
     }
 }

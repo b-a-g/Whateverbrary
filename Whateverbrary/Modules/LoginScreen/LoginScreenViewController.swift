@@ -9,8 +9,7 @@ import UIKit
 //todo: Точно ли тут должен быть ILoginScreenView?
 
 class LoginScreenViewController: UIViewController, ILoginScreenView {
-    
-    
+
     private let loginView: LoginScreenView
     private let presenter: ILoginScreenPresenter
     

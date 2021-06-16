@@ -9,7 +9,7 @@ import UIKit
 
 class LoginScreenRouter: ILoginScreenRouter {
 
-    weak var controller: UIViewController?
+//    weak var controller: UIViewController?
 
     func openUserScreen(user: UserModel) {
         guard let window = UIApplication.shared.windows.filter({$0.isKeyWindow}).first else { return }
