@@ -81,7 +81,7 @@ private extension LoginScreenView {
     }
 
     @objc func onSigninClick() {
-        self.delegate?.signin(login: self.loginTextView.text, password: self.passwordTextView.text)
+        self.delegate?.signUp(login: self.loginTextView.text, password: self.passwordTextView.text)
         print("onSigninClick")
     }
 }

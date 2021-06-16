@@ -8,27 +8,33 @@
 import Foundation
 
 class LoginScreenPresenter: ILoginScreenPresenter {
-    
+
     private weak var view: ILoginScreenView?
     private let router: ILoginScreenRouter
     private let userDefaultsStorage: IUserDefaultsStorage
-    
+
     init(userDefaultsStorage: IUserDefaultsStorage, router: ILoginScreenRouter) {
         self.userDefaultsStorage = userDefaultsStorage
         self.router = router
     }
-    
+
     func viewDidLoad(view: ILoginScreenView) {
         self.view = view
     }
-    
+
     func login(login: String?, password: String?) {
-        let user = UserModel(email: "a.beljaev@cft.ru", password: "qwerty123")
-        self.router.openUserScreen(user: user)
-        print("login")
+        if let login = login,
+           let password = password {
+            AuthService.authService.signIn(email: login, password: password)
+            self.router.openUserScreen(user: UserModel(email: login, password: password))
+        }
     }
-    
-    func signin(login: String?, password: String?) {
-        //
+
+    func signUp(login: String?, password: String?) {
+        if let login = login,
+           let password = password {
+            AuthService.authService.signUp(email: login, password: password)
+            self.router.openUserScreen(user: UserModel(email: login, password: password))
+        }
     }
 }

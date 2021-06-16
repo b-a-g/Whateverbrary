@@ -9,5 +9,5 @@ import Foundation
 
 protocol ILoginScreenViewDelegate: AnyObject {
     func login(login: String?, password: String?)
-    func signin(login: String?, password: String?)
+    func signUp(login: String?, password: String?)
 }
