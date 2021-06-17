@@ -8,12 +8,11 @@
 import UIKit
 
 class LoginScreenAssembly {
-    func build() -> UIViewController {
+    func build(navigator: Navigator) -> UIViewController {
         let userDefaultsStorage = AppDelegate.container.resolve(IUserDefaultsStorage.self)!
-        let router = LoginScreenRouter()
+        let router = LoginScreenRouter(navigator: navigator)
         let presenter = LoginScreenPresenter(userDefaultsStorage: userDefaultsStorage, router: router)
         let controller = LoginScreenViewController(presenter: presenter)
-//        router.controller = controller
         return controller
     }
 }

@@ -10,7 +10,7 @@ import Firebase
 
 class AuthService {
     static let authService = AuthService()
-
+//completion handler closure
     func signUp(email: String, password: String) {
         Auth.auth().createUser(withEmail: email, password: password) { result, error in
             if let error = error as NSError? {

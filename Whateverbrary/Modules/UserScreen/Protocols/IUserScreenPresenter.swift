@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol IUserScreenPresenter {
+protocol IUserScreenPresenter: IUserScreenViewDelegate {
     func viewDidLoad(view: IUserScreenView)
 }

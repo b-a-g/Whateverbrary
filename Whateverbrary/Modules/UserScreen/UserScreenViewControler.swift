@@ -7,7 +7,7 @@
 
 import UIKit
 
-class UserScreenViewController: UIViewController {
+class UserScreenViewController: UIViewController, IUserScreenView {
     
     private let userView: UserScreenView
     private let presenter: IUserScreenPresenter
@@ -16,14 +16,19 @@ class UserScreenViewController: UIViewController {
         self.presenter = presenter
         self.userView = UserScreenView()
         super.init(nibName: nil, bundle: nil)
-//        self.userView.delegate = self.presenter
+        self.userView.delegate = self.presenter
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func loadView() {
+        self.view = userView
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.presenter.viewDidLoad(view: self)
     }
 }
