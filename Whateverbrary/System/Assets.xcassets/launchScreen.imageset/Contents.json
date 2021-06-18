@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "stol-kniga-volna-risunok.jpg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

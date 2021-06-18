@@ -19,10 +19,23 @@ class Navigator {
     }
 
     func openCollectionScreen() {
-        
+        let viewController = UserScreenAssembly().build(navigator: self)
+        self.navigationController.pushViewController(viewController, animated: true)
     }
 
     func openFriendsScreen() {
+        
+    }
+
+    func openOwedScreen() {
+        
+    }
+
+    func openBorrowedScreen() {
+        
+    }
+
+    func openNotificationsScreen() {
         
     }
 }

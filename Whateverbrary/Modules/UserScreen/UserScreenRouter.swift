@@ -15,23 +15,23 @@ class UserScreenRouter: IUserScreenRouter {
     }
 
     func openCollectionScreen() {
-        //
+        self.navigator.openCollectionScreen()
     }
 
     func openFriendsScreen() {
-        //
+        self.navigator.openFriendsScreen()
     }
 
     func openOwedScreen() {
-        //
+        self.navigator.openOwedScreen()
     }
 
     func openBorrowedScreen() {
-        //
+        self.navigator.openBorrowedScreen()
     }
 
     func openNotificationsScreen() {
-        //
+        self.navigator.openNotificationsScreen()
     }
 
 }

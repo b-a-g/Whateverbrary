@@ -23,16 +23,16 @@ class LoginScreenPresenter: ILoginScreenPresenter {
     }
 
     func login(login: String?, password: String?) {
-        if let login = login,
-           let password = password {
+        if let login = login?.lowercased(),
+           let password = password?.lowercased() {
             AuthService.authService.signIn(email: login, password: password)
             self.router.openUserScreen(user: UserModel(email: login, password: password))
         }
     }
 
     func signUp(login: String?, password: String?) {
-        if let login = login,
-           let password = password {
+        if let login = login?.lowercased(),
+           let password = password?.lowercased() {
             AuthService.authService.signUp(email: login, password: password)
             self.router.openUserScreen(user: UserModel(email: login, password: password))
         }

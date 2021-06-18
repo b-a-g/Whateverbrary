@@ -22,27 +22,28 @@ class UserScreenPresenter: IUserScreenPresenter {
         self.view = view
     }
 
-    func openCollection() {
-        
+    func onCollectionButtonTap() {
+        print("onCollectionButtonTap")
+        self.router.openCollectionScreen()
     }
-
-    func openFriendsList() {
-        
+    
+    func onFriendsButtonTap() {
+        print("onFriendsButtonTap")
     }
-
-    func openBorrowedList() {
-        
+    
+    func onOwedButtonTap() {
+        print("onOwedButtonTap")
     }
-
-    func openOwedList() {
-        
+    
+    func onBorrowedButtonTap() {
+        print("onBorrowedButtonTap")
     }
-
-    func openNotificationsList() {
-        
+    
+    func onNotificationsButtonTap() {
+        print("onNotificationsButtonTap")
     }
-
-    func signOut() {
-        
+    
+    func onLogoutButtonTap() {
+        print("onLogoutButtonTap")
     }
 }
