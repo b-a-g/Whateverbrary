@@ -13,7 +13,7 @@ class LoginScreenView: UIView {
     
     private lazy var backgroundImage: UIImageView = {
         var view = UIImageView()
-        view.image = UIImage(named: "launchScreen")
+        view.image = UIImage(named: "mainBackgroundImage")
         view.contentMode = .scaleAspectFill
         return view
     }()

@@ -8,13 +8,13 @@
 import UIKit
 
 class UserScreenButton: UIButton {
-    init(title: String, imageName: String) {
+    init(title: String, imageName: String, target: Any,action: Selector) {
         super.init(frame: .zero)
         setTitle(title, for: .normal)
         setImage(UIImage(named: imageName), for: .normal)
         backgroundColor = InterfaceConstants.defaultBackgroundColor
         layer.cornerRadius = InterfaceConstants.defaultBigCornerRadius
-//        addTarget(self, action: action, for: .touchUpInside)
+        addTarget(target, action: action, for: .touchUpInside)
     }
 
     required init?(coder: NSCoder) {

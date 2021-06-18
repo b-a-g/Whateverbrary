@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol ICollectionScreenPresenter {
-    
+protocol ICollectionScreenPresenter: ICollectionScreenViewDelegate {
+    func viewDidLoad(view: ICollectionScreenView)
 }

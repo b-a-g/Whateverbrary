@@ -50,24 +50,18 @@ class UserScreenView: UIView, IUserScreenView {
         return view
     }()
 
-    private lazy var collectionButton = UserScreenButton(title: InterfaceConstants.collectionButtonTitle, imageName: "")
-    private lazy var friendsButton = UserScreenButton(title: InterfaceConstants.friendsButtonTitle, imageName: "")
-    private lazy var owedButton = UserScreenButton(title: InterfaceConstants.owedButtonTitle, imageName: "")
-    private lazy var borrowedButton = UserScreenButton(title: InterfaceConstants.borrowedButtonTitle, imageName: "")
-    private lazy var notificationsButton = UserScreenButton(title: InterfaceConstants.notificationsButtonTitle, imageName: "")
-    private lazy var logoutButton = UserScreenButton(title: InterfaceConstants.signOutButtonTitle, imageName: "")//, action: #selector(self.onLogoutButtonTap))
+    private lazy var collectionButton = UserScreenButton(title: InterfaceConstants.collectionButtonTitle, imageName: "", target: self, action: #selector(self.onCollectionButtonTap))
+    private lazy var friendsButton = UserScreenButton(title: InterfaceConstants.friendsButtonTitle, imageName: "", target: self, action: #selector(self.onFriendsButtonTap))
+    private lazy var owedButton = UserScreenButton(title: InterfaceConstants.owedButtonTitle, imageName: "", target: self, action: #selector(self.onOwedButtonTap))
+    private lazy var borrowedButton = UserScreenButton(title: InterfaceConstants.borrowedButtonTitle, imageName: "", target: self, action: #selector(self.onBorrowedButtonTap))
+    private lazy var notificationsButton = UserScreenButton(title: InterfaceConstants.notificationsButtonTitle, imageName: "", target: self, action: #selector(self.onNotificationsButtonTap))
+    private lazy var logoutButton = UserScreenButton(title: InterfaceConstants.signOutButtonTitle, imageName: "", target: self, action: #selector(self.onLogoutButtonTap))
 
     override init(frame: CGRect = CGRect.zero) {
         super.init(frame: frame)
         self.backgroundColor = .white
         self.addSubviews()
         self.makeConstraints()
-        self.collectionButton.addTarget(self, action: #selector(self.onCollectionButtonTap), for: .touchUpInside)
-        self.friendsButton.addTarget(self, action: #selector(self.onFriendsButtonTap), for: .touchUpInside)
-        self.owedButton.addTarget(self, action: #selector(self.onOwedButtonTap), for: .touchUpInside)
-        self.borrowedButton.addTarget(self, action: #selector(self.onBorrowedButtonTap), for: .touchUpInside)
-        self.notificationsButton.addTarget(self, action: #selector(self.onNotificationsButtonTap), for: .touchUpInside)
-        self.logoutButton.addTarget(self, action: #selector(self.onLogoutButtonTap), for: .touchUpInside)
     }
 
     required init?(coder aDecoder: NSCoder) {

@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol ICollectionScreenViewDelegate {
-    
+protocol ICollectionScreenViewDelegate: AnyObject {
+    func onCollectionItemTap(at item: IndexPath)
 }

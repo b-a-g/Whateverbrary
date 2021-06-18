@@ -12,14 +12,20 @@ class Navigator {
         let controller = LoginScreenAssembly().build(navigator: self)
         return UINavigationController(rootViewController: controller)
     }()
+}
 
+//MARK: login screen actions
+extension Navigator {
     func openUserScreen(user: UserModel) {
         let viewController = UserScreenAssembly().build(navigator: self)
         self.navigationController.setViewControllers([viewController], animated: true)
     }
+}
 
+//MARK: user screen actions
+extension Navigator {
     func openCollectionScreen() {
-        let viewController = UserScreenAssembly().build(navigator: self)
+        let viewController = CollectionScreenAssembly().build(navigator: self)
         self.navigationController.pushViewController(viewController, animated: true)
     }
 
@@ -36,6 +42,13 @@ class Navigator {
     }
 
     func openNotificationsScreen() {
+        
+    }
+}
+
+//MARK: collection screen actions
+extension Navigator {
+    func openDetailScren() {
         
     }
 }

@@ -5,7 +5,7 @@
 //  Created by Александр Беляев on 16.06.2021.
 //
 
-import UIKit
+import Foundation
 
 class UserScreenRouter: IUserScreenRouter {
 
