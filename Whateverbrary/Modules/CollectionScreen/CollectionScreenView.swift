@@ -22,7 +22,7 @@ class CollectionScreenView: UICollectionView, UICollectionViewDelegate, UICollec
     init() {
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
-        layout.itemSize = CGSize(width: 200, height: 200)
+        layout.itemSize = CGSize(width: 200, height: 400)
         layout.scrollDirection = .vertical
         super.init(frame: .zero, collectionViewLayout: layout)
         delegate = self
@@ -40,19 +40,39 @@ class CollectionScreenView: UICollectionView, UICollectionViewDelegate, UICollec
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return 5
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
-        let label = UILabel()
-        label.text = "\(indexPath.row)"
-        label.backgroundColor = InterfaceConstants.blueBackgroundColor
-        cell.addSubview(label)
-        label.snp.makeConstraints { make in
+        let content = createCellContent(indexPath: indexPath)
+        cell.addSubview(content)
+        content.snp.makeConstraints { make in
             make.top.left.right.bottom.equalToSuperview()
         }
         return cell
+    }
+    
+    func createCellContent(indexPath: IndexPath) -> UIView {
+        let view = UIView()
+        
+        let label = UILabel()
+        label.text = "Книга №\(indexPath.row+1)"
+        view.addSubview(label)
+        
+        let image = UIImageView()
+        image.backgroundColor = .white
+        image.image = UIImage(named: "cover\(indexPath.row)")
+        view.addSubview(image)
+
+        image.snp.makeConstraints { make in
+            make.left.top.right.bottom.equalToSuperview()
+        }
+        label.snp.makeConstraints { make in
+            make.left.right.bottom.equalToSuperview()
+            make.height.equalTo(100)
+        }
+        return view
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

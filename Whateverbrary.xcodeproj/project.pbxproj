@@ -47,6 +47,10 @@
 		E7A069EE267C3AFB00CAF31C /* CollectionScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A069ED267C3AFB00CAF31C /* CollectionScreenViewController.swift */; };
 		E7A069F0267C3B0200CAF31C /* CollectionScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A069EF267C3B0200CAF31C /* CollectionScreenView.swift */; };
 		E7A069F4267C7F8D00CAF31C /* CollectionDetailsScreenAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A069F3267C7F8D00CAF31C /* CollectionDetailsScreenAssembly.swift */; };
+		E7A069F6267C9EF700CAF31C /* CollectionDetailsScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A069F5267C9EF700CAF31C /* CollectionDetailsScreenRouter.swift */; };
+		E7A069F8267C9EFF00CAF31C /* CollectionDetailsScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A069F7267C9EFF00CAF31C /* CollectionDetailsScreenPresenter.swift */; };
+		E7A069FA267C9F0900CAF31C /* CollectionDetailsScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A069F9267C9F0900CAF31C /* CollectionDetailsScreenViewController.swift */; };
+		E7A069FC267C9F1100CAF31C /* CollectionDetailsScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A069FB267C9F1100CAF31C /* CollectionDetailsScreenView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -94,6 +98,10 @@
 		E7A069ED267C3AFB00CAF31C /* CollectionScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionScreenViewController.swift; sourceTree = "<group>"; };
 		E7A069EF267C3B0200CAF31C /* CollectionScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionScreenView.swift; sourceTree = "<group>"; };
 		E7A069F3267C7F8D00CAF31C /* CollectionDetailsScreenAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionDetailsScreenAssembly.swift; sourceTree = "<group>"; };
+		E7A069F5267C9EF700CAF31C /* CollectionDetailsScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionDetailsScreenRouter.swift; sourceTree = "<group>"; };
+		E7A069F7267C9EFF00CAF31C /* CollectionDetailsScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionDetailsScreenPresenter.swift; sourceTree = "<group>"; };
+		E7A069F9267C9F0900CAF31C /* CollectionDetailsScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionDetailsScreenViewController.swift; sourceTree = "<group>"; };
+		E7A069FB267C9F1100CAF31C /* CollectionDetailsScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionDetailsScreenView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,7 +187,7 @@
 				E7A069DA267C334100CAF31C /* FriendsScreen */,
 				E7A069DC267C335F00CAF31C /* BorrowedScreen */,
 				E7A069DB267C334E00CAF31C /* OwedScreen */,
-				E7A069DD267C337300CAF31C /* NotofocationsScreen */,
+				E7A069DD267C337300CAF31C /* NotificationsScreen */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -300,11 +308,11 @@
 			path = BorrowedScreen;
 			sourceTree = "<group>";
 		};
-		E7A069DD267C337300CAF31C /* NotofocationsScreen */ = {
+		E7A069DD267C337300CAF31C /* NotificationsScreen */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = NotofocationsScreen;
+			path = NotificationsScreen;
 			sourceTree = "<group>";
 		};
 		E7A069DE267C388200CAF31C /* Protocols */ = {
@@ -322,8 +330,20 @@
 			isa = PBXGroup;
 			children = (
 				E7A069F3267C7F8D00CAF31C /* CollectionDetailsScreenAssembly.swift */,
+				E7A069F5267C9EF700CAF31C /* CollectionDetailsScreenRouter.swift */,
+				E7A069F7267C9EFF00CAF31C /* CollectionDetailsScreenPresenter.swift */,
+				E7A069F9267C9F0900CAF31C /* CollectionDetailsScreenViewController.swift */,
+				E7A069FB267C9F1100CAF31C /* CollectionDetailsScreenView.swift */,
+				E7A069FD267C9F7500CAF31C /* Protocols */,
 			);
 			path = CollectionDetailsScreen;
+			sourceTree = "<group>";
+		};
+		E7A069FD267C9F7500CAF31C /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -470,8 +490,12 @@
 				E7A069EC267C3AE900CAF31C /* CollectionScreenPresenter.swift in Sources */,
 				E76F39AA26785B2E00368BC2 /* Interface.swift in Sources */,
 				E76F39A52678555E00368BC2 /* ILoginScreenPresenter.swift in Sources */,
+				E7A069F6267C9EF700CAF31C /* CollectionDetailsScreenRouter.swift in Sources */,
+				E7A069FA267C9F0900CAF31C /* CollectionDetailsScreenViewController.swift in Sources */,
+				E7A069F8267C9EFF00CAF31C /* CollectionDetailsScreenPresenter.swift in Sources */,
 				E76F39C12679AC9F00368BC2 /* IUserScreenPresenter.swift in Sources */,
 				E76F3998267850A700368BC2 /* LoginScreenView.swift in Sources */,
+				E7A069FC267C9F1100CAF31C /* CollectionDetailsScreenView.swift in Sources */,
 				E76F399226784FCB00368BC2 /* LoginScreenViewController.swift in Sources */,
 				E76F39BC2679AC5A00368BC2 /* UserScreenAssembly.swift in Sources */,
 				E7A069F4267C7F8D00CAF31C /* CollectionDetailsScreenAssembly.swift in Sources */,
