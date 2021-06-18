@@ -20,21 +20,34 @@ class LoginScreenPresenter: ILoginScreenPresenter {
 
     func viewDidLoad(view: ILoginScreenView) {
         self.view = view
+        self.view?.setUserName(username: self.userDefaultsStorage.lastEnteredPerson() ?? "")
     }
 
     func login(login: String?, password: String?) {
         if let login = login?.lowercased(),
            let password = password?.lowercased() {
-            AuthService.authService.signIn(email: login, password: password)
-            self.router.openUserScreen(user: UserModel(email: login, password: password))
+            AuthService.authService.signIn(email: login, password: password) { user, error in
+                if let user = user {
+                    self.router.openUserScreen(user: UserModel(email: user.email ?? "", password: password))
+                    self.userDefaultsStorage.setCurrentUser(email: user.email!)
+                } else if let error = error {
+                    self.view?.showAlert(message: error.localizedDescription)
+                }
+            }
         }
     }
 
     func signUp(login: String?, password: String?) {
         if let login = login?.lowercased(),
            let password = password?.lowercased() {
-            AuthService.authService.signUp(email: login, password: password)
-            self.router.openUserScreen(user: UserModel(email: login, password: password))
+            AuthService.authService.signUp(email: login, password: password) { user, error in
+                if let user = user {
+                    self.router.openUserScreen(user: UserModel(email: user.email ?? "", password: password))
+                    self.userDefaultsStorage.setCurrentUser(email: user.email ?? "")
+                } else if let error = error {
+                    self.view?.showAlert(message: error.localizedDescription)
+                }
+            }
         }
     }
 }

@@ -11,7 +11,8 @@ struct InterfaceConstants {
     static let defaultSpacing: CGFloat = 12
     static let defaultBigCornerRadius: CGFloat = 25
     static let defaultSmallCornerRadius: CGFloat = 10
-    static let defaultBackgroundColor: UIColor = .lightGray
+    static let defaultBackgroundColor: UIColor = .lightGray.withAlphaComponent(0.2)
+    static let blueBackgroundColor: UIColor = .systemBlue.withAlphaComponent(0.3)
 
     //Login screen constants
     static let emailInputFieldPlaceholder = "Почта"

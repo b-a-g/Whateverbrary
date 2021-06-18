@@ -9,20 +9,30 @@ import UIKit
 import SnapKit
 
 class UserScreenView: UIView, IUserScreenView {
+
     weak var delegate: IUserScreenViewDelegate?
 
+    private lazy var backgroundImage: UIImageView = {
+        var view = UIImageView()
+        view.image = UIImage(named: "mainBackgroundImage")
+        view.contentMode = .scaleAspectFill
+        view.alpha = 0.5
+        return view
+    }()
+
     private lazy var userAvatar: UIImageView = {
-        var imageView = UIImageView()
-        imageView.backgroundColor = InterfaceConstants.defaultBackgroundColor
-        imageView.layer.cornerRadius = InterfaceConstants.defaultBigCornerRadius
-        return imageView
+        var view = UIImageView()
+        view.backgroundColor = InterfaceConstants.defaultBackgroundColor
+        view.layer.cornerRadius = InterfaceConstants.defaultBigCornerRadius
+        view.image = UIImage(named: "avatar1")
+        return view
     }()
 
     private lazy var nicknameLabel: UILabel = {
         var label = UILabel()
         label.backgroundColor = InterfaceConstants.defaultBackgroundColor
         label.layer.cornerRadius = InterfaceConstants.defaultBigCornerRadius
-        label.text = "NICKNAME"
+        label.textAlignment = .center
         return label
     }()
 
@@ -50,12 +60,12 @@ class UserScreenView: UIView, IUserScreenView {
         return view
     }()
 
-    private lazy var collectionButton = UserScreenButton(title: InterfaceConstants.collectionButtonTitle, imageName: "", target: self, action: #selector(self.onCollectionButtonTap))
-    private lazy var friendsButton = UserScreenButton(title: InterfaceConstants.friendsButtonTitle, imageName: "", target: self, action: #selector(self.onFriendsButtonTap))
-    private lazy var owedButton = UserScreenButton(title: InterfaceConstants.owedButtonTitle, imageName: "", target: self, action: #selector(self.onOwedButtonTap))
-    private lazy var borrowedButton = UserScreenButton(title: InterfaceConstants.borrowedButtonTitle, imageName: "", target: self, action: #selector(self.onBorrowedButtonTap))
-    private lazy var notificationsButton = UserScreenButton(title: InterfaceConstants.notificationsButtonTitle, imageName: "", target: self, action: #selector(self.onNotificationsButtonTap))
-    private lazy var logoutButton = UserScreenButton(title: InterfaceConstants.signOutButtonTitle, imageName: "", target: self, action: #selector(self.onLogoutButtonTap))
+    private lazy var collectionButton = UserScreenButton(title: InterfaceConstants.collectionButtonTitle, imageName: "collection", target: self, action: #selector(self.onCollectionButtonTap))
+    private lazy var friendsButton = UserScreenButton(title: InterfaceConstants.friendsButtonTitle, imageName: "friends", target: self, action: #selector(self.onFriendsButtonTap))
+    private lazy var owedButton = UserScreenButton(title: InterfaceConstants.owedButtonTitle, imageName: "rent", target: self, action: #selector(self.onOwedButtonTap))
+    private lazy var borrowedButton = UserScreenButton(title: InterfaceConstants.borrowedButtonTitle, imageName: "rent", target: self, action: #selector(self.onBorrowedButtonTap))
+    private lazy var notificationsButton = UserScreenButton(title: InterfaceConstants.notificationsButtonTitle, imageName: "notification", target: self, action: #selector(self.onNotificationsButtonTap))
+    private lazy var logoutButton = UserScreenButton(title: InterfaceConstants.signOutButtonTitle, imageName: "logout", target: self, action: #selector(self.onLogoutButtonTap))
 
     override init(frame: CGRect = CGRect.zero) {
         super.init(frame: frame)
@@ -72,6 +82,7 @@ class UserScreenView: UIView, IUserScreenView {
 extension UserScreenView {
 
     func addSubviews() {
+        self.addSubview(self.backgroundImage)
         self.addSubview(self.userAvatar)
         self.addSubview(self.nicknameLabel)
         self.addSubview(self.mainButtonContainer)
@@ -86,6 +97,9 @@ extension UserScreenView {
     }
 
     func makeConstraints() {
+        self.backgroundImage.snp.makeConstraints { make in
+            make.top.left.right.bottom.equalToSuperview()
+        }
         self.userAvatar.snp.makeConstraints { make in
             make.top.equalTo(self.safeAreaLayoutGuide.snp.top).offset(InterfaceConstants.defaultSpacing)
             make.centerX.equalTo(self.safeAreaLayoutGuide.snp.centerX)
@@ -127,5 +141,9 @@ extension UserScreenView {
     
     @objc func onLogoutButtonTap() {
         self.delegate?.onLogoutButtonTap()
+    }
+
+    func setUsername(name: String) {
+        self.nicknameLabel.text = name
     }
 }

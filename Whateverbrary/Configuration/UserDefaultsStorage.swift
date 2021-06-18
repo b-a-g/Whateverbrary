@@ -18,8 +18,12 @@ final class UserDefaultsStorage: IUserDefaultsStorage {
     init(userDefaults: UserDefaults = .standard) {
         self.userDefaults = userDefaults
     }
+    
+    func setCurrentUser(email: String) {
+        self.userDefaults.setValue(email, forKey: Keys.lastOpenedUser)
+    }
 
-    func lastEnteredPerson() -> UUID? {
-        return UUID(uuidString: self.userDefaults.string(forKey: Keys.lastOpenedUser) ?? "")
+    func lastEnteredPerson() -> String? {
+        return self.userDefaults.string(forKey: Keys.lastOpenedUser)
     }
 }

@@ -7,8 +7,8 @@
 
 import UIKit
 
-class UserScreenViewController: UIViewController, IUserScreenView {
-    
+class UserScreenViewController: UIViewController {
+
     private let userView: UserScreenView
     private let presenter: IUserScreenPresenter
     
@@ -29,6 +29,6 @@ class UserScreenViewController: UIViewController, IUserScreenView {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.presenter.viewDidLoad(view: self)
+        self.presenter.viewDidLoad(view: self.userView)
     }
 }

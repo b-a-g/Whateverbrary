@@ -12,7 +12,7 @@ class UserScreenButton: UIButton {
         super.init(frame: .zero)
         setTitle(title, for: .normal)
         setImage(UIImage(named: imageName), for: .normal)
-        backgroundColor = InterfaceConstants.defaultBackgroundColor
+        backgroundColor = InterfaceConstants.blueBackgroundColor
         layer.cornerRadius = InterfaceConstants.defaultBigCornerRadius
         addTarget(target, action: action, for: .touchUpInside)
     }

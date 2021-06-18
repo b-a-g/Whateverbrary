@@ -44,11 +44,17 @@ extension Navigator {
     func openNotificationsScreen() {
         
     }
+    
+    func openLoginScreen() {
+        let viewController = LoginScreenAssembly().build(navigator: self)
+        self.navigationController.setViewControllers([viewController], animated: true)
+    }
 }
 
 //MARK: collection screen actions
 extension Navigator {
     func openDetailScren() {
-        
+        let viewController = CollectionDetailsScreenAssembly().build(navigator: self)
+        self.navigationController.pushViewController(viewController, animated: true)
     }
 }

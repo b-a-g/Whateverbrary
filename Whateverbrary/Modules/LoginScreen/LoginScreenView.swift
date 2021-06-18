@@ -9,6 +9,7 @@ import UIKit
 import SnapKit
 
 class LoginScreenView: UIView {
+    
     weak var delegate: ILoginScreenViewDelegate?
     
     private lazy var backgroundImage: UIImageView = {
@@ -68,6 +69,10 @@ class LoginScreenView: UIView {
 
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func setUserName(username: String) {
+        self.loginTextView.text = username
     }
 }
 

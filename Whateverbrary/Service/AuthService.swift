@@ -10,54 +10,69 @@ import Firebase
 
 class AuthService {
     static let authService = AuthService()
-//completion handler closure
-    func signUp(email: String, password: String) {
+
+    typealias completionHandler = (_ user: User?, _ error: Error?) -> Void
+    func signUp(email: String, password: String, completionHandler: @escaping completionHandler) {
         Auth.auth().createUser(withEmail: email, password: password) { result, error in
             if let error = error as NSError? {
                 switch AuthErrorCode(rawValue: error.code) {
                     case .operationNotAllowed:
                         print("Error: \(error.localizedDescription)")
+                        completionHandler(nil, error)
                     case .emailAlreadyInUse:
                         print("Error: \(error.localizedDescription)")
+                        completionHandler(nil, error)
                     case .invalidEmail:
                         print("Error: \(error.localizedDescription)")
+                        completionHandler(nil, error)
                     case .weakPassword:
                         print("Error: \(error.localizedDescription)")
+                        completionHandler(nil, error)
                     default:
                         print("Error: \(error.localizedDescription)")
+                        completionHandler(nil, error)
                 }
             } else {
                 print("User signs up successfully")
                 let newUserInfo = Auth.auth().currentUser
-                let email = newUserInfo?.email
+                completionHandler(newUserInfo, nil)
             }
         }
     }
-    
-    func signIn(email: String, password: String) {
-        Auth.auth().signIn(withEmail: email, password: password) { (authResult, error) in
+
+    func signIn(email: String, password: String, completionHandler: @escaping completionHandler) {
+        Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
           if let error = error as NSError? {
             switch AuthErrorCode(rawValue: error.code) {
             case .operationNotAllowed:
                 print("Error: \(error.localizedDescription)")
-              // Error: Indicates that email and password accounts are not enabled. Enable them in the Auth section of the Firebase console.
+                completionHandler(nil, error)
             case .userDisabled:
                 print("Error: \(error.localizedDescription)")
-              // Error: The user account has been disabled by an administrator.
+                completionHandler(nil, error)
             case .wrongPassword:
                 print("Error: \(error.localizedDescription)")
-              // Error: The password is invalid or the user does not have a password.
+                completionHandler(nil, error)
             case .invalidEmail:
                 print("Error: \(error.localizedDescription)")
-              // Error: Indicates the email address is malformed.
+                completionHandler(nil, error)
             default:
                 print("Error: \(error.localizedDescription)")
+                completionHandler(nil, error)
             }
           } else {
             print("User signs in successfully")
             let userInfo = Auth.auth().currentUser
-            let email = userInfo?.email
+            completionHandler(userInfo, nil)
           }
+        }
+    }
+
+    func signOut() {
+        do {
+          try Auth.auth().signOut()
+        } catch {
+          print("Sign out error")
         }
     }
 }

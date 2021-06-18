@@ -33,5 +33,9 @@ class UserScreenRouter: IUserScreenRouter {
     func openNotificationsScreen() {
         self.navigator.openNotificationsScreen()
     }
+    
+    func openLoginScreen() {
+        self.navigator.openLoginScreen()
+    }
 
 }

@@ -8,5 +8,6 @@
 import Foundation
 
 protocol IUserDefaultsStorage {
-    func lastEnteredPerson() -> UUID?
+    func setCurrentUser(email: String)
+    func lastEnteredPerson() -> String?
 }

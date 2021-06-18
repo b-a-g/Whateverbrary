@@ -13,4 +13,5 @@ protocol IUserScreenRouter {
     func openOwedScreen()
     func openBorrowedScreen()
     func openNotificationsScreen()
+    func openLoginScreen()
 }

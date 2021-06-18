@@ -46,6 +46,7 @@
 		E7A069EC267C3AE900CAF31C /* CollectionScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A069EB267C3AE900CAF31C /* CollectionScreenPresenter.swift */; };
 		E7A069EE267C3AFB00CAF31C /* CollectionScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A069ED267C3AFB00CAF31C /* CollectionScreenViewController.swift */; };
 		E7A069F0267C3B0200CAF31C /* CollectionScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A069EF267C3B0200CAF31C /* CollectionScreenView.swift */; };
+		E7A069F4267C7F8D00CAF31C /* CollectionDetailsScreenAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A069F3267C7F8D00CAF31C /* CollectionDetailsScreenAssembly.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -92,6 +93,7 @@
 		E7A069EB267C3AE900CAF31C /* CollectionScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionScreenPresenter.swift; sourceTree = "<group>"; };
 		E7A069ED267C3AFB00CAF31C /* CollectionScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionScreenViewController.swift; sourceTree = "<group>"; };
 		E7A069EF267C3B0200CAF31C /* CollectionScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionScreenView.swift; sourceTree = "<group>"; };
+		E7A069F3267C7F8D00CAF31C /* CollectionDetailsScreenAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionDetailsScreenAssembly.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +175,7 @@
 				E76F398C2670D11900368BC2 /* LoginScreen */,
 				E76F398D26711BBC00368BC2 /* UserScreen */,
 				E76F398E26711BE300368BC2 /* CollectionScreen */,
+				E7A069F2267C7F7000CAF31C /* CollectionDetailsScreen */,
 				E7A069DA267C334100CAF31C /* FriendsScreen */,
 				E7A069DC267C335F00CAF31C /* BorrowedScreen */,
 				E7A069DB267C334E00CAF31C /* OwedScreen */,
@@ -313,6 +316,14 @@
 				E7A069DF267C389E00CAF31C /* ICollectionScreenRouter.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		E7A069F2267C7F7000CAF31C /* CollectionDetailsScreen */ = {
+			isa = PBXGroup;
+			children = (
+				E7A069F3267C7F8D00CAF31C /* CollectionDetailsScreenAssembly.swift */,
+			);
+			path = CollectionDetailsScreen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -463,6 +474,7 @@
 				E76F3998267850A700368BC2 /* LoginScreenView.swift in Sources */,
 				E76F399226784FCB00368BC2 /* LoginScreenViewController.swift in Sources */,
 				E76F39BC2679AC5A00368BC2 /* UserScreenAssembly.swift in Sources */,
+				E7A069F4267C7F8D00CAF31C /* CollectionDetailsScreenAssembly.swift in Sources */,
 				E76F39A32678525F00368BC2 /* UserModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

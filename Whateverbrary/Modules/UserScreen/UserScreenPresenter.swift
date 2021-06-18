@@ -20,10 +20,10 @@ class UserScreenPresenter: IUserScreenPresenter {
 
     func viewDidLoad(view: IUserScreenView) {
         self.view = view
+        self.view?.setUsername(name: self.userDefaultStorage.lastEnteredPerson() ?? "unknown")
     }
 
     func onCollectionButtonTap() {
-        print("onCollectionButtonTap")
         self.router.openCollectionScreen()
     }
     
@@ -44,6 +44,7 @@ class UserScreenPresenter: IUserScreenPresenter {
     }
     
     func onLogoutButtonTap() {
-        print("onLogoutButtonTap")
+        AuthService.authService.signOut()
+        self.router.openLoginScreen()
     }
 }

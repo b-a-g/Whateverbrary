@@ -8,5 +8,5 @@
 import Foundation
 
 protocol IUserScreenView: AnyObject {
-    
+    func setUsername(name: String)
 }

@@ -23,6 +23,6 @@ class CollectionScreenPresenter: ICollectionScreenPresenter {
     }
 
     func onCollectionItemTap(at: IndexPath) {
-        //
+        self.router.openDetailsScreen()
     }
 }
