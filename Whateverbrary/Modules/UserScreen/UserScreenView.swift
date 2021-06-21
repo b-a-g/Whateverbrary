@@ -25,6 +25,8 @@ class UserScreenView: UIView, IUserScreenView {
         view.backgroundColor = InterfaceConstants.defaultBackgroundColor
         view.layer.cornerRadius = InterfaceConstants.defaultBigCornerRadius
         view.image = UIImage(named: "avatar1")
+        view.isUserInteractionEnabled = true
+        view.addGestureRecognizer(UIGestureRecognizer(target: view, action: #selector(onUserAvatarTap)))
         return view
     }()
 
@@ -126,24 +128,32 @@ extension UserScreenView {
     @objc func onFriendsButtonTap() {
         self.delegate?.onFriendsButtonTap()
     }
-    
+
     @objc func onOwedButtonTap() {
         self.delegate?.onOwedButtonTap()
     }
-    
+
     @objc func onBorrowedButtonTap() {
         self.delegate?.onBorrowedButtonTap()
     }
-    
+
     @objc func onNotificationsButtonTap() {
         self.delegate?.onNotificationsButtonTap()
     }
-    
+
     @objc func onLogoutButtonTap() {
         self.delegate?.onLogoutButtonTap()
+    }
+    
+    @objc func onUserAvatarTap() {
+        self.delegate?.onAvatarTap()
     }
 
     func setUsername(name: String) {
         self.nicknameLabel.text = name
+    }
+
+    func setUserImage(image: UIImage) {
+        self.userAvatar.image = image
     }
 }

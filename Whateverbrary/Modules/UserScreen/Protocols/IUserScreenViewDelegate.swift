@@ -14,4 +14,5 @@ protocol IUserScreenViewDelegate: AnyObject {
     func onBorrowedButtonTap()
     func onNotificationsButtonTap()
     func onLogoutButtonTap()
+    func onAvatarTap()
 }

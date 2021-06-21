@@ -26,25 +26,29 @@ class UserScreenPresenter: IUserScreenPresenter {
     func onCollectionButtonTap() {
         self.router.openCollectionScreen()
     }
-    
+
     func onFriendsButtonTap() {
         print("onFriendsButtonTap")
     }
-    
+
     func onOwedButtonTap() {
         print("onOwedButtonTap")
     }
-    
+
     func onBorrowedButtonTap() {
         print("onBorrowedButtonTap")
     }
-    
+
     func onNotificationsButtonTap() {
         print("onNotificationsButtonTap")
     }
-    
+
     func onLogoutButtonTap() {
         AuthService.authService.signOut()
         self.router.openLoginScreen()
+    }
+
+    func onAvatarTap() {
+        print("avatar tapped")
     }
 }

@@ -8,13 +8,19 @@
 import Foundation
 
 struct UserModel {
-    let id: UUID
+    let uid: UUID
     let email: String
-    let password: String
-    
-    init(email: String, password: String) {
-        self.id = UUID()
+
+    init(email: String) {
+        self.uid = UUID()
         self.email = email
-        self.password = password
+    }
+
+    init?(user: AppUser) {
+        guard let uid = user.uid,
+              let email = user.email
+        else { return nil }
+        self.uid = uid
+        self.email = email
     }
 }

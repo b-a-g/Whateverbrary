@@ -51,6 +51,11 @@
 		E7A069F8267C9EFF00CAF31C /* CollectionDetailsScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A069F7267C9EFF00CAF31C /* CollectionDetailsScreenPresenter.swift */; };
 		E7A069FA267C9F0900CAF31C /* CollectionDetailsScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A069F9267C9F0900CAF31C /* CollectionDetailsScreenViewController.swift */; };
 		E7A069FC267C9F1100CAF31C /* CollectionDetailsScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A069FB267C9F1100CAF31C /* CollectionDetailsScreenView.swift */; };
+		E7F834FB26804ED600463169 /* DataBase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E7F834F926804ED600463169 /* DataBase.xcdatamodeld */; };
+		E7F834FD26804EED00463169 /* DataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F834FC26804EED00463169 /* DataStorage.swift */; };
+		E7F835002680742C00463169 /* IUserStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F834FF2680742C00463169 /* IUserStorage.swift */; };
+		E7F835022680743900463169 /* IItemStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F835012680743900463169 /* IItemStorage.swift */; };
+		E7F83504268075B900463169 /* ItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F83503268075B900463169 /* ItemModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -102,6 +107,11 @@
 		E7A069F7267C9EFF00CAF31C /* CollectionDetailsScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionDetailsScreenPresenter.swift; sourceTree = "<group>"; };
 		E7A069F9267C9F0900CAF31C /* CollectionDetailsScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionDetailsScreenViewController.swift; sourceTree = "<group>"; };
 		E7A069FB267C9F1100CAF31C /* CollectionDetailsScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionDetailsScreenView.swift; sourceTree = "<group>"; };
+		E7F834FA26804ED600463169 /* DataBase.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataBase.xcdatamodel; sourceTree = "<group>"; };
+		E7F834FC26804EED00463169 /* DataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStorage.swift; sourceTree = "<group>"; };
+		E7F834FF2680742C00463169 /* IUserStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IUserStorage.swift; sourceTree = "<group>"; };
+		E7F835012680743900463169 /* IItemStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IItemStorage.swift; sourceTree = "<group>"; };
+		E7F83503268075B900463169 /* ItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,10 +164,12 @@
 		E768804D2666583400A1BBF3 /* Whateverbrary */ = {
 			isa = PBXGroup;
 			children = (
+				E76F39A12678525200368BC2 /* Models */,
+				E7F834FE2680741B00463169 /* Storages */,
+				E7F834F826804E5A00463169 /* CoreData */,
 				E76F398A2670CE6100368BC2 /* System */,
 				E76F39AC2678A25800368BC2 /* Configuration */,
 				E76F39C62679B00800368BC2 /* Service */,
-				E76F39A12678525200368BC2 /* Models */,
 				E76F398B2670D10600368BC2 /* Modules */,
 				E768805C2666583600A1BBF3 /* Info.plist */,
 				E76F398F2678434B00368BC2 /* GoogleService-Info.plist */,
@@ -235,6 +247,7 @@
 			isa = PBXGroup;
 			children = (
 				E76F39A22678525F00368BC2 /* UserModel.swift */,
+				E7F83503268075B900463169 /* ItemModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -344,6 +357,24 @@
 			children = (
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		E7F834F826804E5A00463169 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				E7F834FC26804EED00463169 /* DataStorage.swift */,
+				E7F834F926804ED600463169 /* DataBase.xcdatamodeld */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		E7F834FE2680741B00463169 /* Storages */ = {
+			isa = PBXGroup;
+			children = (
+				E7F834FF2680742C00463169 /* IUserStorage.swift */,
+				E7F835012680743900463169 /* IItemStorage.swift */,
+			);
+			path = Storages;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -472,10 +503,13 @@
 				E7A069E6267C392F00CAF31C /* ICollectionScreenViewDelegate.swift in Sources */,
 				E76F39C32679ACB200368BC2 /* IUserScreenRouter.swift in Sources */,
 				E7A069EE267C3AFB00CAF31C /* CollectionScreenViewController.swift in Sources */,
+				E7F834FD26804EED00463169 /* DataStorage.swift in Sources */,
 				E76F39B62679AC2500368BC2 /* UserScreenView.swift in Sources */,
 				E7A069E4267C392500CAF31C /* ICollectionScreenView.swift in Sources */,
 				E768804F2666583400A1BBF3 /* AppDelegate.swift in Sources */,
+				E7F835002680742C00463169 /* IUserStorage.swift in Sources */,
 				E76F39B82679AC2C00368BC2 /* IUserScreenView.swift in Sources */,
+				E7F835022680743900463169 /* IItemStorage.swift in Sources */,
 				E76F399A2678512200368BC2 /* LoginScreenPresenter.swift in Sources */,
 				E7A069E8267C3A0A00CAF31C /* CollectionScreenAssembly.swift in Sources */,
 				E7A069E2267C38AA00CAF31C /* ICollectionScreenPresenter.swift in Sources */,
@@ -487,8 +521,10 @@
 				E76F39BA2679AC4900368BC2 /* UserScreenRouter.swift in Sources */,
 				E76F39C82679B02400368BC2 /* AuthService.swift in Sources */,
 				E76F39A7267855C500368BC2 /* ILoginScreenViewDelegate.swift in Sources */,
+				E7F83504268075B900463169 /* ItemModel.swift in Sources */,
 				E7A069EC267C3AE900CAF31C /* CollectionScreenPresenter.swift in Sources */,
 				E76F39AA26785B2E00368BC2 /* Interface.swift in Sources */,
+				E7F834FB26804ED600463169 /* DataBase.xcdatamodeld in Sources */,
 				E76F39A52678555E00368BC2 /* ILoginScreenPresenter.swift in Sources */,
 				E7A069F6267C9EF700CAF31C /* CollectionDetailsScreenRouter.swift in Sources */,
 				E7A069FA267C9F0900CAF31C /* CollectionDetailsScreenViewController.swift in Sources */,
@@ -651,7 +687,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -673,7 +709,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -699,6 +735,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		E7F834F926804ED600463169 /* DataBase.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				E7F834FA26804ED600463169 /* DataBase.xcdatamodel */,
+			);
+			currentVersion = E7F834FA26804ED600463169 /* DataBase.xcdatamodel */;
+			path = DataBase.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = E76880432666583400A1BBF3 /* Project object */;
 }

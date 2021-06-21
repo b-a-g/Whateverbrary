@@ -12,9 +12,11 @@ class LoginScreenPresenter: ILoginScreenPresenter {
     private weak var view: ILoginScreenView?
     private let router: ILoginScreenRouter
     private let userDefaultsStorage: IUserDefaultsStorage
+    private let userStorage: IUserStorage
 
-    init(userDefaultsStorage: IUserDefaultsStorage, router: ILoginScreenRouter) {
+    init(userDefaultsStorage: IUserDefaultsStorage, userStorage: IUserStorage, router: ILoginScreenRouter) {
         self.userDefaultsStorage = userDefaultsStorage
+        self.userStorage = userStorage
         self.router = router
     }
 
@@ -25,10 +27,10 @@ class LoginScreenPresenter: ILoginScreenPresenter {
 
     func login(login: String?, password: String?) {
         if let login = login?.lowercased(),
-           let password = password?.lowercased() {
+           let password = password {
             AuthService.authService.signIn(email: login, password: password) { user, error in
                 if let user = user {
-                    self.router.openUserScreen(user: UserModel(email: user.email ?? "", password: password))
+                    self.router.openUserScreen(user: UserModel(email: user.email ?? ""))
                     self.userDefaultsStorage.setCurrentUser(email: user.email!)
                 } else if let error = error {
                     self.view?.showAlert(message: error.localizedDescription)
@@ -39,11 +41,16 @@ class LoginScreenPresenter: ILoginScreenPresenter {
 
     func signUp(login: String?, password: String?) {
         if let login = login?.lowercased(),
-           let password = password?.lowercased() {
+           let password = password {
             AuthService.authService.signUp(email: login, password: password) { user, error in
                 if let user = user {
-                    self.router.openUserScreen(user: UserModel(email: user.email ?? "", password: password))
-                    self.userDefaultsStorage.setCurrentUser(email: user.email ?? "")
+                    if let email = user.email {
+                        self.userDefaultsStorage.setCurrentUser(email: email)
+                        let newUser = UserModel(email: email)
+                        self.userStorage.saveUser(user: newUser) {
+                            self.router.openUserScreen(user: newUser)
+                        }
+                    }
                 } else if let error = error {
                     self.view?.showAlert(message: error.localizedDescription)
                 }
