@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CollectionScreenViewController: UIViewController, ICollectionScreenView {
+class CollectionScreenViewController: UIViewController {
 
     private let collectionView: CollectionScreenView
     private let presenter: ICollectionScreenPresenter
@@ -24,11 +24,11 @@ class CollectionScreenViewController: UIViewController, ICollectionScreenView {
     }
 
     override func loadView() {
-        self.view = collectionView
+        self.view = self.collectionView
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.presenter.viewDidLoad(view: self)
+        self.presenter.viewDidLoad(view: self.collectionView)
     }
 }

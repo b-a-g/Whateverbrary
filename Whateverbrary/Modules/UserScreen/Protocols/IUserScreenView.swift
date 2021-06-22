@@ -8,6 +8,6 @@
 import UIKit
 
 protocol IUserScreenView: AnyObject {
-    func setUsername(name: String)
+    func setUser(user: UserModel)
     func setUserImage(image: UIImage)
 }

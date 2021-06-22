@@ -10,12 +10,15 @@ import Foundation
 class UserScreenRouter: IUserScreenRouter {
 
     let navigator: Navigator
-    init(navigator: Navigator) {
+    let user: UserModel
+
+    init(navigator: Navigator, user: UserModel) {
         self.navigator = navigator
+        self.user = user
     }
 
-    func openCollectionScreen() {
-        self.navigator.openCollectionScreen()
+    func openCollectionScreen(user: UserModel) {
+        self.navigator.openCollectionScreen(user: user)
     }
 
     func openFriendsScreen() {

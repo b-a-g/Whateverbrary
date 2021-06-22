@@ -30,5 +30,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         AppDelegate.container.register(IUserDefaultsStorage.self) { _ in
             return UserDefaultsStorage(userDefaults: .standard)
         }
+        AppDelegate.container.register(IConfigurationReader.self) { _ in
+            ConfigurationReader()
+        }
+        let configurationReader = AppDelegate.container.resolve(IConfigurationReader.self)!
+        let storage = StorageFactory(reader: configurationReader).generatedStorage()
+        AppDelegate.container.register(IItemStorage.self) { _ in
+            return storage
+        }.inObjectScope(.container)
+        AppDelegate.container.register(IUserStorage.self) { _ in
+            return storage
+        }.inObjectScope(.container)
     }
 }

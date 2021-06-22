@@ -22,7 +22,7 @@ class CollectionScreenPresenter: ICollectionScreenPresenter {
         self.view = view
     }
 
-    func onCollectionItemTap(at: IndexPath) {
+    func onCollectionItemTap(item: UUID) {
         self.router.openDetailsScreen()
     }
 }

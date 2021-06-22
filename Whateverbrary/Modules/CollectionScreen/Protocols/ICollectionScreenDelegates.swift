@@ -8,5 +8,9 @@
 import Foundation
 
 protocol ICollectionScreenViewDelegate: AnyObject {
-    func onCollectionItemTap(at item: IndexPath)
+    func onCollectionItemTap(item: UUID)
+}
+
+protocol ICollectionScreenDelegate: AnyObject {
+    func updateCollection(items: [CollectionScreenItemViewModel])
 }

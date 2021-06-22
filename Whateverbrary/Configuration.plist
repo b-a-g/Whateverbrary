@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Title</key>
+	<string>Итоговый проект Focus Start</string>
+	<key>Body</key>
+	<string>Приложение для контроля личной чёугоднотеки</string>
+	<key>StorageType</key>
+	<string>coredata</string>
+</dict>
+</plist>

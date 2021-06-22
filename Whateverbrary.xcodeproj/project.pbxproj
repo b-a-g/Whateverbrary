@@ -40,7 +40,7 @@
 		E7A069E0267C389E00CAF31C /* ICollectionScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A069DF267C389E00CAF31C /* ICollectionScreenRouter.swift */; };
 		E7A069E2267C38AA00CAF31C /* ICollectionScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A069E1267C38AA00CAF31C /* ICollectionScreenPresenter.swift */; };
 		E7A069E4267C392500CAF31C /* ICollectionScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A069E3267C392500CAF31C /* ICollectionScreenView.swift */; };
-		E7A069E6267C392F00CAF31C /* ICollectionScreenViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A069E5267C392F00CAF31C /* ICollectionScreenViewDelegate.swift */; };
+		E7A069E6267C392F00CAF31C /* ICollectionScreenDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A069E5267C392F00CAF31C /* ICollectionScreenDelegates.swift */; };
 		E7A069E8267C3A0A00CAF31C /* CollectionScreenAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A069E7267C3A0A00CAF31C /* CollectionScreenAssembly.swift */; };
 		E7A069EA267C3ADE00CAF31C /* CollectionScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A069E9267C3ADE00CAF31C /* CollectionScreenRouter.swift */; };
 		E7A069EC267C3AE900CAF31C /* CollectionScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A069EB267C3AE900CAF31C /* CollectionScreenPresenter.swift */; };
@@ -56,6 +56,11 @@
 		E7F835002680742C00463169 /* IUserStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F834FF2680742C00463169 /* IUserStorage.swift */; };
 		E7F835022680743900463169 /* IItemStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F835012680743900463169 /* IItemStorage.swift */; };
 		E7F83504268075B900463169 /* ItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F83503268075B900463169 /* ItemModel.swift */; };
+		E7F8350626808A8D00463169 /* StorageFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F8350526808A8D00463169 /* StorageFactory.swift */; };
+		E7F835082680A36F00463169 /* ConfigurationReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F835072680A36F00463169 /* ConfigurationReader.swift */; };
+		E7F8350A2680A52600463169 /* Configuration.plist in Resources */ = {isa = PBXBuildFile; fileRef = E7F835092680A52600463169 /* Configuration.plist */; };
+		E7F8350E268195AC00463169 /* CollectionScreenItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F8350D268195AC00463169 /* CollectionScreenItemViewModel.swift */; };
+		E7F835102681960100463169 /* CollectionScreenItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F8350F2681960100463169 /* CollectionScreenItemCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -96,7 +101,7 @@
 		E7A069DF267C389E00CAF31C /* ICollectionScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICollectionScreenRouter.swift; sourceTree = "<group>"; };
 		E7A069E1267C38AA00CAF31C /* ICollectionScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICollectionScreenPresenter.swift; sourceTree = "<group>"; };
 		E7A069E3267C392500CAF31C /* ICollectionScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICollectionScreenView.swift; sourceTree = "<group>"; };
-		E7A069E5267C392F00CAF31C /* ICollectionScreenViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICollectionScreenViewDelegate.swift; sourceTree = "<group>"; };
+		E7A069E5267C392F00CAF31C /* ICollectionScreenDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICollectionScreenDelegates.swift; sourceTree = "<group>"; };
 		E7A069E7267C3A0A00CAF31C /* CollectionScreenAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionScreenAssembly.swift; sourceTree = "<group>"; };
 		E7A069E9267C3ADE00CAF31C /* CollectionScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionScreenRouter.swift; sourceTree = "<group>"; };
 		E7A069EB267C3AE900CAF31C /* CollectionScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionScreenPresenter.swift; sourceTree = "<group>"; };
@@ -112,6 +117,11 @@
 		E7F834FF2680742C00463169 /* IUserStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IUserStorage.swift; sourceTree = "<group>"; };
 		E7F835012680743900463169 /* IItemStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IItemStorage.swift; sourceTree = "<group>"; };
 		E7F83503268075B900463169 /* ItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemModel.swift; sourceTree = "<group>"; };
+		E7F8350526808A8D00463169 /* StorageFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageFactory.swift; sourceTree = "<group>"; };
+		E7F835072680A36F00463169 /* ConfigurationReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationReader.swift; sourceTree = "<group>"; };
+		E7F835092680A52600463169 /* Configuration.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Configuration.plist; sourceTree = "<group>"; };
+		E7F8350D268195AC00463169 /* CollectionScreenItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionScreenItemViewModel.swift; sourceTree = "<group>"; };
+		E7F8350F2681960100463169 /* CollectionScreenItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionScreenItemCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +182,7 @@
 				E76F39C62679B00800368BC2 /* Service */,
 				E76F398B2670D10600368BC2 /* Modules */,
 				E768805C2666583600A1BBF3 /* Info.plist */,
+				E7F835092680A52600463169 /* Configuration.plist */,
 				E76F398F2678434B00368BC2 /* GoogleService-Info.plist */,
 			);
 			path = Whateverbrary;
@@ -238,6 +249,8 @@
 				E7A069EB267C3AE900CAF31C /* CollectionScreenPresenter.swift */,
 				E7A069ED267C3AFB00CAF31C /* CollectionScreenViewController.swift */,
 				E7A069EF267C3B0200CAF31C /* CollectionScreenView.swift */,
+				E7F8350D268195AC00463169 /* CollectionScreenItemViewModel.swift */,
+				E7F8350F2681960100463169 /* CollectionScreenItemCell.swift */,
 				E7A069DE267C388200CAF31C /* Protocols */,
 			);
 			path = CollectionScreen;
@@ -277,6 +290,7 @@
 			children = (
 				E76F39AD2678A27D00368BC2 /* IUserDefaultsStorage.swift */,
 				E76F39AF2678A2BD00368BC2 /* UserDefaultsStorage.swift */,
+				E7F835072680A36F00463169 /* ConfigurationReader.swift */,
 			);
 			path = Configuration;
 			sourceTree = "<group>";
@@ -332,7 +346,7 @@
 			isa = PBXGroup;
 			children = (
 				E7A069E3267C392500CAF31C /* ICollectionScreenView.swift */,
-				E7A069E5267C392F00CAF31C /* ICollectionScreenViewDelegate.swift */,
+				E7A069E5267C392F00CAF31C /* ICollectionScreenDelegates.swift */,
 				E7A069E1267C38AA00CAF31C /* ICollectionScreenPresenter.swift */,
 				E7A069DF267C389E00CAF31C /* ICollectionScreenRouter.swift */,
 			);
@@ -373,6 +387,7 @@
 			children = (
 				E7F834FF2680742C00463169 /* IUserStorage.swift */,
 				E7F835012680743900463169 /* IItemStorage.swift */,
+				E7F8350526808A8D00463169 /* StorageFactory.swift */,
 			);
 			path = Storages;
 			sourceTree = "<group>";
@@ -437,6 +452,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E768805B2666583600A1BBF3 /* LaunchScreen.storyboard in Resources */,
+				E7F8350A2680A52600463169 /* Configuration.plist in Resources */,
 				E76880582666583600A1BBF3 /* Assets.xcassets in Resources */,
 				E76F39902678434B00368BC2 /* GoogleService-Info.plist in Resources */,
 			);
@@ -500,13 +516,14 @@
 				E76F39BE2679AC6400368BC2 /* UserScreenPresenter.swift in Sources */,
 				E76F39A0267851FC00368BC2 /* ILoginScreenRouter.swift in Sources */,
 				E76F39AE2678A27D00368BC2 /* IUserDefaultsStorage.swift in Sources */,
-				E7A069E6267C392F00CAF31C /* ICollectionScreenViewDelegate.swift in Sources */,
+				E7A069E6267C392F00CAF31C /* ICollectionScreenDelegates.swift in Sources */,
 				E76F39C32679ACB200368BC2 /* IUserScreenRouter.swift in Sources */,
 				E7A069EE267C3AFB00CAF31C /* CollectionScreenViewController.swift in Sources */,
 				E7F834FD26804EED00463169 /* DataStorage.swift in Sources */,
 				E76F39B62679AC2500368BC2 /* UserScreenView.swift in Sources */,
 				E7A069E4267C392500CAF31C /* ICollectionScreenView.swift in Sources */,
 				E768804F2666583400A1BBF3 /* AppDelegate.swift in Sources */,
+				E7F835102681960100463169 /* CollectionScreenItemCell.swift in Sources */,
 				E7F835002680742C00463169 /* IUserStorage.swift in Sources */,
 				E76F39B82679AC2C00368BC2 /* IUserScreenView.swift in Sources */,
 				E7F835022680743900463169 /* IItemStorage.swift in Sources */,
@@ -516,6 +533,7 @@
 				E76F39962678509100368BC2 /* ILoginScreenView.swift in Sources */,
 				E76F39C52679ACC300368BC2 /* IUserScreenViewDelegate.swift in Sources */,
 				E76F39B22679AC0700368BC2 /* UserScreenViewControler.swift in Sources */,
+				E7F835082680A36F00463169 /* ConfigurationReader.swift in Sources */,
 				E76F399C2678515300368BC2 /* LoginScreenAssembly.swift in Sources */,
 				E7A069E0267C389E00CAF31C /* ICollectionScreenRouter.swift in Sources */,
 				E76F39BA2679AC4900368BC2 /* UserScreenRouter.swift in Sources */,
@@ -525,6 +543,7 @@
 				E7A069EC267C3AE900CAF31C /* CollectionScreenPresenter.swift in Sources */,
 				E76F39AA26785B2E00368BC2 /* Interface.swift in Sources */,
 				E7F834FB26804ED600463169 /* DataBase.xcdatamodeld in Sources */,
+				E7F8350626808A8D00463169 /* StorageFactory.swift in Sources */,
 				E76F39A52678555E00368BC2 /* ILoginScreenPresenter.swift in Sources */,
 				E7A069F6267C9EF700CAF31C /* CollectionDetailsScreenRouter.swift in Sources */,
 				E7A069FA267C9F0900CAF31C /* CollectionDetailsScreenViewController.swift in Sources */,
@@ -534,6 +553,7 @@
 				E7A069FC267C9F1100CAF31C /* CollectionDetailsScreenView.swift in Sources */,
 				E76F399226784FCB00368BC2 /* LoginScreenViewController.swift in Sources */,
 				E76F39BC2679AC5A00368BC2 /* UserScreenAssembly.swift in Sources */,
+				E7F8350E268195AC00463169 /* CollectionScreenItemViewModel.swift in Sources */,
 				E7A069F4267C7F8D00CAF31C /* CollectionDetailsScreenAssembly.swift in Sources */,
 				E76F39A32678525F00368BC2 /* UserModel.swift in Sources */,
 			);

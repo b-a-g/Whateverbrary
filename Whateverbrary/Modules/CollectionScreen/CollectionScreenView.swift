@@ -7,10 +7,11 @@
 
 import UIKit
 
-class CollectionScreenView: UICollectionView, UICollectionViewDelegate, UICollectionViewDataSource, ICollectionScreenView {
-    
+class CollectionScreenView: UICollectionView, ICollectionScreenView {
+
     weak var collectionScreenDelegate: ICollectionScreenViewDelegate?
-    
+    private var items = [CollectionScreenItemViewModel]()
+
     private lazy var backgroundImage: UIImageView = {
         var view = UIImageView()
         view.image = UIImage(named: "mainBackgroundImage")
@@ -18,64 +19,53 @@ class CollectionScreenView: UICollectionView, UICollectionViewDelegate, UICollec
         view.alpha = 0.5
         return view
     }()
-    
-    init() {
+
+    private let layout: UICollectionViewFlowLayout = {
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
         layout.itemSize = CGSize(width: 200, height: 400)
         layout.scrollDirection = .vertical
-        super.init(frame: .zero, collectionViewLayout: layout)
+        return layout
+    }()
+
+    init() {
+        super.init(frame: .zero, collectionViewLayout: self.layout)
         delegate = self
         dataSource = self
         backgroundColor = .white
-        register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
+        register(CollectionScreenItemCell.self, forCellWithReuseIdentifier: "cell")
         self.addSubview(self.backgroundImage)
         self.backgroundImage.snp.makeConstraints { make in
             make.top.left.right.bottom.equalToSuperview()
         }
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+}
+
+extension CollectionScreenView: ICollectionScreenDelegate {
+    func updateCollection(items: [CollectionScreenItemViewModel]) {
+        self.items = items
+        self.reloadData()
     }
-    
+}
+
+extension CollectionScreenView: UICollectionViewDelegate, UICollectionViewDataSource {
+
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return self.items.count
+    }
+
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let item = self.items[indexPath.row]
         let cell = dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
-        let content = createCellContent(indexPath: indexPath)
-        cell.addSubview(content)
-        content.snp.makeConstraints { make in
-            make.top.left.right.bottom.equalToSuperview()
-        }
+        (cell as? CollectionScreenItemCell)?.update(viewModel: item)
         return cell
     }
-    
-    func createCellContent(indexPath: IndexPath) -> UIView {
-        let view = UIView()
-        
-        let label = UILabel()
-        label.text = "Книга №\(indexPath.row+1)"
-        view.addSubview(label)
-        
-        let image = UIImageView()
-        image.backgroundColor = .white
-        image.image = UIImage(named: "cover\(indexPath.row)")
-        view.addSubview(image)
 
-        image.snp.makeConstraints { make in
-            make.left.top.right.bottom.equalToSuperview()
-        }
-        label.snp.makeConstraints { make in
-            make.left.right.bottom.equalToSuperview()
-            make.height.equalTo(100)
-        }
-        return view
-    }
-    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.collectionScreenDelegate?.onCollectionItemTap(at: indexPath)
+        self.collectionScreenDelegate?.onCollectionItemTap(item: self.items[indexPath.row].uid)
     }
 }

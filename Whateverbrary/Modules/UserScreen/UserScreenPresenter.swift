@@ -11,20 +11,20 @@ class UserScreenPresenter: IUserScreenPresenter {
 
     private weak var view: IUserScreenView?
     private let router: IUserScreenRouter
-    private let userDefaultStorage: IUserDefaultsStorage
+    private let user: UserModel
 
-    init(userDefaultStorage: IUserDefaultsStorage, router: IUserScreenRouter) {
-        self.userDefaultStorage = userDefaultStorage
+    init(router: IUserScreenRouter, user: UserModel) {
         self.router = router
+        self.user = user
     }
 
     func viewDidLoad(view: IUserScreenView) {
         self.view = view
-        self.view?.setUsername(name: self.userDefaultStorage.lastEnteredPerson() ?? "unknown")
+        self.view?.setUser(user: self.user)
     }
 
-    func onCollectionButtonTap() {
-        self.router.openCollectionScreen()
+    func onCollectionButtonTap(user: UserModel) {
+        self.router.openCollectionScreen(user: user)
     }
 
     func onFriendsButtonTap() {

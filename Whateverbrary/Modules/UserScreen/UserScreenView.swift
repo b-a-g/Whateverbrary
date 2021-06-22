@@ -11,6 +11,7 @@ import SnapKit
 class UserScreenView: UIView, IUserScreenView {
 
     weak var delegate: IUserScreenViewDelegate?
+    private var user: UserModel?
 
     private lazy var backgroundImage: UIImageView = {
         var view = UIImageView()
@@ -122,7 +123,9 @@ extension UserScreenView {
     }
 
     @objc func onCollectionButtonTap() {
-        self.delegate?.onCollectionButtonTap()
+        if let user = self.user {
+            self.delegate?.onCollectionButtonTap(user: user)
+        }
     }
 
     @objc func onFriendsButtonTap() {
@@ -149,8 +152,9 @@ extension UserScreenView {
         self.delegate?.onAvatarTap()
     }
 
-    func setUsername(name: String) {
-        self.nicknameLabel.text = name
+    func setUser(user: UserModel) {
+        self.user = user
+        self.nicknameLabel.text = self.user?.email
     }
 
     func setUserImage(image: UIImage) {

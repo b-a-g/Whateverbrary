@@ -6,12 +6,13 @@
     </entity>
     <entity name="Item" representedClassName="Item" syncable="YES" codeGenerationType="class">
         <attribute name="author" optional="YES" attributeType="String"/>
+        <attribute name="cover" optional="YES" attributeType="Binary"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="owner" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="uid" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
     </entity>
     <elements>
         <element name="AppUser" positionX="-63" positionY="-18" width="128" height="59"/>
-        <element name="Item" positionX="-54" positionY="-9" width="128" height="89"/>
+        <element name="Item" positionX="-54" positionY="-9" width="128" height="104"/>
     </elements>
 </model>

@@ -16,17 +16,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="mainBackgroundImage" translatesAutoresizingMaskIntoConstraints="NO" id="7Ah-Oa-42c">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mainBackgroundImage" translatesAutoresizingMaskIntoConstraints="NO" id="7Ah-Oa-42c">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="7Ah-Oa-42c" secondAttribute="bottom" id="Dzn-4D-qWr"/>
-                            <constraint firstItem="7Ah-Oa-42c" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="ILL-Ri-i7f"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7Ah-Oa-42c" secondAttribute="trailing" id="TRg-uK-H9s"/>
-                            <constraint firstItem="7Ah-Oa-42c" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="lyd-ji-iby"/>
+                            <constraint firstItem="7Ah-Oa-42c" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="4qD-S6-dyg"/>
+                            <constraint firstItem="7Ah-Oa-42c" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="RGi-r9-42P"/>
+                            <constraint firstItem="7Ah-Oa-42c" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="RJ0-gc-on7"/>
+                            <constraint firstItem="7Ah-Oa-42c" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Xa5-4c-gMJ"/>
                         </constraints>
                     </view>
                 </viewController>

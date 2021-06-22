@@ -8,7 +8,7 @@
 import Foundation
 
 protocol IUserScreenRouter {
-    func openCollectionScreen()
+    func openCollectionScreen(user: UserModel)
     func openFriendsScreen()
     func openOwedScreen()
     func openBorrowedScreen()

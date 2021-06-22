@@ -8,7 +8,7 @@
 import Foundation
 
 protocol IUserScreenViewDelegate: AnyObject {
-    func onCollectionButtonTap()
+    func onCollectionButtonTap(user: UserModel)
     func onFriendsButtonTap()
     func onOwedButtonTap()
     func onBorrowedButtonTap()

@@ -17,15 +17,15 @@ class Navigator {
 //MARK: login screen actions
 extension Navigator {
     func openUserScreen(user: UserModel) {
-        let viewController = UserScreenAssembly().build(navigator: self)
+        let viewController = UserScreenAssembly().build(navigator: self, user: user)
         self.navigationController.setViewControllers([viewController], animated: true)
     }
 }
 
 //MARK: user screen actions
 extension Navigator {
-    func openCollectionScreen() {
-        let viewController = CollectionScreenAssembly().build(navigator: self)
+    func openCollectionScreen(user: UserModel) {
+        let viewController = CollectionScreenAssembly().build(navigator: self, user: user)
         self.navigationController.pushViewController(viewController, animated: true)
     }
 

@@ -8,10 +8,9 @@
 import UIKit
 
 class UserScreenAssembly {
-    func build(navigator: Navigator) -> UIViewController {
-        let userDefaultsStorage = AppDelegate.container.resolve(IUserDefaultsStorage.self)!
-        let router = UserScreenRouter(navigator: navigator)
-        let presenter = UserScreenPresenter(userDefaultStorage: userDefaultsStorage, router: router)
+    func build(navigator: Navigator, user: UserModel) -> UIViewController {
+        let router = UserScreenRouter(navigator: navigator, user: user)
+        let presenter = UserScreenPresenter(router: router, user: user)
         let controller = UserScreenViewController(presenter: presenter)
         return controller
     }
