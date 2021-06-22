@@ -9,9 +9,8 @@ import UIKit
 
 class CollectionScreenAssembly {
     func build(navigator: Navigator, user: UserModel) -> UIViewController {
-        let userDefaultsStorage = AppDelegate.container.resolve(IUserDefaultsStorage.self)!
         let router = CollectionScreenRouter(navigator: navigator)
-        let presenter = CollectionScreenPresenter(userDefaultStorage: userDefaultsStorage, router: router)
+        let presenter = CollectionScreenPresenter(router: router)
         let controller = CollectionScreenViewController(presenter: presenter)
         return controller
     }

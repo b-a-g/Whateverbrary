@@ -11,10 +11,8 @@ class CollectionScreenPresenter: ICollectionScreenPresenter {
 
     private weak var view: ICollectionScreenView?
     private let router: ICollectionScreenRouter
-    private let userDefaultStorage: IUserDefaultsStorage
 
-    init(userDefaultStorage: IUserDefaultsStorage, router: ICollectionScreenRouter) {
-        self.userDefaultStorage = userDefaultStorage
+    init(router: ICollectionScreenRouter) {
         self.router = router
     }
 
