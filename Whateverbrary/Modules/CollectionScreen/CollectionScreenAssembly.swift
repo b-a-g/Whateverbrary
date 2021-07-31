@@ -9,8 +9,13 @@ import UIKit
 
 class CollectionScreenAssembly {
     func build(navigator: Navigator, user: UserModel) -> UIViewController {
-        let router = CollectionScreenRouter(navigator: navigator)
-        let presenter = CollectionScreenPresenter(router: router)
+        let configurationReader = AppDelegate.container.resolve(IConfigurationReader.self)!
+        let itemStorage = AppDelegate.container.resolve(IItemStorage.self)!
+        let router = CollectionScreenRouter(navigator: navigator, user: user)
+        let presenter = CollectionScreenPresenter(router: router,
+                                                  itemStorage: itemStorage,
+                                                  configurationReader: configurationReader,
+                                                  user: user)
         let controller = CollectionScreenViewController(presenter: presenter)
         return controller
     }

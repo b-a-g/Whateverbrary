@@ -10,11 +10,18 @@ import Foundation
 class CollectionScreenRouter: ICollectionScreenRouter {
 
     let navigator: Navigator
-    init(navigator: Navigator) {
+    let user: UserModel
+
+    init(navigator: Navigator, user: UserModel) {
         self.navigator = navigator
+        self.user = user
     }
 
-    func openDetailsScreen() {
+    func openDetailsScreen(item: ItemModel) {
         self.navigator.openDetailScren()
+    }
+
+    func createItem() {
+        //
     }
 }

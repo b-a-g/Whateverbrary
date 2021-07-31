@@ -61,6 +61,7 @@
 		E7F8350A2680A52600463169 /* Configuration.plist in Resources */ = {isa = PBXBuildFile; fileRef = E7F835092680A52600463169 /* Configuration.plist */; };
 		E7F8350E268195AC00463169 /* CollectionScreenItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F8350D268195AC00463169 /* CollectionScreenItemViewModel.swift */; };
 		E7F835102681960100463169 /* CollectionScreenItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F8350F2681960100463169 /* CollectionScreenItemCell.swift */; };
+		E7F835122681B2CF00463169 /* ICollectionScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F835112681B2CF00463169 /* ICollectionScreenViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -122,6 +123,7 @@
 		E7F835092680A52600463169 /* Configuration.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Configuration.plist; sourceTree = "<group>"; };
 		E7F8350D268195AC00463169 /* CollectionScreenItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionScreenItemViewModel.swift; sourceTree = "<group>"; };
 		E7F8350F2681960100463169 /* CollectionScreenItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionScreenItemCell.swift; sourceTree = "<group>"; };
+		E7F835112681B2CF00463169 /* ICollectionScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICollectionScreenViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -349,6 +351,7 @@
 				E7A069E5267C392F00CAF31C /* ICollectionScreenDelegates.swift */,
 				E7A069E1267C38AA00CAF31C /* ICollectionScreenPresenter.swift */,
 				E7A069DF267C389E00CAF31C /* ICollectionScreenRouter.swift */,
+				E7F835112681B2CF00463169 /* ICollectionScreenViewController.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -521,6 +524,7 @@
 				E7A069EE267C3AFB00CAF31C /* CollectionScreenViewController.swift in Sources */,
 				E7F834FD26804EED00463169 /* DataStorage.swift in Sources */,
 				E76F39B62679AC2500368BC2 /* UserScreenView.swift in Sources */,
+				E7F835122681B2CF00463169 /* ICollectionScreenViewController.swift in Sources */,
 				E7A069E4267C392500CAF31C /* ICollectionScreenView.swift in Sources */,
 				E768804F2666583400A1BBF3 /* AppDelegate.swift in Sources */,
 				E7F835102681960100463169 /* CollectionScreenItemCell.swift in Sources */,

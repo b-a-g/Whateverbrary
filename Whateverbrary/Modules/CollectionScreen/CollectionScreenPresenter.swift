@@ -11,9 +11,16 @@ class CollectionScreenPresenter: ICollectionScreenPresenter {
 
     private weak var view: ICollectionScreenView?
     private let router: ICollectionScreenRouter
+    private let itemStorage: IItemStorage
+    private let configurationReader: IConfigurationReader
+    private let user: UserModel
+    private let items: [ItemModel] = []
 
-    init(router: ICollectionScreenRouter) {
+    init(router: ICollectionScreenRouter, itemStorage: IItemStorage, configurationReader: IConfigurationReader, user: UserModel) {
         self.router = router
+        self.itemStorage = itemStorage
+        self.configurationReader = configurationReader
+        self.user = user
     }
 
     func viewDidLoad(view: ICollectionScreenView) {
@@ -21,6 +28,7 @@ class CollectionScreenPresenter: ICollectionScreenPresenter {
     }
 
     func onCollectionItemTap(item: UUID) {
-        self.router.openDetailsScreen()
+        guard let item = self.items.first(where: { $0.uid == item }) else { return }
+        self.router.openDetailsScreen(item: item)
     }
 }
