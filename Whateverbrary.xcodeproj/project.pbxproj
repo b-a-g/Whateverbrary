@@ -35,7 +35,7 @@
 		E76F39C32679ACB200368BC2 /* IUserScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76F39C22679ACB200368BC2 /* IUserScreenRouter.swift */; };
 		E76F39C52679ACC300368BC2 /* IUserScreenViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76F39C42679ACC300368BC2 /* IUserScreenViewDelegate.swift */; };
 		E76F39C82679B02400368BC2 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76F39C72679B02400368BC2 /* AuthService.swift */; };
-		E76F39CA2679D8C100368BC2 /* UserScreenButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76F39C92679D8C100368BC2 /* UserScreenButton.swift */; };
+		E76F39CA2679D8C100368BC2 /* BigButtonWithLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76F39C92679D8C100368BC2 /* BigButtonWithLabel.swift */; };
 		E76F39D0267B3B3300368BC2 /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76F39CF267B3B3300368BC2 /* Navigator.swift */; };
 		E7A069E0267C389E00CAF31C /* ICollectionScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A069DF267C389E00CAF31C /* ICollectionScreenRouter.swift */; };
 		E7A069E2267C38AA00CAF31C /* ICollectionScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A069E1267C38AA00CAF31C /* ICollectionScreenPresenter.swift */; };
@@ -97,7 +97,7 @@
 		E76F39C22679ACB200368BC2 /* IUserScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IUserScreenRouter.swift; sourceTree = "<group>"; };
 		E76F39C42679ACC300368BC2 /* IUserScreenViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IUserScreenViewDelegate.swift; sourceTree = "<group>"; };
 		E76F39C72679B02400368BC2 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
-		E76F39C92679D8C100368BC2 /* UserScreenButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserScreenButton.swift; sourceTree = "<group>"; };
+		E76F39C92679D8C100368BC2 /* BigButtonWithLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigButtonWithLabel.swift; sourceTree = "<group>"; };
 		E76F39CF267B3B3300368BC2 /* Navigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
 		E7A069DF267C389E00CAF31C /* ICollectionScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICollectionScreenRouter.swift; sourceTree = "<group>"; };
 		E7A069E1267C38AA00CAF31C /* ICollectionScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICollectionScreenPresenter.swift; sourceTree = "<group>"; };
@@ -271,7 +271,7 @@
 			isa = PBXGroup;
 			children = (
 				E76F39A926785B2E00368BC2 /* Interface.swift */,
-				E76F39C92679D8C100368BC2 /* UserScreenButton.swift */,
+				E76F39C92679D8C100368BC2 /* BigButtonWithLabel.swift */,
 			);
 			path = Interface;
 			sourceTree = "<group>";
@@ -511,7 +511,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E76F39B02678A2BD00368BC2 /* UserDefaultsStorage.swift in Sources */,
-				E76F39CA2679D8C100368BC2 /* UserScreenButton.swift in Sources */,
+				E76F39CA2679D8C100368BC2 /* BigButtonWithLabel.swift in Sources */,
 				E76F399E267851E200368BC2 /* LoginScreenRouter.swift in Sources */,
 				E76F39D0267B3B3300368BC2 /* Navigator.swift in Sources */,
 				E7A069F0267C3B0200CAF31C /* CollectionScreenView.swift in Sources */,

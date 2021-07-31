@@ -63,12 +63,12 @@ class UserScreenView: UIView, IUserScreenView {
         return view
     }()
 
-    private lazy var collectionButton = UserScreenButton(title: InterfaceConstants.collectionButtonTitle, imageName: "collection", target: self, action: #selector(self.onCollectionButtonTap))
-    private lazy var friendsButton = UserScreenButton(title: InterfaceConstants.friendsButtonTitle, imageName: "friends", target: self, action: #selector(self.onFriendsButtonTap))
-    private lazy var owedButton = UserScreenButton(title: InterfaceConstants.owedButtonTitle, imageName: "rent", target: self, action: #selector(self.onOwedButtonTap))
-    private lazy var borrowedButton = UserScreenButton(title: InterfaceConstants.borrowedButtonTitle, imageName: "rent", target: self, action: #selector(self.onBorrowedButtonTap))
-    private lazy var notificationsButton = UserScreenButton(title: InterfaceConstants.notificationsButtonTitle, imageName: "notification", target: self, action: #selector(self.onNotificationsButtonTap))
-    private lazy var logoutButton = UserScreenButton(title: InterfaceConstants.signOutButtonTitle, imageName: "logout", target: self, action: #selector(self.onLogoutButtonTap))
+    private lazy var collectionButton = BigButtonWithLabel(title: InterfaceConstants.collectionButtonTitle, imageName: "collection", target: self, action: #selector(self.onCollectionButtonTap))
+    private lazy var friendsButton = BigButtonWithLabel(title: InterfaceConstants.friendsButtonTitle, imageName: "friends", target: self, action: #selector(self.onFriendsButtonTap))
+    private lazy var owedButton = BigButtonWithLabel(title: InterfaceConstants.owedButtonTitle, imageName: "rent", target: self, action: #selector(self.onOwedButtonTap))
+    private lazy var borrowedButton = BigButtonWithLabel(title: InterfaceConstants.borrowedButtonTitle, imageName: "rent", target: self, action: #selector(self.onBorrowedButtonTap))
+    private lazy var notificationsButton = BigButtonWithLabel(title: InterfaceConstants.notificationsButtonTitle, imageName: "notification", target: self, action: #selector(self.onNotificationsButtonTap))
+    private lazy var logoutButton = BigButtonWithLabel(title: InterfaceConstants.signOutButtonTitle, imageName: "logout", target: self, action: #selector(self.onLogoutButtonTap))
 
     override init(frame: CGRect = CGRect.zero) {
         super.init(frame: frame)
