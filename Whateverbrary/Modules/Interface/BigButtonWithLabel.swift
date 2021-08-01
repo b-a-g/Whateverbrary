@@ -12,7 +12,6 @@ class BigButtonWithLabel: UIView {
     private weak var label: UILabel?
     private weak var stack: UIStackView?
     
-    
     init(title: String, imageName: String, target: Any, action: Selector) {
         super.init(frame: .zero)
         createView(title: title, imageName: imageName, target: target, action: action)
@@ -61,5 +60,19 @@ class BigButtonWithLabel: UIView {
         self.stack?.snp.makeConstraints({ make in
             make.leading.trailing.top.bottom.equalToSuperview()
         })
+    }
+    
+    public func setBackgrooundColor(color: UIColor) {
+        self.button?.backgroundColor = color
+    }
+    
+    public func setLabelText(text: String?) {
+        if let text = text {
+            self.label?.text = text
+        }
+    }
+    
+    public func setImage(image: UIImage, state: UIControl.State) {
+        self.button?.setImage(image, for: state)
     }
 }

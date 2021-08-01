@@ -21,13 +21,9 @@ class UserScreenView: UIView, IUserScreenView {
         return view
     }()
 
-    private lazy var userAvatar: UIImageView = {
-        var view = UIImageView()
-        view.backgroundColor = InterfaceConstants.defaultBackgroundColor
-        view.layer.cornerRadius = InterfaceConstants.defaultBigCornerRadius
-        view.image = UIImage(named: "avatar1")
-        view.isUserInteractionEnabled = true
-        view.addGestureRecognizer(UIGestureRecognizer(target: view, action: #selector(onUserAvatarTap)))
+    private lazy var userAvatar: BigButtonWithLabel = {
+        var view = BigButtonWithLabel(title: "", imageName: "avatar1", target: self, action: #selector(onUserAvatarTap))
+        view.setBackgrooundColor(color: InterfaceConstants.defaultBackgroundColor)
         return view
     }()
 
@@ -158,6 +154,6 @@ extension UserScreenView {
     }
 
     func setUserImage(image: UIImage) {
-        self.userAvatar.image = image
+        self.userAvatar.setImage(image: image, state: .normal)
     }
 }
