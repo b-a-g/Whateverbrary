@@ -12,14 +12,6 @@ class CollectionScreenView: UICollectionView, ICollectionScreenView {
     weak var collectionScreenDelegate: ICollectionScreenViewDelegate?
     private var items = [CollectionScreenItemViewModel]()
 
-    private lazy var backgroundImage: UIImageView = {
-        var view = UIImageView()
-        view.image = UIImage(named: "mainBackgroundImage")
-        view.contentMode = .scaleAspectFill
-        view.alpha = 0.5
-        return view
-    }()
-
     private let layout: UICollectionViewFlowLayout = {
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
@@ -30,24 +22,32 @@ class CollectionScreenView: UICollectionView, ICollectionScreenView {
 
     init() {
         super.init(frame: .zero, collectionViewLayout: self.layout)
+        backgroundColor = UIColor(rgb: 0x4959aa)
         delegate = self
         dataSource = self
-        backgroundColor = .white
         register(CollectionScreenItemCell.self, forCellWithReuseIdentifier: "cell")
-        self.addSubview(self.backgroundImage)
-        self.backgroundImage.snp.makeConstraints { make in
-            make.width.equalTo(UIScreen.main.bounds.width)
-            make.height.equalTo(UIScreen.main.bounds.height)
-        }
+        makeDataStub()
     }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    private func makeDataStub() {
+        let uuid = UUID()
+        self.items = [
+            CollectionScreenItemViewModel(uid: uuid, author: "Author0", name: "Book0", cover: "cover0"),
+            CollectionScreenItemViewModel(uid: uuid, author: "Author1", name: "Book1", cover: "cover1"),
+            CollectionScreenItemViewModel(uid: uuid, author: "Author2", name: "Book2", cover: "cover2"),
+            CollectionScreenItemViewModel(uid: uuid, author: "Author3", name: "Book3", cover: "cover3"),
+            CollectionScreenItemViewModel(uid: uuid, author: "Author4", name: "Book4", cover: "cover4")
+        ]
+    }
 }
 
 extension CollectionScreenView: ICollectionScreenDelegate {
-    func updateCollection(items: [CollectionScreenItemViewModel]) {
+    public func updateCollection(items: [CollectionScreenItemViewModel]) {
+//        self.collectionScreenDelegate?.
         self.items = items
         self.reloadData()
     }
