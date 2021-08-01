@@ -31,6 +31,9 @@ class LoginScreenViewController: UIViewController, ILoginScreenView {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.presenter.viewDidLoad(view: self)
+        if let navController = self.navigationController {
+            navController.navigationBar.isHidden = true
+        }
     }
 
     func showAlert(message: String) {

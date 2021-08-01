@@ -36,7 +36,8 @@ class CollectionScreenView: UICollectionView, ICollectionScreenView {
         register(CollectionScreenItemCell.self, forCellWithReuseIdentifier: "cell")
         self.addSubview(self.backgroundImage)
         self.backgroundImage.snp.makeConstraints { make in
-            make.top.left.right.bottom.equalToSuperview()
+            make.width.equalTo(UIScreen.main.bounds.width)
+            make.height.equalTo(UIScreen.main.bounds.height)
         }
     }
 
