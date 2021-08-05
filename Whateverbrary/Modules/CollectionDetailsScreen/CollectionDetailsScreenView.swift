@@ -8,5 +8,12 @@
 import UIKit
 
 class CollectionDetailsScreenView: UIView, ICollectionDetailsScreenView {
-    
+    init() {
+        super.init(frame: .zero)
+        backgroundColor = UIColor(rgb: 0x4959aa)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 }

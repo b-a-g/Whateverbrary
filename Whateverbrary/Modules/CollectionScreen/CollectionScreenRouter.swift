@@ -21,6 +21,10 @@ class CollectionScreenRouter: ICollectionScreenRouter {
         self.navigator.openDetailScren()
     }
 
+    func openDetailsScreen() {
+        self.navigator.openDetailScren()
+    }
+
     func createItem() {
         //
     }

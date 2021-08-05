@@ -55,6 +55,6 @@ extension Navigator {
 extension Navigator {
     func openDetailScren() {
         let viewController = CollectionDetailsScreenAssembly().build(navigator: self)
-        self.navigationController.pushViewController(viewController, animated: true)
+        self.navigationController.present(viewController, animated: true, completion: nil)
     }
 }
