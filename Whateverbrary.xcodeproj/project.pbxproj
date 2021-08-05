@@ -51,6 +51,11 @@
 		E7A069F8267C9EFF00CAF31C /* CollectionDetailsScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A069F7267C9EFF00CAF31C /* CollectionDetailsScreenPresenter.swift */; };
 		E7A069FA267C9F0900CAF31C /* CollectionDetailsScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A069F9267C9F0900CAF31C /* CollectionDetailsScreenViewController.swift */; };
 		E7A069FC267C9F1100CAF31C /* CollectionDetailsScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A069FB267C9F1100CAF31C /* CollectionDetailsScreenView.swift */; };
+		E7A6FBFC26BC279D0005F718 /* ICollectionDetailsScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A6FBFB26BC279D0005F718 /* ICollectionDetailsScreenView.swift */; };
+		E7A6FBFE26BC27BD0005F718 /* ICollectionDetailsScreenDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A6FBFD26BC27BD0005F718 /* ICollectionDetailsScreenDelegate.swift */; };
+		E7A6FC0026BC27C80005F718 /* ICollectionDetailsScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A6FBFF26BC27C80005F718 /* ICollectionDetailsScreenPresenter.swift */; };
+		E7A6FC0226BC27D80005F718 /* ICollectionDetailsScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A6FC0126BC27D80005F718 /* ICollectionDetailsScreenRouter.swift */; };
+		E7A6FC0426BC27E70005F718 /* ICollectionDetailsScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A6FC0326BC27E70005F718 /* ICollectionDetailsScreenViewController.swift */; };
 		E7F834FB26804ED600463169 /* DataBase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E7F834F926804ED600463169 /* DataBase.xcdatamodeld */; };
 		E7F834FD26804EED00463169 /* DataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F834FC26804EED00463169 /* DataStorage.swift */; };
 		E7F835002680742C00463169 /* IUserStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F834FF2680742C00463169 /* IUserStorage.swift */; };
@@ -113,6 +118,11 @@
 		E7A069F7267C9EFF00CAF31C /* CollectionDetailsScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionDetailsScreenPresenter.swift; sourceTree = "<group>"; };
 		E7A069F9267C9F0900CAF31C /* CollectionDetailsScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionDetailsScreenViewController.swift; sourceTree = "<group>"; };
 		E7A069FB267C9F1100CAF31C /* CollectionDetailsScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionDetailsScreenView.swift; sourceTree = "<group>"; };
+		E7A6FBFB26BC279D0005F718 /* ICollectionDetailsScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICollectionDetailsScreenView.swift; sourceTree = "<group>"; };
+		E7A6FBFD26BC27BD0005F718 /* ICollectionDetailsScreenDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICollectionDetailsScreenDelegate.swift; sourceTree = "<group>"; };
+		E7A6FBFF26BC27C80005F718 /* ICollectionDetailsScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICollectionDetailsScreenPresenter.swift; sourceTree = "<group>"; };
+		E7A6FC0126BC27D80005F718 /* ICollectionDetailsScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICollectionDetailsScreenRouter.swift; sourceTree = "<group>"; };
+		E7A6FC0326BC27E70005F718 /* ICollectionDetailsScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICollectionDetailsScreenViewController.swift; sourceTree = "<group>"; };
 		E7F834FA26804ED600463169 /* DataBase.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataBase.xcdatamodel; sourceTree = "<group>"; };
 		E7F834FC26804EED00463169 /* DataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStorage.swift; sourceTree = "<group>"; };
 		E7F834FF2680742C00463169 /* IUserStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IUserStorage.swift; sourceTree = "<group>"; };
@@ -372,6 +382,11 @@
 		E7A069FD267C9F7500CAF31C /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				E7A6FBFB26BC279D0005F718 /* ICollectionDetailsScreenView.swift */,
+				E7A6FBFD26BC27BD0005F718 /* ICollectionDetailsScreenDelegate.swift */,
+				E7A6FBFF26BC27C80005F718 /* ICollectionDetailsScreenPresenter.swift */,
+				E7A6FC0126BC27D80005F718 /* ICollectionDetailsScreenRouter.swift */,
+				E7A6FC0326BC27E70005F718 /* ICollectionDetailsScreenViewController.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -520,6 +535,7 @@
 				E76F39A0267851FC00368BC2 /* ILoginScreenRouter.swift in Sources */,
 				E76F39AE2678A27D00368BC2 /* IUserDefaultsStorage.swift in Sources */,
 				E7A069E6267C392F00CAF31C /* ICollectionScreenDelegates.swift in Sources */,
+				E7A6FBFC26BC279D0005F718 /* ICollectionDetailsScreenView.swift in Sources */,
 				E76F39C32679ACB200368BC2 /* IUserScreenRouter.swift in Sources */,
 				E7A069EE267C3AFB00CAF31C /* CollectionScreenViewController.swift in Sources */,
 				E7F834FD26804EED00463169 /* DataStorage.swift in Sources */,
@@ -537,16 +553,19 @@
 				E76F39962678509100368BC2 /* ILoginScreenView.swift in Sources */,
 				E76F39C52679ACC300368BC2 /* IUserScreenViewDelegate.swift in Sources */,
 				E76F39B22679AC0700368BC2 /* UserScreenViewControler.swift in Sources */,
+				E7A6FC0026BC27C80005F718 /* ICollectionDetailsScreenPresenter.swift in Sources */,
 				E7F835082680A36F00463169 /* ConfigurationReader.swift in Sources */,
 				E76F399C2678515300368BC2 /* LoginScreenAssembly.swift in Sources */,
 				E7A069E0267C389E00CAF31C /* ICollectionScreenRouter.swift in Sources */,
 				E76F39BA2679AC4900368BC2 /* UserScreenRouter.swift in Sources */,
+				E7A6FC0226BC27D80005F718 /* ICollectionDetailsScreenRouter.swift in Sources */,
 				E76F39C82679B02400368BC2 /* AuthService.swift in Sources */,
 				E76F39A7267855C500368BC2 /* ILoginScreenViewDelegate.swift in Sources */,
 				E7F83504268075B900463169 /* ItemModel.swift in Sources */,
 				E7A069EC267C3AE900CAF31C /* CollectionScreenPresenter.swift in Sources */,
 				E76F39AA26785B2E00368BC2 /* Interface.swift in Sources */,
 				E7F834FB26804ED600463169 /* DataBase.xcdatamodeld in Sources */,
+				E7A6FC0426BC27E70005F718 /* ICollectionDetailsScreenViewController.swift in Sources */,
 				E7F8350626808A8D00463169 /* StorageFactory.swift in Sources */,
 				E76F39A52678555E00368BC2 /* ILoginScreenPresenter.swift in Sources */,
 				E7A069F6267C9EF700CAF31C /* CollectionDetailsScreenRouter.swift in Sources */,
@@ -556,6 +575,7 @@
 				E76F3998267850A700368BC2 /* LoginScreenView.swift in Sources */,
 				E7A069FC267C9F1100CAF31C /* CollectionDetailsScreenView.swift in Sources */,
 				E76F399226784FCB00368BC2 /* LoginScreenViewController.swift in Sources */,
+				E7A6FBFE26BC27BD0005F718 /* ICollectionDetailsScreenDelegate.swift in Sources */,
 				E76F39BC2679AC5A00368BC2 /* UserScreenAssembly.swift in Sources */,
 				E7F8350E268195AC00463169 /* CollectionScreenItemViewModel.swift in Sources */,
 				E7A069F4267C7F8D00CAF31C /* CollectionDetailsScreenAssembly.swift in Sources */,

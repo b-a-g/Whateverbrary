@@ -10,10 +10,9 @@ import UIKit
 class CollectionDetailsScreenAssembly {
     func build(navigator: Navigator) -> UIViewController {
 //        let userDefaultStorage = AppDelegate.container.resolve(IUserDefaultsStorage.self)!
-//        let router = CollectionDetailsScreenRouter(navigator: navigator)
-//        let presenter = CollectionDetailsScreenPresenter(userDefaultStorage: userDefaultStorage, router: router)
-//        let controller = CollectionScreenDetailsViewController(presenter: presenter)
-//        return controller
-        return UIViewController()
+        let router = CollectionDetailsScreenRouter(navigator: navigator)
+        let presenter = CollectionDetailsScreenPresenter(router: router)
+        let controller = CollectionDetailsScreenViewController(presenter: presenter)
+        return controller
     }
 }

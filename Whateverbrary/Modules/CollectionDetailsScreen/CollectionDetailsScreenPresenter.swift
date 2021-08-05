@@ -6,3 +6,19 @@
 //
 
 import Foundation
+
+class CollectionDetailsScreenPresenter: ICollectionDetailsScreenPresenter {
+
+    private weak var view: ICollectionDetailsScreenView?
+    private let router: ICollectionDetailsScreenRouter
+//    private let item: ItemModel
+
+    init(router: ICollectionDetailsScreenRouter) {
+        self.router = router
+//        self.item = item
+    }
+
+    func viewDidLoad(view: ICollectionDetailsScreenView) {
+        self.view = view
+    }
+}

@@ -28,7 +28,11 @@ class CollectionScreenPresenter: ICollectionScreenPresenter {
     }
 
     func onCollectionItemTap(item: UUID) {
-        guard let item = self.items.first(where: { $0.uid == item }) else { return }
+        guard let item = self.items.first(where: { $0.uid == item }) else
+        {
+            print("Item not found")
+            return
+        }
         self.router.openDetailsScreen(item: item)
     }
 }

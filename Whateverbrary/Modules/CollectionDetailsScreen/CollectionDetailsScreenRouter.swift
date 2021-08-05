@@ -6,3 +6,11 @@
 //
 
 import Foundation
+
+class CollectionDetailsScreenRouter: ICollectionDetailsScreenRouter {
+    let navigator: Navigator
+
+    init(navigator: Navigator) {
+        self.navigator = navigator
+    }
+}
