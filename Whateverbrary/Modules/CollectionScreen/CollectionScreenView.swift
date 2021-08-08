@@ -10,7 +10,7 @@ import UIKit
 class CollectionScreenView: UICollectionView, ICollectionScreenView {
 
     weak var collectionScreenDelegate: ICollectionScreenViewDelegate?
-    private var items = [CollectionScreenItemViewModel]()
+    private var items = [ItemViewModel]()
 
     private let layout: UICollectionViewFlowLayout = {
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
@@ -36,17 +36,17 @@ class CollectionScreenView: UICollectionView, ICollectionScreenView {
     private func makeDataStub() {
         let uuid = UUID()
         self.items = [
-            CollectionScreenItemViewModel(uid: uuid, author: "Author0", name: "Book0", cover: "cover0"),
-            CollectionScreenItemViewModel(uid: uuid, author: "Author1", name: "Book1", cover: "cover1"),
-            CollectionScreenItemViewModel(uid: uuid, author: "Author2", name: "Book2", cover: "cover2"),
-            CollectionScreenItemViewModel(uid: uuid, author: "Author3", name: "Book3", cover: "cover3"),
-            CollectionScreenItemViewModel(uid: uuid, author: "Author4", name: "Book4", cover: "cover4")
+            ItemViewModel(uid: uuid, author: "Author0", name: "Book0", cover: "cover0"),
+            ItemViewModel(uid: uuid, author: "Author1", name: "Book1", cover: "cover1"),
+            ItemViewModel(uid: uuid, author: "Author2", name: "Book2", cover: "cover2"),
+            ItemViewModel(uid: uuid, author: "Author3", name: "Book3", cover: "cover3"),
+            ItemViewModel(uid: uuid, author: "Author4", name: "Book4", cover: "cover4")
         ]
     }
 }
 
 extension CollectionScreenView: ICollectionScreenDelegate {
-    public func updateCollection(items: [CollectionScreenItemViewModel]) {
+    public func updateCollection(items: [ItemViewModel]) {
 //        self.collectionScreenDelegate?.
         self.items = items
         self.reloadData()

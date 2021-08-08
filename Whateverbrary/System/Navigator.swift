@@ -53,13 +53,13 @@ extension Navigator {
 
 //MARK: collection screen actions
 extension Navigator {
-    func openDetailScren() {
-        let viewController = CollectionDetailsScreenAssembly().build(navigator: self)
+    func openDetailScren(item: ItemViewModel) {
+        let viewController = ItemScreenAssembly().build(navigator: self, item: item, state: .details)
         self.navigationController.present(viewController, animated: true, completion: nil)
     }
 
-    func openNewItemScreen(item: CollectionScreenItemViewModel?, state: EditItemScreenStates) {
-        let viewController = EditItemScreenAssembly().build(navigator: self, item: item, state: state)
+    func openNewItemScreen(item: ItemViewModel?, state: ItemScreenStates) {
+        let viewController = ItemScreenAssembly().build(navigator: self, item: item, state: state)
         self.navigationController.present(viewController, animated: true, completion: nil)
     }
 }

@@ -1,20 +1,19 @@
 //
-//  CollectionDetailsScreenViewController.swift
+//  ItemScreenViewController.swift
 //  Whateverbrary
 //
-//  Created by Александр Беляев on 18.06.2021.
+//  Created by Александр Беляев on 06.08.2021.
 //
 
 import UIKit
 
-class CollectionDetailsScreenViewController: UIViewController {
+class ItemScreenViewController: UIViewController {
+    private let detailsView: ItemScreenView
+    private let presenter: IItemScreenPresenter
 
-    private let detailsView: CollectionDetailsScreenView
-    private let presenter: ICollectionDetailsScreenPresenter
-
-    init(presenter: ICollectionDetailsScreenPresenter) {
+    init(presenter: IItemScreenPresenter) {
         self.presenter = presenter
-        self.detailsView = CollectionDetailsScreenView()
+        self.detailsView = ItemScreenView()
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -30,4 +29,5 @@ class CollectionDetailsScreenViewController: UIViewController {
         super.viewDidLoad()
         self.presenter.viewDidLoad(view: self.detailsView)
     }
+
 }

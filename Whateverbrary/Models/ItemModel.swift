@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class ItemModel {
+public final class ItemModel {
     let uid: UUID
     let owner: UUID
     private(set) var name: String

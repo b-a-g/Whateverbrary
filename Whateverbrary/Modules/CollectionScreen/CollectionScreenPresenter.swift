@@ -39,8 +39,4 @@ class CollectionScreenPresenter: ICollectionScreenPresenter {
     private func getUserItems() {
         self.items = self.itemStorage.getItems(for: self.user)
     }
-
-    private func convertToViewModel(item: ItemModel) -> CollectionScreenItemViewModel {
-        return CollectionScreenItemViewModel(uid: item.uid, author: item.author, name: item.name, cover: "")
-    }
 }

@@ -43,7 +43,7 @@ final class CollectionScreenItemCell: UICollectionViewCell {
         }
     }
 
-    func update(viewModel: CollectionScreenItemViewModel) {
+    func update(viewModel: ItemViewModel) {
         self.cover.image = UIImage(named: viewModel.cover)
         self.author.text = viewModel.author
         self.name.text = viewModel.name

@@ -13,5 +13,5 @@ protocol ICollectionScreenViewDelegate: AnyObject {
 }
 
 protocol ICollectionScreenDelegate: AnyObject {
-    func updateCollection(items: [CollectionScreenItemViewModel])
+    func updateCollection(items: [ItemViewModel])
 }

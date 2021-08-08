@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct CollectionScreenItemViewModel {
+public struct ItemViewModel {
     let uid: UUID
     let author: String
     let name: String
