@@ -67,6 +67,6 @@ extension CollectionScreenView: UICollectionViewDelegate, UICollectionViewDataSo
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.collectionScreenDelegate?.onCollectionItemTap(item: self.items[indexPath.row].uid)
+        self.collectionScreenDelegate?.onCollectionItemTap(index: indexPath.row)
     }
 }

@@ -14,7 +14,7 @@ class CollectionScreenPresenter: ICollectionScreenPresenter {
     private let itemStorage: IItemStorage
     private let configurationReader: IConfigurationReader
     private let user: UserModel
-    private var items: [ItemModel]?
+    private var items: [ItemModel] = []
 
     init(router: ICollectionScreenRouter, itemStorage: IItemStorage, configurationReader: IConfigurationReader, user: UserModel) {
         self.router = router
@@ -28,12 +28,14 @@ class CollectionScreenPresenter: ICollectionScreenPresenter {
         self.getUserItems()
     }
 
-    func onCollectionItemTap(item: UUID) {
-        self.router.openDetailsScreen()
+    func onCollectionItemTap(index: Int) {
+        if index < self.items.endIndex {
+            self.router.openDetailsScreen(item: self.items[index])
+        }
     }
 
     func onAddButtonTap() {
-        self.router.openEditItemScreen(item: nil, state: .new)
+        self.router.openNewItemScreen()
     }
 
     private func getUserItems() {

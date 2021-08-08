@@ -22,11 +22,11 @@ class CollectionScreenRouter: ICollectionScreenRouter {
         self.navigator.openDetailScren(item: itemViewModel)
     }
 
-    func openDetailsScreen() {
-        self.navigator.openNewItemScreen(item: nil, state: .new)
+    func openNewItemScreen() {
+        self.navigator.openNewItemScreen()
     }
 
-    func openEditItemScreen(item: ItemViewModel?, state: ItemScreenStates) {
-        self.navigator.openNewItemScreen(item: item, state: state)
+    func openEditItemScreen(item: ItemViewModel, state: ItemScreenStates) {
+        self.navigator.openEditItemScreen(item: item)
     }
 }

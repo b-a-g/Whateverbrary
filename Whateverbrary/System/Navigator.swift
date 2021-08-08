@@ -58,8 +58,13 @@ extension Navigator {
         self.navigationController.present(viewController, animated: true, completion: nil)
     }
 
-    func openNewItemScreen(item: ItemViewModel?, state: ItemScreenStates) {
-        let viewController = ItemScreenAssembly().build(navigator: self, item: item, state: state)
+    func openNewItemScreen() {
+        let viewController = ItemScreenAssembly().build(navigator: self, item: nil, state: .new)
+        self.navigationController.present(viewController, animated: true, completion: nil)
+    }
+
+    func openEditItemScreen(item: ItemViewModel) {
+        let viewController = ItemScreenAssembly().build(navigator: self, item: item, state: .edit)
         self.navigationController.present(viewController, animated: true, completion: nil)
     }
 }
