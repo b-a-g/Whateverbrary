@@ -11,7 +11,3 @@ protocol ICollectionScreenViewDelegate: AnyObject {
     func onCollectionItemTap(index: Int)
     func onAddButtonTap()
 }
-
-protocol ICollectionScreenDelegate: AnyObject {
-    func updateCollection(items: [ItemViewModel])
-}

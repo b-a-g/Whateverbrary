@@ -21,11 +21,14 @@ class CollectionScreenPresenter: ICollectionScreenPresenter {
         self.itemStorage = itemStorage
         self.configurationReader = configurationReader
         self.user = user
+        makeDataStub()
     }
 
     func viewDidLoad(view: ICollectionScreenView) {
         self.view = view
         self.getUserItems()
+        let itemVM = ModelToViewModelConverters.convertItemModelToViewModel(itemModel: self.items)
+        self.view?.updateCollection(items: itemVM)
     }
 
     func onCollectionItemTap(index: Int) {
@@ -40,5 +43,16 @@ class CollectionScreenPresenter: ICollectionScreenPresenter {
 
     private func getUserItems() {
         self.items = self.itemStorage.getItems(for: self.user)
+    }
+
+    private func makeDataStub() {
+        let uuid = UUID()
+        self.items = [
+            ItemModel(uid: uuid, owner: uuid,name: "Book0", author: "Author0"),
+            ItemModel(uid: uuid, owner: uuid,name: "Book0", author: "Author0"),
+            ItemModel(uid: uuid, owner: uuid,name: "Book0", author: "Author0"),
+            ItemModel(uid: uuid, owner: uuid,name: "Book0", author: "Author0"),
+            ItemModel(uid: uuid, owner: uuid,name: "Book0", author: "Author0"),
+        ]
     }
 }

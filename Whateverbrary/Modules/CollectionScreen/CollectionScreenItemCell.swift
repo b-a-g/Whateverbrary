@@ -19,6 +19,7 @@ final class CollectionScreenItemCell: UICollectionViewCell {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
+        self.backgroundColor = .lightGray
         configureCell()
         makeConstraints()
     }

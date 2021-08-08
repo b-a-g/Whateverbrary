@@ -8,5 +8,5 @@
 import Foundation
 
 protocol ICollectionScreenView: AnyObject {
-    
+    func updateCollection(items: [ItemViewModel])
 }
