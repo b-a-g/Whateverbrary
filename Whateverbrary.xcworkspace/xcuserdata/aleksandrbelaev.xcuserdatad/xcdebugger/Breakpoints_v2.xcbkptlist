@@ -8,7 +8,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "1B3735CD-8983-49F1-A35B-294DDD62F78F"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Whateverbrary/System/Navigator.swift"
@@ -24,7 +24,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "12385927-40B1-405E-B6A9-A60590865D90"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Whateverbrary/System/Navigator.swift"
@@ -39,81 +39,17 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "6B80CF83-53D0-4ACE-B580-708C56496D0E"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Whateverbrary/Modules/CollectionScreen/CollectionScreenPresenter.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
-            landmarkName = "onCollectionItemTap(item:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "1BCF8501-FACE-4718-B06D-AAEA36B25944"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Whateverbrary/Modules/CollectionScreen/CollectionScreenView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
             landmarkName = "collectionView(_:didSelectItemAt:)"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "A13EE2BF-F9E6-4462-8832-F09E1CAB27BC"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Whateverbrary/Modules/CollectionScreen/CollectionScreenPresenter.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
-            landmarkName = "onCollectionItemTap(item:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "A13EE2BF-F9E6-4462-8832-F09E1CAB27BC - 7e8496469c20684a"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Whateverbrary.CollectionScreenPresenter.onCollectionItemTap(item: Foundation.UUID) -&gt; ()"
-                  moduleName = "Whateverbrary"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/aleksandrbelaev/Developer/Focus%20Start/Whateverbrary/Whateverbrary/Modules/CollectionScreen/CollectionScreenPresenter.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "31"
-                  endingLineNumber = "31"
-                  offsetFromSymbolStart = "129">
-               </Location>
-               <Location
-                  uuid = "A13EE2BF-F9E6-4462-8832-F09E1CAB27BC - 73f801642c10e60a"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Whateverbrary.ItemModel) -&gt; Swift.Bool in Whateverbrary.CollectionScreenPresenter.onCollectionItemTap(item: Foundation.UUID) -&gt; ()"
-                  moduleName = "Whateverbrary"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/aleksandrbelaev/Developer/Focus%20Start/Whateverbrary/Whateverbrary/Modules/CollectionScreen/CollectionScreenPresenter.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "31"
-                  endingLineNumber = "31"
-                  offsetFromSymbolStart = "85">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -25,7 +25,7 @@ class CollectionScreenRouter: ICollectionScreenRouter {
         self.navigator.openDetailScren()
     }
 
-    func createItem() {
-        //
+    func openEditItemScreen(item: CollectionScreenItemViewModel?, state: EditItemScreenStates) {
+        self.navigator.openNewItemScreen(item: item, state: state)
     }
 }

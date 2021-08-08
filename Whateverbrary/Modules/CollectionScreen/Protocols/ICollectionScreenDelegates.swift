@@ -9,6 +9,7 @@ import Foundation
 
 protocol ICollectionScreenViewDelegate: AnyObject {
     func onCollectionItemTap(item: UUID)
+    func onAddButtonTap()
 }
 
 protocol ICollectionScreenDelegate: AnyObject {

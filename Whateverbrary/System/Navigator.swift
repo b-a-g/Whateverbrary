@@ -57,4 +57,9 @@ extension Navigator {
         let viewController = CollectionDetailsScreenAssembly().build(navigator: self)
         self.navigationController.present(viewController, animated: true, completion: nil)
     }
+
+    func openNewItemScreen(item: CollectionScreenItemViewModel?, state: EditItemScreenStates) {
+        let viewController = EditItemScreenAssembly().build(navigator: self, item: item, state: state)
+        self.navigationController.present(viewController, animated: true, completion: nil)
+    }
 }

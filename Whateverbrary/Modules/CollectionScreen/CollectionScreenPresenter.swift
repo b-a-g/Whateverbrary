@@ -14,7 +14,7 @@ class CollectionScreenPresenter: ICollectionScreenPresenter {
     private let itemStorage: IItemStorage
     private let configurationReader: IConfigurationReader
     private let user: UserModel
-    private let items: [ItemModel] = []
+    private var items: [ItemModel]?
 
     init(router: ICollectionScreenRouter, itemStorage: IItemStorage, configurationReader: IConfigurationReader, user: UserModel) {
         self.router = router
@@ -25,9 +25,22 @@ class CollectionScreenPresenter: ICollectionScreenPresenter {
 
     func viewDidLoad(view: ICollectionScreenView) {
         self.view = view
+        self.getUserItems()
     }
 
     func onCollectionItemTap(item: UUID) {
         self.router.openDetailsScreen()
+    }
+
+    func onAddButtonTap() {
+        self.router.openEditItemScreen(item: nil, state: .new)
+    }
+
+    private func getUserItems() {
+        self.items = self.itemStorage.getItems(for: self.user)
+    }
+
+    private func convertToViewModel(item: ItemModel) -> CollectionScreenItemViewModel {
+        return CollectionScreenItemViewModel(uid: item.uid, author: item.author, name: item.name, cover: "")
     }
 }

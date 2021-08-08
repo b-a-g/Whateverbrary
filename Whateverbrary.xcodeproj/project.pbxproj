@@ -56,6 +56,11 @@
 		E7A6FC0026BC27C80005F718 /* ICollectionDetailsScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A6FBFF26BC27C80005F718 /* ICollectionDetailsScreenPresenter.swift */; };
 		E7A6FC0226BC27D80005F718 /* ICollectionDetailsScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A6FC0126BC27D80005F718 /* ICollectionDetailsScreenRouter.swift */; };
 		E7A6FC0426BC27E70005F718 /* ICollectionDetailsScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A6FC0326BC27E70005F718 /* ICollectionDetailsScreenViewController.swift */; };
+		E7A6FC0726BD071C0005F718 /* EditItemScreenAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A6FC0626BD071C0005F718 /* EditItemScreenAssembly.swift */; };
+		E7A6FC0926BD073C0005F718 /* EditItemScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A6FC0826BD073C0005F718 /* EditItemScreenRouter.swift */; };
+		E7A6FC0B26BD07E90005F718 /* EditItemScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A6FC0A26BD07E90005F718 /* EditItemScreenPresenter.swift */; };
+		E7A6FC0D26BD08070005F718 /* EditItemScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A6FC0C26BD08070005F718 /* EditItemScreenViewController.swift */; };
+		E7A6FC0F26BD08200005F718 /* EditItemScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A6FC0E26BD08200005F718 /* EditItemScreenView.swift */; };
 		E7F834FB26804ED600463169 /* DataBase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E7F834F926804ED600463169 /* DataBase.xcdatamodeld */; };
 		E7F834FD26804EED00463169 /* DataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F834FC26804EED00463169 /* DataStorage.swift */; };
 		E7F835002680742C00463169 /* IUserStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F834FF2680742C00463169 /* IUserStorage.swift */; };
@@ -123,6 +128,11 @@
 		E7A6FBFF26BC27C80005F718 /* ICollectionDetailsScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICollectionDetailsScreenPresenter.swift; sourceTree = "<group>"; };
 		E7A6FC0126BC27D80005F718 /* ICollectionDetailsScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICollectionDetailsScreenRouter.swift; sourceTree = "<group>"; };
 		E7A6FC0326BC27E70005F718 /* ICollectionDetailsScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICollectionDetailsScreenViewController.swift; sourceTree = "<group>"; };
+		E7A6FC0626BD071C0005F718 /* EditItemScreenAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditItemScreenAssembly.swift; sourceTree = "<group>"; };
+		E7A6FC0826BD073C0005F718 /* EditItemScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditItemScreenRouter.swift; sourceTree = "<group>"; };
+		E7A6FC0A26BD07E90005F718 /* EditItemScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditItemScreenPresenter.swift; sourceTree = "<group>"; };
+		E7A6FC0C26BD08070005F718 /* EditItemScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditItemScreenViewController.swift; sourceTree = "<group>"; };
+		E7A6FC0E26BD08200005F718 /* EditItemScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditItemScreenView.swift; sourceTree = "<group>"; };
 		E7F834FA26804ED600463169 /* DataBase.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataBase.xcdatamodel; sourceTree = "<group>"; };
 		E7F834FC26804EED00463169 /* DataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStorage.swift; sourceTree = "<group>"; };
 		E7F834FF2680742C00463169 /* IUserStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IUserStorage.swift; sourceTree = "<group>"; };
@@ -219,6 +229,7 @@
 				E76F398D26711BBC00368BC2 /* UserScreen */,
 				E76F398E26711BE300368BC2 /* CollectionScreen */,
 				E7A069F2267C7F7000CAF31C /* CollectionDetailsScreen */,
+				E7A6FC0526BD06C60005F718 /* EditItemScreen */,
 				E7A069DA267C334100CAF31C /* FriendsScreen */,
 				E7A069DC267C335F00CAF31C /* BorrowedScreen */,
 				E7A069DB267C334E00CAF31C /* OwedScreen */,
@@ -391,6 +402,18 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		E7A6FC0526BD06C60005F718 /* EditItemScreen */ = {
+			isa = PBXGroup;
+			children = (
+				E7A6FC0626BD071C0005F718 /* EditItemScreenAssembly.swift */,
+				E7A6FC0826BD073C0005F718 /* EditItemScreenRouter.swift */,
+				E7A6FC0A26BD07E90005F718 /* EditItemScreenPresenter.swift */,
+				E7A6FC0C26BD08070005F718 /* EditItemScreenViewController.swift */,
+				E7A6FC0E26BD08200005F718 /* EditItemScreenView.swift */,
+			);
+			path = EditItemScreen;
+			sourceTree = "<group>";
+		};
 		E7F834F826804E5A00463169 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
@@ -533,6 +556,7 @@
 				E7A069EA267C3ADE00CAF31C /* CollectionScreenRouter.swift in Sources */,
 				E76F39BE2679AC6400368BC2 /* UserScreenPresenter.swift in Sources */,
 				E76F39A0267851FC00368BC2 /* ILoginScreenRouter.swift in Sources */,
+				E7A6FC0926BD073C0005F718 /* EditItemScreenRouter.swift in Sources */,
 				E76F39AE2678A27D00368BC2 /* IUserDefaultsStorage.swift in Sources */,
 				E7A069E6267C392F00CAF31C /* ICollectionScreenDelegates.swift in Sources */,
 				E7A6FBFC26BC279D0005F718 /* ICollectionDetailsScreenView.swift in Sources */,
@@ -545,6 +569,7 @@
 				E768804F2666583400A1BBF3 /* AppDelegate.swift in Sources */,
 				E7F835102681960100463169 /* CollectionScreenItemCell.swift in Sources */,
 				E7F835002680742C00463169 /* IUserStorage.swift in Sources */,
+				E7A6FC0D26BD08070005F718 /* EditItemScreenViewController.swift in Sources */,
 				E76F39B82679AC2C00368BC2 /* IUserScreenView.swift in Sources */,
 				E7F835022680743900463169 /* IItemStorage.swift in Sources */,
 				E76F399A2678512200368BC2 /* LoginScreenPresenter.swift in Sources */,
@@ -558,9 +583,12 @@
 				E76F399C2678515300368BC2 /* LoginScreenAssembly.swift in Sources */,
 				E7A069E0267C389E00CAF31C /* ICollectionScreenRouter.swift in Sources */,
 				E76F39BA2679AC4900368BC2 /* UserScreenRouter.swift in Sources */,
+				E7A6FC0F26BD08200005F718 /* EditItemScreenView.swift in Sources */,
 				E7A6FC0226BC27D80005F718 /* ICollectionDetailsScreenRouter.swift in Sources */,
+				E7A6FC0B26BD07E90005F718 /* EditItemScreenPresenter.swift in Sources */,
 				E76F39C82679B02400368BC2 /* AuthService.swift in Sources */,
 				E76F39A7267855C500368BC2 /* ILoginScreenViewDelegate.swift in Sources */,
+				E7A6FC0726BD071C0005F718 /* EditItemScreenAssembly.swift in Sources */,
 				E7F83504268075B900463169 /* ItemModel.swift in Sources */,
 				E7A069EC267C3AE900CAF31C /* CollectionScreenPresenter.swift in Sources */,
 				E76F39AA26785B2E00368BC2 /* Interface.swift in Sources */,

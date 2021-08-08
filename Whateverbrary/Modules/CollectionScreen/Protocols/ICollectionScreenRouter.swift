@@ -10,5 +10,5 @@ import Foundation
 protocol ICollectionScreenRouter {
     func openDetailsScreen(item: ItemModel)
     func openDetailsScreen()
-    func createItem()
+    func openEditItemScreen(item: CollectionScreenItemViewModel?, state: EditItemScreenStates)
 }
