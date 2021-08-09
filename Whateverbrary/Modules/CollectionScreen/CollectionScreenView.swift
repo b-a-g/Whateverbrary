@@ -33,7 +33,6 @@ class CollectionScreenView: UICollectionView, ICollectionScreenView {
     }
 
     public func updateCollection(items: [ItemViewModel]) {
-//        self.collectionScreenDelegate?.
         self.items = items
         self.reloadData()
     }
