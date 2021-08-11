@@ -12,6 +12,10 @@ class Navigator {
         let controller = LoginScreenAssembly().build(navigator: self)
         return UINavigationController(rootViewController: controller)
     }()
+
+    lazy var backButtonItem: UIBarButtonItem = {
+        return UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(backToUserScreen))
+    }()
 }
 
 //MARK: login screen actions
@@ -26,7 +30,9 @@ extension Navigator {
 extension Navigator {
     func openCollectionScreen(user: UserModel) {
         let viewController = CollectionScreenAssembly().build(navigator: self, user: user)
-        self.navigationController.pushViewController(viewController, animated: true)
+        self.navigationController.viewControllers.append(viewController)
+        self.navigationController.navigationBar.isHidden = false
+        self.navigationController.setToolbarItems([backButtonItem], animated: false)
     }
 
     func openFriendsScreen() {
@@ -42,12 +48,17 @@ extension Navigator {
     }
 
     func openNotificationsScreen() {
-        
+
     }
-    
+
     func openLoginScreen() {
         let viewController = LoginScreenAssembly().build(navigator: self)
         self.navigationController.setViewControllers([viewController], animated: true)
+    }
+
+    @objc
+    private func backToUserScreen(user: UserModel) {
+        self.openUserScreen(user: user)
     }
 }
 

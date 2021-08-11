@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct UserModel {
+class UserModel: NSObject {
     let uid: UUID
     let email: String
 
