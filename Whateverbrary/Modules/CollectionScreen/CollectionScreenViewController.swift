@@ -36,6 +36,11 @@ class CollectionScreenViewController: UIViewController {
         }
     }
 
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.navigationController?.navigationBar.isHidden = true
+    }
+
     @objc
     private func addButtonACtion() {
         self.presenter.onAddButtonTap()
