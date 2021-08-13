@@ -30,5 +30,14 @@ class CollectionScreenViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.presenter.viewDidLoad(view: self.collectionView)
+        if let navController = self.navigationController {
+            navController.navigationBar.isHidden = false
+            self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonACtion))
+        }
+    }
+
+    @objc
+    private func addButtonACtion() {
+        self.presenter.onAddButtonTap()
     }
 }

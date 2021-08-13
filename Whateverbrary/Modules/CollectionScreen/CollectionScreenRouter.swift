@@ -19,14 +19,14 @@ class CollectionScreenRouter: ICollectionScreenRouter {
 
     func openDetailsScreen(item: ItemModel) {
         let itemViewModel = ModelToViewModelConverters.convertItemModelToViewModel(itemModel: item)
-        self.navigator.openDetailScren(item: itemViewModel)
+        self.navigator.openDetailScren(user: self.user, item: itemViewModel)
     }
 
     func openNewItemScreen() {
-        self.navigator.openNewItemScreen()
+        self.navigator.openNewItemScreen(user: self.user)
     }
 
     func openEditItemScreen(item: ItemViewModel, state: ItemScreenStates) {
-        self.navigator.openEditItemScreen(item: item)
+        self.navigator.openEditItemScreen(user: self.user, item: item)
     }
 }

@@ -12,10 +12,6 @@ class Navigator {
         let controller = LoginScreenAssembly().build(navigator: self)
         return UINavigationController(rootViewController: controller)
     }()
-
-    lazy var backButtonItem: UIBarButtonItem = {
-        return UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(backToUserScreen))
-    }()
 }
 
 //MARK: login screen actions
@@ -31,8 +27,6 @@ extension Navigator {
     func openCollectionScreen(user: UserModel) {
         let viewController = CollectionScreenAssembly().build(navigator: self, user: user)
         self.navigationController.viewControllers.append(viewController)
-        self.navigationController.navigationBar.isHidden = false
-        self.navigationController.setToolbarItems([backButtonItem], animated: false)
     }
 
     func openFriendsScreen() {
@@ -60,22 +54,27 @@ extension Navigator {
     private func backToUserScreen(user: UserModel) {
         self.openUserScreen(user: user)
     }
+
+    @objc
+    private func addNewItem(user: UserModel) {
+        self.openNewItemScreen(user: user)
+    }
 }
 
 //MARK: collection screen actions
 extension Navigator {
-    func openDetailScren(item: ItemViewModel) {
-        let viewController = ItemScreenAssembly().build(navigator: self, item: item, state: .details)
+    func openDetailScren(user: UserModel, item: ItemViewModel) {
+        let viewController = ItemScreenAssembly().build(navigator: self, user: user, item: item, state: .details)
         self.navigationController.present(viewController, animated: true, completion: nil)
     }
 
-    func openNewItemScreen() {
-        let viewController = ItemScreenAssembly().build(navigator: self, item: nil, state: .new)
+    func openNewItemScreen(user: UserModel) {
+        let viewController = ItemScreenAssembly().build(navigator: self, user: user, item: nil, state: .new)
         self.navigationController.present(viewController, animated: true, completion: nil)
     }
 
-    func openEditItemScreen(item: ItemViewModel) {
-        let viewController = ItemScreenAssembly().build(navigator: self, item: item, state: .edit)
+    func openEditItemScreen(user: UserModel, item: ItemViewModel) {
+        let viewController = ItemScreenAssembly().build(navigator: self, user: user, item: item, state: .edit)
         self.navigationController.present(viewController, animated: true, completion: nil)
     }
 }

@@ -10,11 +10,13 @@ import Foundation
 class ItemScreenPresenter: IItemScreenPresenter {
     private weak var view: ItemScreenView?
     private let router: IItemScreenRouter
-//    private let item: ItemModel
+    private let item: ItemViewModel?
+    private let user: UserModel
 
-    init(router: IItemScreenRouter) {
+    init(router: IItemScreenRouter, user: UserModel, item: ItemViewModel?) {
         self.router = router
-//        self.item = item
+        self.user = user
+        self.item = item
     }
 
     func viewDidLoad(view: ItemScreenView) {

@@ -9,8 +9,10 @@ import Foundation
 
 class ItemScreenRouter: IItemScreenRouter {
     let navigator: Navigator
+    let user: UserModel
 
-    init(navigator: Navigator) {
+    init(navigator: Navigator, user: UserModel) {
         self.navigator = navigator
+        self.user = user
     }
 }
