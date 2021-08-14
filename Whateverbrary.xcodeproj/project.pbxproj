@@ -220,7 +220,7 @@
 				E76F398C2670D11900368BC2 /* LoginScreen */,
 				E76F398D26711BBC00368BC2 /* UserScreen */,
 				E76F398E26711BE300368BC2 /* CollectionScreen */,
-				E7A6FC0526BD06C60005F718 /* EditItemScreen */,
+				E7A6FC0526BD06C60005F718 /* ItemScreen */,
 				E7A069DA267C334100CAF31C /* FriendsScreen */,
 				E7A069DC267C335F00CAF31C /* BorrowedScreen */,
 				E7A069DB267C334E00CAF31C /* OwedScreen */,
@@ -381,7 +381,7 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
-		E7A6FC0526BD06C60005F718 /* EditItemScreen */ = {
+		E7A6FC0526BD06C60005F718 /* ItemScreen */ = {
 			isa = PBXGroup;
 			children = (
 				E7A6FC0626BD071C0005F718 /* ItemScreenAssembly.swift */,
@@ -391,7 +391,7 @@
 				E7A6FC0E26BD08200005F718 /* ItemScreenView.swift */,
 				E7A069FD267C9F7500CAF31C /* Protocols */,
 			);
-			path = EditItemScreen;
+			path = ItemScreen;
 			sourceTree = "<group>";
 		};
 		E7F834F826804E5A00463169 /* CoreData */ = {
