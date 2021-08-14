@@ -29,7 +29,7 @@ class LoginScreenView: UIView {
     private lazy var loginTextView: UITextField = {
         var view = TextFieldWithPadding()
         view.layer.cornerRadius = InterfaceConstants.defaultSmallCornerRadius
-        view.backgroundColor = .secondarySystemBackground.withAlphaComponent(0.8)
+        view.backgroundColor = UIColor.secondarySystemBackground.withAlphaComponent(0.8)
         view.placeholder = InterfaceConstants.emailInputFieldPlaceholder
         return view
     }()
@@ -37,7 +37,7 @@ class LoginScreenView: UIView {
     private lazy var passwordTextView: UITextField = {
         var view = TextFieldWithPadding()
         view.layer.cornerRadius = InterfaceConstants.defaultSmallCornerRadius
-        view.backgroundColor = .secondarySystemBackground.withAlphaComponent(0.8)
+        view.backgroundColor = UIColor.secondarySystemBackground.withAlphaComponent(0.8)
         view.placeholder = InterfaceConstants.passwordInputfieldPlaceholder
         return view
     }()
@@ -45,7 +45,7 @@ class LoginScreenView: UIView {
     private lazy var signInButton: UIButton = {
         var view = UIButton(type: .system)
         view.layer.cornerRadius = InterfaceConstants.defaultSmallCornerRadius
-        view.backgroundColor = .secondarySystemBackground.withAlphaComponent(0.8)
+        view.backgroundColor = UIColor.secondarySystemBackground.withAlphaComponent(0.8)
         view.setTitle(InterfaceConstants.signInButtonTitle, for: .normal)
         view.addTarget(self, action: #selector(self.onLoginClick), for: .touchUpInside)
         return view
@@ -54,7 +54,7 @@ class LoginScreenView: UIView {
     private lazy var signUpButton: UIButton = {
         var view = UIButton(type: .system)
         view.layer.cornerRadius = InterfaceConstants.defaultSmallCornerRadius
-        view.backgroundColor = .secondarySystemBackground.withAlphaComponent(0.8)
+        view.backgroundColor = UIColor.secondarySystemBackground.withAlphaComponent(0.8)
         view.setTitle(InterfaceConstants.signUpButtonTitle, for: .normal)
         view.addTarget(self, action: #selector(self.onSigninClick), for: .touchUpInside)
         return view
