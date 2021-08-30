@@ -64,17 +64,17 @@ extension Navigator {
 //MARK: go to item screen
 extension Navigator {
     func openDetailScren(user: UserModel, item: ItemViewModel) {
-        let viewController = ItemScreenAssembly().build(navigator: self, user: user, item: item, state: .details)
+        let viewController = NewItemScreenAssembly().build(navigator: self, user: user, item: item, state: .details)
         self.navigationController.present(viewController, animated: true, completion: nil)
     }
 
     func openNewItemScreen(user: UserModel) {
-        let viewController = ItemScreenAssembly().build(navigator: self, user: user, item: nil, state: .new)
+        let viewController = NewItemScreenAssembly().build(navigator: self, user: user, item: nil, state: .new)
         self.navigationController.present(viewController, animated: true, completion: nil)
     }
 
     func openEditItemScreen(user: UserModel, item: ItemViewModel) {
-        let viewController = ItemScreenAssembly().build(navigator: self, user: user, item: item, state: .edit)
+        let viewController = NewItemScreenAssembly().build(navigator: self, user: user, item: item, state: .edit)
         self.navigationController.present(viewController, animated: true, completion: nil)
     }
 }

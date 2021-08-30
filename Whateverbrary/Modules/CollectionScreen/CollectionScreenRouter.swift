@@ -26,7 +26,7 @@ class CollectionScreenRouter: ICollectionScreenRouter {
         self.navigator.openNewItemScreen(user: self.user)
     }
 
-    func openEditItemScreen(item: ItemViewModel, state: ItemScreenStates) {
+    func openEditItemScreen(item: ItemViewModel, state: NewItemScreenStates) {
         self.navigator.openEditItemScreen(user: self.user, item: item)
     }
 }

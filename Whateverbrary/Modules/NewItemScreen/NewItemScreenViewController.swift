@@ -1,5 +1,5 @@
 //
-//  ItemScreenViewController.swift
+//  NewItemScreenViewController.swift
 //  Whateverbrary
 //
 //  Created by Александр Беляев on 06.08.2021.
@@ -7,13 +7,13 @@
 
 import UIKit
 
-class ItemScreenViewController: UIViewController {
-    private let detailsView: ItemScreenView
-    private let presenter: IItemScreenPresenter
+class NewItemScreenViewController: UIViewController {
+    private let detailsView: NewItemScreenView
+    private let presenter: INewItemScreenPresenter
 
-    init(presenter: IItemScreenPresenter, state: ItemScreenStates, item: ItemViewModel?) {
+    init(presenter: INewItemScreenPresenter, state: NewItemScreenStates, item: ItemViewModel?) {
         self.presenter = presenter
-        self.detailsView = ItemScreenView(state: state, item: item)
+        self.detailsView = NewItemScreenView(state: state, item: item)
         super.init(nibName: nil, bundle: nil)
     }
 

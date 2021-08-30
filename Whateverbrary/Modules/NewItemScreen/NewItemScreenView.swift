@@ -1,5 +1,5 @@
 //
-//  ItemScreenView.swift
+//  NewItemScreenView.swift
 //  Whateverbrary
 //
 //  Created by Александр Беляев on 06.08.2021.
@@ -7,13 +7,13 @@
 
 import UIKit
 
-public enum ItemScreenStates {
+public enum NewItemScreenStates {
     case new
     case edit
     case details
 }
 
-class ItemScreenView: UIView {
+class NewItemScreenView: UIView {
 
     var saveDataHandler: ((_ item: ItemViewModel) -> Void)?
     private var item: ItemViewModel?
@@ -23,7 +23,7 @@ class ItemScreenView: UIView {
     private var submitButton = UIButton(frame: .zero)
     private var discardButton = UIButton(frame: .zero)
 
-    init(state: ItemScreenStates, item: ItemViewModel?) {
+    init(state: NewItemScreenStates, item: ItemViewModel?) {
         super.init(frame: .zero)
         backgroundColor = UIColor(rgb: 0x4959aa)
         switch state {
