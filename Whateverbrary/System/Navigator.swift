@@ -61,7 +61,7 @@ extension Navigator {
     }
 }
 
-//MARK: collection screen actions
+//MARK: go to item screen
 extension Navigator {
     func openDetailScren(user: UserModel, item: ItemViewModel) {
         let viewController = ItemScreenAssembly().build(navigator: self, user: user, item: item, state: .details)

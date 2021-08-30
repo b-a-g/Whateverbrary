@@ -11,9 +11,9 @@ class ItemScreenViewController: UIViewController {
     private let detailsView: ItemScreenView
     private let presenter: IItemScreenPresenter
 
-    init(presenter: IItemScreenPresenter) {
+    init(presenter: IItemScreenPresenter, state: ItemScreenStates, item: ItemViewModel?) {
         self.presenter = presenter
-        self.detailsView = ItemScreenView()
+        self.detailsView = ItemScreenView(state: state, item: item)
         super.init(nibName: nil, bundle: nil)
     }
 

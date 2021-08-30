@@ -21,5 +21,8 @@ class ItemScreenPresenter: IItemScreenPresenter {
 
     func viewDidLoad(view: ItemScreenView) {
         self.view = view
+//        self.view?.saveDataHandler = { [weak self] in
+//
+//        }
     }
 }
