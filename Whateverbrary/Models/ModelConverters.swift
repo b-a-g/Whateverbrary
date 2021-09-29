@@ -1,5 +1,5 @@
 //
-//  ModelToViewModelConverters.swift
+//  ModelConverters.swift
 //  Whateverbrary
 //
 //  Created by Александр Беляев on 08.08.2021.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct ModelToViewModelConverters {
+public struct ModelConverters {
 
     public static func convertItemModelToViewModel(itemModel: [ItemModel]) -> [ItemViewModel] {
         var itemVM: [ItemViewModel] = []
@@ -18,7 +18,11 @@ public struct ModelToViewModelConverters {
     }
 
     public static func convertItemModelToViewModel(itemModel: ItemModel) -> ItemViewModel {
-            return ItemViewModel(uid: itemModel.uid, author: itemModel.author, name: itemModel.name, cover: "")
+        ItemViewModel(uid: itemModel.uid, author: itemModel.author, name: itemModel.name, cover: "")
+    }
+
+    public static func convertViewModelToModel(item: ItemViewModel, user: UserModel) -> ItemModel {
+        ItemModel(uid: item.uid, owner: user.uid, name: item.name, author: item.author)
     }
 
 }

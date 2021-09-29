@@ -8,11 +8,13 @@
 import UIKit
 
 class NewItemScreenAssembly {
-    func build(navigator: Navigator, user: UserModel, item: ItemViewModel?, state: NewItemScreenStates) -> UIViewController {
-//        let userDefaultStorage = AppDelegate.container.resolve(IUserDefaultsStorage.self)!
+    func build(navigator: Navigator, user: UserModel) -> UIViewController {
+        let itemStorage = AppDelegate.container.resolve(IItemStorage.self)!
         let router = NewItemScreenRouter(navigator: navigator, user: user)
-        let presenter = NewItemScreenPresenter(router: router, user: user, item: item)
-        let controller = NewItemScreenViewController(presenter: presenter, state: state, item: item)
+        let presenter = NewItemScreenPresenter(router: router,
+                user: user,
+                itemStorage: itemStorage)
+        let controller = NewItemScreenViewController(presenter: presenter)
         return controller
     }
 

@@ -9,4 +9,5 @@ import Foundation
 
 protocol INewItemScreenPresenter {
     func viewDidLoad(view: NewItemScreenView)
+    func saveItem(item: ItemViewModel)
 }

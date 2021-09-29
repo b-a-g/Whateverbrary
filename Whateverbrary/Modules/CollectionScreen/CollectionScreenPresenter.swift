@@ -16,7 +16,10 @@ class CollectionScreenPresenter: ICollectionScreenPresenter {
     private let user: UserModel
     private var items: [ItemModel] = []
 
-    init(router: ICollectionScreenRouter, itemStorage: IItemStorage, configurationReader: IConfigurationReader, user: UserModel) {
+    init(router: ICollectionScreenRouter,
+         itemStorage: IItemStorage,
+         configurationReader: IConfigurationReader,
+         user: UserModel) {
         self.router = router
         self.itemStorage = itemStorage
         self.configurationReader = configurationReader
@@ -26,8 +29,8 @@ class CollectionScreenPresenter: ICollectionScreenPresenter {
     func viewDidLoad(view: ICollectionScreenView) {
         self.view = view
         self.getUserItems()
-        makeDataStub()
-        let itemVM = ModelToViewModelConverters.convertItemModelToViewModel(itemModel: self.items)
+//        makeDataStub()
+        let itemVM = ModelConverters.convertItemModelToViewModel(itemModel: self.items)
         self.view?.updateCollection(items: itemVM)
     }
 

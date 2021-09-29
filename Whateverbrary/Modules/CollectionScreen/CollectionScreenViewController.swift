@@ -32,7 +32,9 @@ class CollectionScreenViewController: UIViewController {
         self.presenter.viewDidLoad(view: self.collectionView)
         if let navController = self.navigationController {
             navController.navigationBar.isHidden = false
-            self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonACtion))
+            self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add,
+                    target: self,
+                    action: #selector(addButtonACtion))
         }
     }
 

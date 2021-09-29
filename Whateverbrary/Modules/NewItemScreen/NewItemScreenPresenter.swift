@@ -8,21 +8,29 @@
 import Foundation
 
 class NewItemScreenPresenter: INewItemScreenPresenter {
+
     private weak var view: NewItemScreenView?
     private let router: INewItemScreenRouter
-    private let item: ItemViewModel?
     private let user: UserModel
+    private let itemStorage: IItemStorage
 
-    init(router: INewItemScreenRouter, user: UserModel, item: ItemViewModel?) {
+    init(router: INewItemScreenRouter,
+         user: UserModel,
+         itemStorage: IItemStorage) {
         self.router = router
         self.user = user
-        self.item = item
+        self.itemStorage = itemStorage
     }
 
     func viewDidLoad(view: NewItemScreenView) {
         self.view = view
-//        self.view?.saveDataHandler = { [weak self] in
-//
-//        }
+        self.view?.saveDataHandler = { [weak self] item in
+            self?.saveItem(item: item)
+        }
+    }
+
+    internal func saveItem(item: ItemViewModel) {
+        let itemModel = ModelConverters.convertViewModelToModel(item: item, user: self.user)
+        self.itemStorage.createItem(item: itemModel)
     }
 }

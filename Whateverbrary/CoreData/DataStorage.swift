@@ -33,13 +33,8 @@ extension DataStorage: IItemStorage {
                     ItemModel(item: $0) }) ?? []
     }
     
-    func createItem(item: ItemModel, completion: @escaping () -> Void) {
+    func createItem(item: ItemModel) {
         self.container.performBackgroundTask { context in
-            defer {
-                DispatchQueue.main.async {
-                    completion()
-                }
-            }
             let fetchRequest: NSFetchRequest<AppUser> = AppUser.fetchRequest()
             fetchRequest.predicate = NSPredicate(format: "\(#keyPath(AppUser.uid)) = '\(item.owner)'")
             guard let user = try! context.fetch(fetchRequest).first else { return }

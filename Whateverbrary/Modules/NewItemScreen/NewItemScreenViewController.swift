@@ -8,26 +8,23 @@
 import UIKit
 
 class NewItemScreenViewController: UIViewController {
-    private let detailsView: NewItemScreenView
+    public let ui: NewItemScreenView
     private let presenter: INewItemScreenPresenter
 
-    init(presenter: INewItemScreenPresenter, state: NewItemScreenStates, item: ItemViewModel?) {
+    init(presenter: INewItemScreenPresenter) {
         self.presenter = presenter
-        self.detailsView = NewItemScreenView(state: state, item: item)
+        self.ui = NewItemScreenView()
         super.init(nibName: nil, bundle: nil)
+        self.view = self.ui
     }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
-    override func loadView() {
-        self.view = self.detailsView
-    }
-
     override func viewDidLoad() {
+        self.presenter.viewDidLoad(view: self.ui)
         super.viewDidLoad()
-        self.presenter.viewDidLoad(view: self.detailsView)
     }
 
 }
