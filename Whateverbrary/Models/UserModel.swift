@@ -8,10 +8,10 @@
 import Foundation
 
 public class UserModel: NSObject {
-    let uid: UUID
+    let uid: String
     let email: String
 
-    init(email: String, uid: UUID) {
+    init(email: String, uid: String) {
         self.uid = uid
         self.email = email
     }

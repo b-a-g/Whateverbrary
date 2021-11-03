@@ -31,7 +31,7 @@ final class DataStorage {
 
     private lazy var context: NSManagedObjectContext = {
         return container.viewContext
-      }()
+    }()
 
     private func saveContext() {
         if context.hasChanges {
@@ -59,26 +59,26 @@ extension DataStorage: IItemStorage {
     }
     
     func createItem(item: ItemModel) {
-//        self.container.performBackgroundTask { context in
-        let fetchRequest: NSFetchRequest<AppUser> = AppUser.fetchRequest()
-//        fetchRequest.predicate = NSPredicate(format: "\(#keyPath(AppUser.uid)) = '\(item.owner)'")
+        self.container.performBackgroundTask { _ in
+            let fetchRequest: NSFetchRequest<AppUser> = AppUser.fetchRequest()
+            //        fetchRequest.predicate = NSPredicate(format: "\(#keyPath(AppUser.uid)) = '\(item.owner)'")
 
-        guard let user = self.fetch(fetchRequest).first else { return }
+            guard let user = self.fetch(fetchRequest).first else { return }
 
-        let object = Item(context: self.context)
-        object.uid = item.uid
-        object.name = item.name
-        object.author = item.author
-        object.owner = user.uid
+            let object = Item(context: self.context)
+            object.uid = item.uid
+            object.name = item.name
+            object.author = item.author
+            object.owner = user.uid
 
-        self.saveContext()
-//        }
+            self.saveContext()
+        }
     }
 
     func getAllItems() -> [ItemModel] {
         let fetchRequest: NSFetchRequest<Item> = Item.fetchRequest()
         return self.fetch(fetchRequest).compactMap {
-                    ItemModel(item: $0) }
+            ItemModel(item: $0) }
     }
     
     func removeItem(item: ItemModel, completion: @escaping () -> Void) {
@@ -87,8 +87,16 @@ extension DataStorage: IItemStorage {
 }
 
 extension DataStorage: IUserStorage {
-    func getUser() -> UserModel? {
-        return UserModel(email: "olo@lo.lo", uid: UUID())
+    func getUser(uid: String) -> UserModel? {
+        let request: NSFetchRequest<AppUser> = AppUser.fetchRequest()
+        request.predicate = NSPredicate(format: "\(#keyPath(AppUser.uid)) = '\(uid)'")
+        guard let user = self.fetch(request).first else {return nil}
+        if let uid = user.uid, let email = user.email {
+            return UserModel(email: email, uid: uid)
+        }
+        else {
+            return nil
+        }
     }
 
     func getAllUsers() -> [AppUser] {
@@ -97,16 +105,16 @@ extension DataStorage: IUserStorage {
     }
 
     func saveUser(user: UserModel, completion: (() -> Void)?) {
-//        self.container.performBackgroundTask { context in
+        //        self.container.performBackgroundTask { context in
         let object = AppUser(context: self.context)
         object.uid = user.uid
         object.email = user.email
         self.saveContext()
-//            DispatchQueue.main.async {
-//                if let completion = completion {
-//                    completion()
-//                }
-//            }
-//        }
+        //            DispatchQueue.main.async {
+        //                if let completion = completion {
+        //                    completion()
+        //                }
+        //            }
+        //        }
     }
 }

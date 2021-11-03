@@ -31,9 +31,11 @@ class LoginScreenPresenter: ILoginScreenPresenter {
            let password = password {
             AuthService.authService.signIn(email: login, password: password) { user, error in
                 if let user = user {
-                    self.router.openUserScreen(user: UserModel(email: user.email ?? "", uid: UUID(uuidString: user.uid) ?? UUID()))
+                    self.router.openUserScreen(user: UserModel(email: user.email ?? "", uid: user.uid))
                     self.userDefaultsStorage.setCurrentUser(email: user.email!)
-                    self.userStorage.saveUser(user: UserModel(email: user.email ?? "", uid: UUID(uuidString: user.uid) ?? UUID()), completion: nil)
+                    if let email = user.email {
+                        self.userStorage.saveUser(user: UserModel(email: email, uid: user.uid), completion: nil)
+                    }
                 } else if let error = error {
                     self.view?.showAlert(message: error.localizedDescription)
                 }
@@ -46,9 +48,9 @@ class LoginScreenPresenter: ILoginScreenPresenter {
            let password = password {
             AuthService.authService.signUp(email: login, password: password) { user, error in
                 if let user = user {
-                    if let email = user.email, let uid = UUID(uuidString: user.uid) {
+                    if let email = user.email {
                         self.userDefaultsStorage.setCurrentUser(email: email)
-                        let newUser = UserModel(email: email, uid: uid)
+                        let newUser = UserModel(email: email, uid: user.uid)
                         self.userStorage.saveUser(user: newUser) {
                             self.router.openUserScreen(user: newUser)
                         }

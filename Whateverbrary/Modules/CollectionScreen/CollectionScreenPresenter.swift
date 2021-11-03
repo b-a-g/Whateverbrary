@@ -32,9 +32,6 @@ class CollectionScreenPresenter: ICollectionScreenPresenter {
     func viewDidLoad(view: ICollectionScreenView) {
         self.view = view
         self.getUserItems()
-        let _ = self.itemStorage.getAllItems()
-        let _ = self.userStorage.getAllUsers()
-//        makeDataStub()
         let itemVM = ModelConverters.convertItemModelToViewModel(itemModel: self.items)
         self.view?.updateCollection(items: itemVM)
     }
@@ -54,13 +51,13 @@ class CollectionScreenPresenter: ICollectionScreenPresenter {
     }
 
     private func makeDataStub() {
-        let uuid = UUID()
+        let uuid = UUID().uuidString
         var itemsArr: [ItemModel] = []
-        itemsArr.append(ItemModel(uid: uuid, owner: uuid,name: "Book0", author: "Author0"))
-        itemsArr.append(ItemModel(uid: uuid, owner: uuid,name: "Book1", author: "Author1"))
-        itemsArr.append(ItemModel(uid: uuid, owner: uuid,name: "Book2", author: "Author2"))
-        itemsArr.append(ItemModel(uid: uuid, owner: uuid,name: "Book3", author: "Author3"))
-        itemsArr.append(ItemModel(uid: uuid, owner: uuid,name: "Book4", author: "Author4"))
+        itemsArr.append(ItemModel(uid: uuid, owner: "abc",name: "Book0", author: "Author0"))
+        itemsArr.append(ItemModel(uid: uuid, owner: "abc",name: "Book1", author: "Author1"))
+        itemsArr.append(ItemModel(uid: uuid, owner: "abc",name: "Book2", author: "Author2"))
+        itemsArr.append(ItemModel(uid: uuid, owner: "abc",name: "Book3", author: "Author3"))
+        itemsArr.append(ItemModel(uid: uuid, owner: "abc",name: "Book4", author: "Author4"))
         self.items = itemsArr
     }
 }

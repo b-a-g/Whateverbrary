@@ -8,7 +8,7 @@
 import Foundation
 
 protocol IUserStorage {
-    func getUser() -> UserModel?
+    func getUser(uid: String) -> UserModel?
     func getAllUsers() -> [AppUser]
     func saveUser(user: UserModel, completion: (() -> Void)?)
 }

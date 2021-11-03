@@ -8,7 +8,7 @@
 import Foundation
 
 public struct ItemViewModel {
-    let uid: UUID
+    let uid: String
     let author: String
     let name: String
     let cover: String

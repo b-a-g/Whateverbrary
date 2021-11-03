@@ -54,7 +54,7 @@ class NewItemScreenView: UIView {
 
     @objc
     private func submitButtonAction() {
-        let item = ItemViewModel(uid: UUID(), author: "", name: self.itemNameLabel.text ?? "", cover: "")
+        let item = ItemViewModel(uid: UUID().uuidString, author: "", name: self.itemNameLabel.text ?? "", cover: "")
         self.saveDataHandler?(item)
     }
 }
