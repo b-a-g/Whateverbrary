@@ -11,8 +11,8 @@ public class UserModel: NSObject {
     let uid: UUID
     let email: String
 
-    init(email: String) {
-        self.uid = UUID()
+    init(email: String, uid: UUID) {
+        self.uid = uid
         self.email = email
     }
 

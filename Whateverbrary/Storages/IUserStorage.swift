@@ -9,5 +9,6 @@ import Foundation
 
 protocol IUserStorage {
     func getUser() -> UserModel?
-    func saveUser(user: UserModel, completion: @escaping () -> Void)
+    func getAllUsers() -> [AppUser]
+    func saveUser(user: UserModel, completion: (() -> Void)?)
 }

@@ -16,15 +16,11 @@ class NewItemScreenViewController: UIViewController {
         self.ui = NewItemScreenView()
         super.init(nibName: nil, bundle: nil)
         self.view = self.ui
+        self.presenter.setUI(view: self.ui)
     }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-
-    override func viewDidLoad() {
-        self.presenter.viewDidLoad(view: self.ui)
-        super.viewDidLoad()
     }
 
 }

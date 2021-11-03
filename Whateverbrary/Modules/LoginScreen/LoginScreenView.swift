@@ -74,6 +74,10 @@ class LoginScreenView: UIView {
     func setUserName(username: String) {
         self.loginTextView.text = username
     }
+
+    func setPassword() {
+        self.passwordTextView.text = "123456"
+    }
 }
 
 private extension LoginScreenView {

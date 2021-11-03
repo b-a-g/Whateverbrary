@@ -23,6 +23,7 @@ class LoginScreenPresenter: ILoginScreenPresenter {
     func viewDidLoad(view: ILoginScreenView) {
         self.view = view
         self.view?.setUserName(username: self.userDefaultsStorage.lastEnteredPerson() ?? "")
+        self.view?.setPassword()
     }
 
     func login(login: String?, password: String?) {
@@ -30,8 +31,9 @@ class LoginScreenPresenter: ILoginScreenPresenter {
            let password = password {
             AuthService.authService.signIn(email: login, password: password) { user, error in
                 if let user = user {
-                    self.router.openUserScreen(user: UserModel(email: user.email ?? ""))
+                    self.router.openUserScreen(user: UserModel(email: user.email ?? "", uid: UUID(uuidString: user.uid) ?? UUID()))
                     self.userDefaultsStorage.setCurrentUser(email: user.email!)
+                    self.userStorage.saveUser(user: UserModel(email: user.email ?? "", uid: UUID(uuidString: user.uid) ?? UUID()), completion: nil)
                 } else if let error = error {
                     self.view?.showAlert(message: error.localizedDescription)
                 }
@@ -44,9 +46,9 @@ class LoginScreenPresenter: ILoginScreenPresenter {
            let password = password {
             AuthService.authService.signUp(email: login, password: password) { user, error in
                 if let user = user {
-                    if let email = user.email {
+                    if let email = user.email, let uid = UUID(uuidString: user.uid) {
                         self.userDefaultsStorage.setCurrentUser(email: email)
-                        let newUser = UserModel(email: email)
+                        let newUser = UserModel(email: email, uid: uid)
                         self.userStorage.saveUser(user: newUser) {
                             self.router.openUserScreen(user: newUser)
                         }

@@ -22,7 +22,7 @@ class NewItemScreenPresenter: INewItemScreenPresenter {
         self.itemStorage = itemStorage
     }
 
-    func viewDidLoad(view: NewItemScreenView) {
+    public func setUI(view: NewItemScreenView) {
         self.view = view
         self.view?.saveDataHandler = { [weak self] item in
             self?.saveItem(item: item)

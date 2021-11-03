@@ -10,4 +10,5 @@ import UIKit
 protocol ILoginScreenView: AnyObject {
     func showAlert(message: String)
     func setUserName(username: String)
+    func setPassword()
 }

@@ -45,4 +45,8 @@ class LoginScreenViewController: UIViewController, ILoginScreenView {
     func setUserName(username: String) {
         self.loginView.setUserName(username: username)
     }
+
+    func setPassword() {
+        self.loginView.setPassword()
+    }
 }

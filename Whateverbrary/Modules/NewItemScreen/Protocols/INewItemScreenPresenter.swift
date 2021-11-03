@@ -8,6 +8,6 @@
 import Foundation
 
 protocol INewItemScreenPresenter {
-    func viewDidLoad(view: NewItemScreenView)
+    func setUI(view: NewItemScreenView)
     func saveItem(item: ItemViewModel)
 }

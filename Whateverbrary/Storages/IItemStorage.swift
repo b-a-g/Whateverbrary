@@ -8,6 +8,7 @@
 import Foundation
 
 protocol IItemStorage {
+    func getAllItems() -> [ItemModel]
     func getItems(for user: UserModel) -> [ItemModel]
     func createItem(item: ItemModel)
     func removeItem(item: ItemModel, completion: @escaping () -> Void)
