@@ -8,7 +8,6 @@
 import Foundation
 
 protocol ICollectionScreenRouter {
-    func openDetailsScreen(item: ItemModel)
     func openNewItemScreen()
     func openEditItemScreen(item: ItemModel)
 }

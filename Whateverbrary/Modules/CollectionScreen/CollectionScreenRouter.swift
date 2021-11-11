@@ -17,10 +17,6 @@ class CollectionScreenRouter: ICollectionScreenRouter {
         self.user = user
     }
 
-    func openDetailsScreen(item: ItemModel) {
-        self.navigator.openDetailScren(user: self.user)
-    }
-
     func openNewItemScreen() {
         self.navigator.openNewItemScreen(user: self.user)
     }

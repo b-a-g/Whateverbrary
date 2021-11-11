@@ -53,11 +53,6 @@ extension Navigator {
 
 //MARK: go to item screen
 extension Navigator {
-    func openDetailScren(user: UserModel) {
-//        let viewController = NewItemScreenAssembly().build(navigator: self, user: user)
-//        self.navigationController.present(viewController, animated: true, completion: nil)
-    }
-
     func openNewItemScreen(user: UserModel) {
         let viewController = NewItemScreenAssembly().build(navigator: self, user: user)
         self.navigationController.pushViewController(viewController, animated: true)
