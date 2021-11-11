@@ -9,6 +9,6 @@ import Foundation
 
 protocol ICollectionScreenRouter {
     func openDetailsScreen(item: ItemModel)
-    func openNewItemScreen()
+    func openNewItemScreen(completion: @escaping (() -> Void))
     func openEditItemScreen(item: ItemModel)
 }

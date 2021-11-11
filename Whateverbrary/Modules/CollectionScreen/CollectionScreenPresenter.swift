@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Alamofire
 
 class CollectionScreenPresenter: ICollectionScreenPresenter {
 
@@ -31,6 +32,14 @@ class CollectionScreenPresenter: ICollectionScreenPresenter {
 
     func viewDidLoad(view: ICollectionScreenView) {
         self.view = view
+        self.updateItemsAndShow()
+    }
+
+    func viewWillAppear() {
+        self.updateItemsAndShow()
+    }
+
+    private func updateItemsAndShow() {
         self.getUserItems()
         let itemVM = ModelConverters.convertItemModelToViewModel(itemModel: self.items)
         self.view?.updateCollection(items: itemVM)
@@ -43,7 +52,9 @@ class CollectionScreenPresenter: ICollectionScreenPresenter {
     }
 
     func onAddButtonTap() {
-        self.router.openNewItemScreen()
+        self.router.openNewItemScreen { [weak self] in
+            self?.updateItemsAndShow()
+        }
     }
 
     private func getUserItems() {

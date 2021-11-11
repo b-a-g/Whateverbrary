@@ -9,4 +9,5 @@ import Foundation
 
 protocol ICollectionScreenPresenter: ICollectionScreenViewDelegate {
     func viewDidLoad(view: ICollectionScreenView)
+    func viewWillAppear()
 }

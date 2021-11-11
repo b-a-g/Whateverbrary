@@ -49,32 +49,22 @@ extension Navigator {
         let viewController = LoginScreenAssembly().build(navigator: self)
         self.navigationController.setViewControllers([viewController], animated: true)
     }
-
-    @objc
-    private func backToUserScreen(user: UserModel) {
-        self.openUserScreen(user: user)
-    }
-
-    @objc
-    private func addNewItem(user: UserModel) {
-        self.openNewItemScreen(user: user)
-    }
 }
 
 //MARK: go to item screen
 extension Navigator {
     func openDetailScren(user: UserModel) {
-        let viewController = NewItemScreenAssembly().build(navigator: self, user: user)
-        self.navigationController.present(viewController, animated: true, completion: nil)
+//        let viewController = NewItemScreenAssembly().build(navigator: self, user: user)
+//        self.navigationController.present(viewController, animated: true, completion: nil)
     }
 
-    func openNewItemScreen(user: UserModel) {
-        let viewController = NewItemScreenAssembly().build(navigator: self, user: user)
+    func openNewItemScreen(user: UserModel, completion: @escaping (() -> Void)) {
+        let viewController = NewItemScreenAssembly().build(navigator: self, user: user, completion: completion)
         self.navigationController.present(viewController, animated: true, completion: nil)
     }
 
     func openEditItemScreen(user: UserModel) {
-        let viewController = NewItemScreenAssembly().build(navigator: self, user: user)
-        self.navigationController.present(viewController, animated: true, completion: nil)
+//        let viewController = NewItemScreenAssembly().build(navigator: self, user: user)
+//        self.navigationController.present(viewController, animated: true, completion: nil)
     }
 }

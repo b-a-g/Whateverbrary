@@ -11,7 +11,8 @@ class NewItemScreenView: UIView {
 
     var saveDataHandler: ((_ item: ItemViewModel) -> Void)?
 
-    private var itemNameLabel = UILabel(frame: .zero)
+    private var author = UITextField(frame: .zero)
+    private var name = UITextField(frame: .zero)
     private var submitButton = UIButton(frame: .zero)
 
     init() {
@@ -26,24 +27,24 @@ class NewItemScreenView: UIView {
     }
 
     private func createBlankView() {
-        let itemName = UILabel(frame: .zero)
-        itemName.backgroundColor = .red
-        itemName.text = "TEMPLATE"
-        self.itemNameLabel = itemName
+        self.author.placeholder = "Автор"
+        self.name.placeholder = "Название"
+        self.submitButton.setTitle("Submit", for: .normal)
+        self.submitButton.addTarget(self, action: #selector(self.submitButtonAction), for: .touchUpInside)
 
-        let button = UIButton(frame: .zero)
-        button.setTitle("Submit", for: .normal)
-        button.addTarget(self, action: #selector(self.submitButtonAction), for: .touchUpInside)
-        button.backgroundColor = .red
-        self.submitButton = button
-
-        addSubview(self.itemNameLabel)
+        addSubview(self.author)
+        addSubview(self.name)
         addSubview(self.submitButton)
     }
 
     private func makeConstraints() {
-        self.itemNameLabel.snp.makeConstraints { make in
+        self.author.snp.makeConstraints { make in
             make.top.leading.trailing.equalTo(safeAreaLayoutGuide)
+            make.height.equalTo(50)
+        }
+        self.name.snp.makeConstraints { make in
+            make.top.equalTo(self.author.snp.bottom).offset(10)
+            make.leading.trailing.equalTo(safeAreaLayoutGuide)
             make.height.equalTo(50)
         }
         self.submitButton.snp.makeConstraints { make in
@@ -54,7 +55,7 @@ class NewItemScreenView: UIView {
 
     @objc
     private func submitButtonAction() {
-        let item = ItemViewModel(uid: UUID().uuidString, author: "", name: self.itemNameLabel.text ?? "", cover: "")
+        let item = ItemViewModel(uid: UUID().uuidString, author: self.author.text ?? "", name: self.name.text ?? "", cover: "")
         self.saveDataHandler?(item)
     }
 }

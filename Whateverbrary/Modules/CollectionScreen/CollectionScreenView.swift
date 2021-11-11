@@ -35,6 +35,8 @@ class CollectionScreenView: UICollectionView, ICollectionScreenView {
     public func updateCollection(items: [ItemViewModel]) {
         self.items = items
         self.reloadData()
+        self.setNeedsLayout()
+        self.layoutIfNeeded()
     }
 }
 

@@ -21,8 +21,8 @@ class CollectionScreenRouter: ICollectionScreenRouter {
         self.navigator.openDetailScren(user: self.user)
     }
 
-    func openNewItemScreen() {
-        self.navigator.openNewItemScreen(user: self.user)
+    func openNewItemScreen(completion: @escaping (() -> Void)) {
+        self.navigator.openNewItemScreen(user: self.user, completion: completion)
     }
 
     func openEditItemScreen(item: ItemModel) {
