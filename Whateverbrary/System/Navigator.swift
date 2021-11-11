@@ -60,11 +60,11 @@ extension Navigator {
 
     func openNewItemScreen(user: UserModel) {
         let viewController = NewItemScreenAssembly().build(navigator: self, user: user)
-        self.navigationController.viewControllers.append(viewController)
+        self.navigationController.pushViewController(viewController, animated: true)
     }
 
     func openEditItemScreen(user: UserModel) {
-//        let viewController = NewItemScreenAssembly().build(navigator: self, user: user)
-//        self.navigationController.present(viewController, animated: true, completion: nil)
+        let viewController = EditItemScreenAssembly().build(navigator: self, user: user)
+        self.navigationController.pushViewController(viewController, animated: true)
     }
 }

@@ -1,15 +1,15 @@
 //
-//  NewItemScreenPresenter.swift
+//  EditItemScreenPresenter.swift
 //  Whateverbrary
 //
-//  Created by Александр Беляев on 06.08.2021.
+//  Created by Александр Беляев on 11.11.2021.
 //
 
 import Foundation
 
-class NewItemScreenPresenter: INewItemScreenPresenter {
+class EditItemScreenPresenter: IEditItemScreenPresenter {
 
-    private weak var view: NewItemScreenView?
+    private weak var view: EditItemScreenView?
     private let user: UserModel
     private let itemStorage: IItemStorage
 
@@ -20,16 +20,16 @@ class NewItemScreenPresenter: INewItemScreenPresenter {
 
     }
 
-    public func setUI(view: NewItemScreenView) {
+    public func setUI(view: EditItemScreenView) {
         self.view = view
         self.view?.saveDataHandler = { [weak self] item in
             self?.saveItem(item: item)
-            
+
         }
     }
 
     internal func saveItem(item: ItemViewModel) {
         let itemModel = ModelConverters.convertViewModelToModel(item: item, user: self.user)
-        self.itemStorage.createItem(item: itemModel)
+        self.itemStorage.editItem(item: itemModel)
     }
 }

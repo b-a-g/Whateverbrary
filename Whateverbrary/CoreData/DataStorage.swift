@@ -61,7 +61,6 @@ extension DataStorage: IItemStorage {
     func createItem(item: ItemModel) {
         self.container.performBackgroundTask { _ in
             let fetchRequest: NSFetchRequest<AppUser> = AppUser.fetchRequest()
-            //        fetchRequest.predicate = NSPredicate(format: "\(#keyPath(AppUser.uid)) = '\(item.owner)'")
 
             guard let user = self.fetch(fetchRequest).first else { return }
 
@@ -70,6 +69,19 @@ extension DataStorage: IItemStorage {
             object.name = item.name
             object.author = item.author
             object.owner = user.uid
+
+            self.saveContext()
+        }
+    }
+
+    func editItem(item: ItemModel) {
+        self.container.performBackgroundTask { _ in
+            let fetchRequest: NSFetchRequest<Item> = Item.fetchRequest()
+            fetchRequest.predicate = NSPredicate(format: "FIRST uid = '\(item.uid)'")
+            guard let oldItem = self.fetch(fetchRequest).first else {return}
+
+            oldItem.author = item.author
+            oldItem.name = item.name
 
             self.saveContext()
         }

@@ -52,11 +52,19 @@
 		E7A6FC0226BC27D80005F718 /* INewItemScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A6FC0126BC27D80005F718 /* INewItemScreenRouter.swift */; };
 		E7A6FC0426BC27E70005F718 /* INewItemScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A6FC0326BC27E70005F718 /* INewItemScreenViewController.swift */; };
 		E7A6FC0726BD071C0005F718 /* NewItemScreenAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A6FC0626BD071C0005F718 /* NewItemScreenAssembly.swift */; };
-		E7A6FC0926BD073C0005F718 /* NewItemScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A6FC0826BD073C0005F718 /* NewItemScreenRouter.swift */; };
 		E7A6FC0B26BD07E90005F718 /* NewItemScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A6FC0A26BD07E90005F718 /* NewItemScreenPresenter.swift */; };
 		E7A6FC0D26BD08070005F718 /* NewItemScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A6FC0C26BD08070005F718 /* NewItemScreenViewController.swift */; };
 		E7A6FC0F26BD08200005F718 /* NewItemScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A6FC0E26BD08200005F718 /* NewItemScreenView.swift */; };
 		E7A6FC1126C019C70005F718 /* ModelConverters.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A6FC1026C019C70005F718 /* ModelConverters.swift */; };
+		E7E59A8D273D58C7006071D4 /* EditItemScreenAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E59A8C273D58C7006071D4 /* EditItemScreenAssembly.swift */; };
+		E7E59A91273D58DA006071D4 /* EditItemScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E59A90273D58DA006071D4 /* EditItemScreenPresenter.swift */; };
+		E7E59A93273D595F006071D4 /* EditItemScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E59A92273D595F006071D4 /* EditItemScreenViewController.swift */; };
+		E7E59A95273D596A006071D4 /* EditItemScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E59A94273D596A006071D4 /* EditItemScreenView.swift */; };
+		E7E59A9A273D59B7006071D4 /* IEditItemScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E59A99273D59B7006071D4 /* IEditItemScreenView.swift */; };
+		E7E59A9C273D59C8006071D4 /* IEditItemScreenDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E59A9B273D59C8006071D4 /* IEditItemScreenDelegate.swift */; };
+		E7E59A9E273D59D7006071D4 /* IEditItemScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E59A9D273D59D7006071D4 /* IEditItemScreenPresenter.swift */; };
+		E7E59AA0273D59E5006071D4 /* IEditItemScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E59A9F273D59E5006071D4 /* IEditItemScreenRouter.swift */; };
+		E7E59AA2273D59F1006071D4 /* IEditItemScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E59AA1273D59F1006071D4 /* IEditItemScreenViewController.swift */; };
 		E7F834FB26804ED600463169 /* DataBase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E7F834F926804ED600463169 /* DataBase.xcdatamodeld */; };
 		E7F834FD26804EED00463169 /* DataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F834FC26804EED00463169 /* DataStorage.swift */; };
 		E7F835002680742C00463169 /* IUserStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F834FF2680742C00463169 /* IUserStorage.swift */; };
@@ -120,11 +128,19 @@
 		E7A6FC0126BC27D80005F718 /* INewItemScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = INewItemScreenRouter.swift; sourceTree = "<group>"; };
 		E7A6FC0326BC27E70005F718 /* INewItemScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = INewItemScreenViewController.swift; sourceTree = "<group>"; };
 		E7A6FC0626BD071C0005F718 /* NewItemScreenAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewItemScreenAssembly.swift; sourceTree = "<group>"; };
-		E7A6FC0826BD073C0005F718 /* NewItemScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewItemScreenRouter.swift; sourceTree = "<group>"; };
 		E7A6FC0A26BD07E90005F718 /* NewItemScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewItemScreenPresenter.swift; sourceTree = "<group>"; };
 		E7A6FC0C26BD08070005F718 /* NewItemScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewItemScreenViewController.swift; sourceTree = "<group>"; };
 		E7A6FC0E26BD08200005F718 /* NewItemScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewItemScreenView.swift; sourceTree = "<group>"; };
 		E7A6FC1026C019C70005F718 /* ModelConverters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelConverters.swift; sourceTree = "<group>"; };
+		E7E59A8C273D58C7006071D4 /* EditItemScreenAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditItemScreenAssembly.swift; sourceTree = "<group>"; };
+		E7E59A90273D58DA006071D4 /* EditItemScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditItemScreenPresenter.swift; sourceTree = "<group>"; };
+		E7E59A92273D595F006071D4 /* EditItemScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditItemScreenViewController.swift; sourceTree = "<group>"; };
+		E7E59A94273D596A006071D4 /* EditItemScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditItemScreenView.swift; sourceTree = "<group>"; };
+		E7E59A99273D59B7006071D4 /* IEditItemScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IEditItemScreenView.swift; sourceTree = "<group>"; };
+		E7E59A9B273D59C8006071D4 /* IEditItemScreenDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IEditItemScreenDelegate.swift; sourceTree = "<group>"; };
+		E7E59A9D273D59D7006071D4 /* IEditItemScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IEditItemScreenPresenter.swift; sourceTree = "<group>"; };
+		E7E59A9F273D59E5006071D4 /* IEditItemScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IEditItemScreenRouter.swift; sourceTree = "<group>"; };
+		E7E59AA1273D59F1006071D4 /* IEditItemScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IEditItemScreenViewController.swift; sourceTree = "<group>"; };
 		E7F834FA26804ED600463169 /* DataBase.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataBase.xcdatamodel; sourceTree = "<group>"; };
 		E7F834FC26804EED00463169 /* DataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStorage.swift; sourceTree = "<group>"; };
 		E7F834FF2680742C00463169 /* IUserStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IUserStorage.swift; sourceTree = "<group>"; };
@@ -386,7 +402,6 @@
 			isa = PBXGroup;
 			children = (
 				E7A6FC0626BD071C0005F718 /* NewItemScreenAssembly.swift */,
-				E7A6FC0826BD073C0005F718 /* NewItemScreenRouter.swift */,
 				E7A6FC0A26BD07E90005F718 /* NewItemScreenPresenter.swift */,
 				E7A6FC0C26BD08070005F718 /* NewItemScreenViewController.swift */,
 				E7A6FC0E26BD08200005F718 /* NewItemScreenView.swift */,
@@ -398,8 +413,25 @@
 		E7B9354126DD0A02005226C1 /* EditItemScreen */ = {
 			isa = PBXGroup;
 			children = (
+				E7E59A8C273D58C7006071D4 /* EditItemScreenAssembly.swift */,
+				E7E59A90273D58DA006071D4 /* EditItemScreenPresenter.swift */,
+				E7E59A92273D595F006071D4 /* EditItemScreenViewController.swift */,
+				E7E59A94273D596A006071D4 /* EditItemScreenView.swift */,
+				E7E59A98273D59A0006071D4 /* Protocols */,
 			);
 			path = EditItemScreen;
+			sourceTree = "<group>";
+		};
+		E7E59A98273D59A0006071D4 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				E7E59A99273D59B7006071D4 /* IEditItemScreenView.swift */,
+				E7E59A9B273D59C8006071D4 /* IEditItemScreenDelegate.swift */,
+				E7E59A9D273D59D7006071D4 /* IEditItemScreenPresenter.swift */,
+				E7E59A9F273D59E5006071D4 /* IEditItemScreenRouter.swift */,
+				E7E59AA1273D59F1006071D4 /* IEditItemScreenViewController.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		E7F834F826804E5A00463169 /* CoreData */ = {
@@ -542,9 +574,10 @@
 				E76F39D0267B3B3300368BC2 /* Navigator.swift in Sources */,
 				E7A069F0267C3B0200CAF31C /* CollectionScreenView.swift in Sources */,
 				E7A069EA267C3ADE00CAF31C /* CollectionScreenRouter.swift in Sources */,
+				E7E59A9C273D59C8006071D4 /* IEditItemScreenDelegate.swift in Sources */,
 				E76F39BE2679AC6400368BC2 /* UserScreenPresenter.swift in Sources */,
 				E76F39A0267851FC00368BC2 /* ILoginScreenRouter.swift in Sources */,
-				E7A6FC0926BD073C0005F718 /* NewItemScreenRouter.swift in Sources */,
+				E7E59A93273D595F006071D4 /* EditItemScreenViewController.swift in Sources */,
 				E76F39AE2678A27D00368BC2 /* IUserDefaultsStorage.swift in Sources */,
 				E7A6FC1126C019C70005F718 /* ModelConverters.swift in Sources */,
 				E7A069E6267C392F00CAF31C /* ICollectionScreenDelegates.swift in Sources */,
@@ -557,8 +590,10 @@
 				E7A069E4267C392500CAF31C /* ICollectionScreenView.swift in Sources */,
 				E768804F2666583400A1BBF3 /* AppDelegate.swift in Sources */,
 				E7F835102681960100463169 /* CollectionScreenItemCell.swift in Sources */,
+				E7E59AA2273D59F1006071D4 /* IEditItemScreenViewController.swift in Sources */,
 				E7F835002680742C00463169 /* IUserStorage.swift in Sources */,
 				E7A6FC0D26BD08070005F718 /* NewItemScreenViewController.swift in Sources */,
+				E7E59AA0273D59E5006071D4 /* IEditItemScreenRouter.swift in Sources */,
 				E76F39B82679AC2C00368BC2 /* IUserScreenView.swift in Sources */,
 				E7F835022680743900463169 /* IItemStorage.swift in Sources */,
 				E76F399A2678512200368BC2 /* LoginScreenPresenter.swift in Sources */,
@@ -570,13 +605,17 @@
 				E7A6FC0026BC27C80005F718 /* INewItemScreenPresenter.swift in Sources */,
 				E7F835082680A36F00463169 /* ConfigurationReader.swift in Sources */,
 				E76F399C2678515300368BC2 /* LoginScreenAssembly.swift in Sources */,
+				E7E59A9A273D59B7006071D4 /* IEditItemScreenView.swift in Sources */,
 				E7A069E0267C389E00CAF31C /* ICollectionScreenRouter.swift in Sources */,
 				E76F39BA2679AC4900368BC2 /* UserScreenRouter.swift in Sources */,
 				E7A6FC0F26BD08200005F718 /* NewItemScreenView.swift in Sources */,
 				E7A6FC0226BC27D80005F718 /* INewItemScreenRouter.swift in Sources */,
+				E7E59A95273D596A006071D4 /* EditItemScreenView.swift in Sources */,
 				E7A6FC0B26BD07E90005F718 /* NewItemScreenPresenter.swift in Sources */,
 				E76F39C82679B02400368BC2 /* AuthService.swift in Sources */,
 				E76F39A7267855C500368BC2 /* ILoginScreenViewDelegate.swift in Sources */,
+				E7E59A8D273D58C7006071D4 /* EditItemScreenAssembly.swift in Sources */,
+				E7E59A9E273D59D7006071D4 /* IEditItemScreenPresenter.swift in Sources */,
 				E7A6FC0726BD071C0005F718 /* NewItemScreenAssembly.swift in Sources */,
 				E7F83504268075B900463169 /* NewItemModel.swift in Sources */,
 				E7A069EC267C3AE900CAF31C /* CollectionScreenPresenter.swift in Sources */,
@@ -589,6 +628,7 @@
 				E76F3998267850A700368BC2 /* LoginScreenView.swift in Sources */,
 				E76F399226784FCB00368BC2 /* LoginScreenViewController.swift in Sources */,
 				E7A6FBFE26BC27BD0005F718 /* INewItemScreenDelegate.swift in Sources */,
+				E7E59A91273D58DA006071D4 /* EditItemScreenPresenter.swift in Sources */,
 				E76F39BC2679AC5A00368BC2 /* UserScreenAssembly.swift in Sources */,
 				E7F8350E268195AC00463169 /* CollectionScreenItemViewModel.swift in Sources */,
 				E76F39A32678525F00368BC2 /* UserModel.swift in Sources */,

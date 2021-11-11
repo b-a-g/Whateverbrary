@@ -1,18 +1,18 @@
 //
-//  NewItemScreenAssembly.swift
+//  EditItemScreenAssembly.swift
 //  Whateverbrary
 //
-//  Created by Александр Беляев on 06.08.2021.
+//  Created by Александр Беляев on 11.11.2021.
 //
 
 import UIKit
 
-class NewItemScreenAssembly {
+class EditItemScreenAssembly {
     func build(navigator: Navigator, user: UserModel) -> UIViewController {
         let itemStorage = AppDelegate.container.resolve(IItemStorage.self)!
-        let presenter = NewItemScreenPresenter(user: user,
+        let presenter = EditItemScreenPresenter(user: user,
                                                itemStorage: itemStorage)
-        let controller = NewItemScreenViewController(presenter: presenter)
+        let controller = EditItemScreenViewController(presenter: presenter)
         return controller
     }
 

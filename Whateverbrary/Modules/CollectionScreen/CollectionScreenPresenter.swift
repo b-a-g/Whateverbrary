@@ -47,7 +47,7 @@ class CollectionScreenPresenter: ICollectionScreenPresenter {
 
     func onCollectionItemTap(index: Int) {
         if index < self.items.endIndex {
-            self.router.openDetailsScreen(item: self.items[index])
+            self.router.openEditItemScreen(item: self.items[index])
         }
     }
 
