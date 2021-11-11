@@ -52,23 +52,10 @@ class CollectionScreenPresenter: ICollectionScreenPresenter {
     }
 
     func onAddButtonTap() {
-        self.router.openNewItemScreen { [weak self] in
-            self?.updateItemsAndShow()
-        }
+        self.router.openNewItemScreen()
     }
 
     private func getUserItems() {
         self.items = self.itemStorage.getItems(for: self.user)
-    }
-
-    private func makeDataStub() {
-        let uuid = UUID().uuidString
-        var itemsArr: [ItemModel] = []
-        itemsArr.append(ItemModel(uid: uuid, owner: "abc",name: "Book0", author: "Author0"))
-        itemsArr.append(ItemModel(uid: uuid, owner: "abc",name: "Book1", author: "Author1"))
-        itemsArr.append(ItemModel(uid: uuid, owner: "abc",name: "Book2", author: "Author2"))
-        itemsArr.append(ItemModel(uid: uuid, owner: "abc",name: "Book3", author: "Author3"))
-        itemsArr.append(ItemModel(uid: uuid, owner: "abc",name: "Book4", author: "Author4"))
-        self.items = itemsArr
     }
 }

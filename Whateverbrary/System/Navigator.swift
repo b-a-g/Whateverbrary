@@ -58,9 +58,9 @@ extension Navigator {
 //        self.navigationController.present(viewController, animated: true, completion: nil)
     }
 
-    func openNewItemScreen(user: UserModel, completion: @escaping (() -> Void)) {
-        let viewController = NewItemScreenAssembly().build(navigator: self, user: user, completion: completion)
-        self.navigationController.present(viewController, animated: true, completion: nil)
+    func openNewItemScreen(user: UserModel) {
+        let viewController = NewItemScreenAssembly().build(navigator: self, user: user)
+        self.navigationController.viewControllers.append(viewController)
     }
 
     func openEditItemScreen(user: UserModel) {

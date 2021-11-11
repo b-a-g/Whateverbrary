@@ -33,9 +33,14 @@ class CollectionScreenViewController: UIViewController {
         if let navController = self.navigationController {
             navController.navigationBar.isHidden = false
             self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add,
-                    target: self,
-                    action: #selector(addButtonACtion))
+                                                                     target: self,
+                                                                     action: #selector(addButtonACtion))
         }
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.presenter.viewWillAppear()
     }
 
     override func viewWillDisappear(_ animated: Bool) {
