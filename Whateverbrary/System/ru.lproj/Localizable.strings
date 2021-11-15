@@ -1,0 +1,33 @@
+/*
+  Localizable.strings
+  Whateverbrary
+
+  Created by Александр Беляев on 15.11.2021.
+
+*/
+
+//MARK: AUTH ERRORS
+"AUTH_ERROR_OPERATION_NOT_ALLOWED" = "Ой, простите. Не можем вас впустить. Подождите немного и попробуйте снова, пожалуйста :)";
+"AUTH_ERROR_TOO_MANY_REQUESTS"= "Хм. А вы настойчивый. Подождите немного и попробуйте снова :)";
+"AUTH_ERROR_EMAILALREADY_IN_USE" = "Мы знакомы? Кажется, что да. Скажите пароль и заходите :)";
+"AUTH_ERROR_INVALID_EMAIL" = "Ой, а вы не опечатались? Проверьте, правильно ли написана почта :)";
+"AUTH_ERROR_WEAK_PASSWORD" = "Ну что же вы? Давайте-ка придумаем пароль чуточку сложнее :)";
+"AUTH_ERROR_USER_NOT_FOUND"= "Вы ли это? Не узнаю ваш адрес. Проверьте, правильно ли написана почта :)";
+"AUTH_ERROR_USER_DISABLED" = "Ой. Кажется, вход закрыт. Думаю, стоит подождать и попробовать ещё раз :)";
+"AUTH_ERROR_WRONG_PASSWORD" = "Хм. Вы, должно быть, опечатались. Проверьте пароль и заходите :)";
+"AUTH_ERROR_DEFAULT" = "Что-то определённо пошло не так. Подождите немного и попробуйте снова, пожалуйста :)";
+
+
+//MARK: Login screen titles
+"LOGIN_SCREEN_EMAIL_FIELD_PLACEHOLDER" = "Почта";
+"LOGIN_SCREEN_PASSWORD_FIELD_PLACEHOLDER" = "Пароль";
+"LOGIN_SCREEN_SIGN_IN_BUTTON_TITLE" = "Войти";
+"LOGIN_SCREEN_SIGN_UP_BUTTON_TITLE" = "Регистрация";
+
+//MARK: User screen titles
+"USER_SCREEN_SIGN_OUT_BUTTON_TITLE" = "Выйти";
+"USER_SCREEN_COLLECTION_BUTTON_TITLE" = "ЧтоУгодноТека";
+"USER_SCREEN_FRIENDS_BUTTON_TITLE" = "Друзья";
+"USER_SCREEN_BORROWED_BUTTON_TITLE" = "Не моё";
+"USER_SCREEN_OWED_BUTTON_TITLE" = "Не у меня";
+"USER_SCREEN_NOTIFICATIONS_BUTTON_TITLE" = "Уведомления";

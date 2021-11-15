@@ -11,27 +11,11 @@ import Firebase
 class AuthService {
     static let authService = AuthService()
 
-    typealias completionHandler = (_ user: User?, _ error: Error?) -> Void
+    typealias completionHandler = (_ user: User?, _ error: String?) -> Void
     func signUp(email: String, password: String, completionHandler: @escaping completionHandler) {
         Auth.auth().createUser(withEmail: email, password: password) { result, error in
             if let error = error as NSError? {
-                switch AuthErrorCode(rawValue: error.code) {
-                    case .operationNotAllowed:
-                        print("Error: \(error.localizedDescription)")
-                        completionHandler(nil, error)
-                    case .emailAlreadyInUse:
-                        print("Error: \(error.localizedDescription)")
-                        completionHandler(nil, error)
-                    case .invalidEmail:
-                        print("Error: \(error.localizedDescription)")
-                        completionHandler(nil, error)
-                    case .weakPassword:
-                        print("Error: \(error.localizedDescription)")
-                        completionHandler(nil, error)
-                    default:
-                        print("Error: \(error.localizedDescription)")
-                        completionHandler(nil, error)
-                }
+                completionHandler(nil, Localization.localize(for: error))
             } else {
                 print("User signs up successfully")
                 let newUserInfo = Auth.auth().currentUser
@@ -42,29 +26,13 @@ class AuthService {
 
     func signIn(email: String, password: String, completionHandler: @escaping completionHandler) {
         Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
-          if let error = error as NSError? {
-            switch AuthErrorCode(rawValue: error.code) {
-            case .operationNotAllowed:
-                print("Error: \(error.localizedDescription)")
-                completionHandler(nil, error)
-            case .userDisabled:
-                print("Error: \(error.localizedDescription)")
-                completionHandler(nil, error)
-            case .wrongPassword:
-                print("Error: \(error.localizedDescription)")
-                completionHandler(nil, error)
-            case .invalidEmail:
-                print("Error: \(error.localizedDescription)")
-                completionHandler(nil, error)
-            default:
-                print("Error: \(error.localizedDescription)")
-                completionHandler(nil, error)
+            if let error = error as NSError? {
+                completionHandler(nil, Localization.localize(for: error))
+            } else {
+                print("User signs in successfully")
+                let userInfo = Auth.auth().currentUser
+                completionHandler(userInfo, nil)
             }
-          } else {
-            print("User signs in successfully")
-            let userInfo = Auth.auth().currentUser
-            completionHandler(userInfo, nil)
-          }
         }
     }
 

@@ -37,7 +37,7 @@ class LoginScreenPresenter: ILoginScreenPresenter {
                         self.userStorage.saveUser(user: UserModel(email: email, uid: user.uid), completion: nil)
                     }
                 } else if let error = error {
-                    self.view?.showAlert(message: error.localizedDescription)
+                    self.view?.showAlert(message: error)
                 }
             }
         }
@@ -56,7 +56,8 @@ class LoginScreenPresenter: ILoginScreenPresenter {
                         }
                     }
                 } else if let error = error {
-                    self.view?.showAlert(message: error.localizedDescription)
+                    
+                    self.view?.showAlert(message: error)
                 }
             }
         }
