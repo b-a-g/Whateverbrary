@@ -15,7 +15,7 @@ class CollectionScreenView: UICollectionView, ICollectionScreenView {
     private let layout: UICollectionViewFlowLayout = {
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
-        layout.itemSize = CGSize(width: 200, height: 400)
+        layout.itemSize = CGSize(width: 100, height: 200)
         layout.scrollDirection = .vertical
         return layout
     }()

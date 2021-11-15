@@ -15,18 +15,18 @@ struct InterfaceConstants {
     static let blueBackgroundColor: UIColor = UIColor.systemBlue.withAlphaComponent(0.3)
 
     //Login screen constants
-    static let emailInputFieldPlaceholder = Localization.localize(for: "LOGIN_SCREEN_EMAIL_FIELD_PLACEHOLDER")
-    static let passwordInputfieldPlaceholder = Localization.localize(for: "LOGIN_SCREEN_PASSWORD_FIELD_PLACEHOLDER")
-    static let signInButtonTitle = Localization.localize(for: "LOGIN_SCREEN_SIGN_IN_BUTTON_TITLE")
-    static let signUpButtonTitle = Localization.localize(for: "LOGIN_SCREEN_SIGN_UP_BUTTON_TITLE")
+    static let emailInputFieldPlaceholder = LocalizationService.localize(for: "LOGIN_SCREEN_EMAIL_FIELD_PLACEHOLDER")
+    static let passwordInputfieldPlaceholder = LocalizationService.localize(for: "LOGIN_SCREEN_PASSWORD_FIELD_PLACEHOLDER")
+    static let signInButtonTitle = LocalizationService.localize(for: "LOGIN_SCREEN_SIGN_IN_BUTTON_TITLE")
+    static let signUpButtonTitle = LocalizationService.localize(for: "LOGIN_SCREEN_SIGN_UP_BUTTON_TITLE")
 
     //User screen constants
-    static let signOutButtonTitle = Localization.localize(for: "USER_SCREEN_SIGN_OUT_BUTTON_TITLE")
-    static let collectionButtonTitle = Localization.localize(for: "USER_SCREEN_COLLECTION_BUTTON_TITLE")
-    static let friendsButtonTitle = Localization.localize(for: "USER_SCREEN_FRIENDS_BUTTON_TITLE")
-    static let borrowedButtonTitle = Localization.localize(for: "USER_SCREEN_BORROWED_BUTTON_TITLE")
-    static let owedButtonTitle = Localization.localize(for: "USER_SCREEN_OWED_BUTTON_TITLE")
-    static let notificationsButtonTitle = Localization.localize(for: "USER_SCREEN_NOTIFICATIONS_BUTTON_TITLE")
+    static let signOutButtonTitle = LocalizationService.localize(for: "USER_SCREEN_SIGN_OUT_BUTTON_TITLE")
+    static let collectionButtonTitle = LocalizationService.localize(for: "USER_SCREEN_COLLECTION_BUTTON_TITLE")
+    static let friendsButtonTitle = LocalizationService.localize(for: "USER_SCREEN_FRIENDS_BUTTON_TITLE")
+    static let borrowedButtonTitle = LocalizationService.localize(for: "USER_SCREEN_BORROWED_BUTTON_TITLE")
+    static let owedButtonTitle = LocalizationService.localize(for: "USER_SCREEN_OWED_BUTTON_TITLE")
+    static let notificationsButtonTitle = LocalizationService.localize(for: "USER_SCREEN_NOTIFICATIONS_BUTTON_TITLE")
 }
 
 class TextFieldWithPadding: UITextField {

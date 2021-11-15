@@ -15,7 +15,7 @@ class AuthService {
     func signUp(email: String, password: String, completionHandler: @escaping completionHandler) {
         Auth.auth().createUser(withEmail: email, password: password) { result, error in
             if let error = error as NSError? {
-                completionHandler(nil, Localization.localize(for: error))
+                completionHandler(nil, LocalizationService.localize(for: error))
             } else {
                 print("User signs up successfully")
                 let newUserInfo = Auth.auth().currentUser
@@ -27,7 +27,7 @@ class AuthService {
     func signIn(email: String, password: String, completionHandler: @escaping completionHandler) {
         Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
             if let error = error as NSError? {
-                completionHandler(nil, Localization.localize(for: error))
+                completionHandler(nil, LocalizationService.localize(for: error))
             } else {
                 print("User signs in successfully")
                 let userInfo = Auth.auth().currentUser

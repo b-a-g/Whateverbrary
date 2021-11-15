@@ -8,7 +8,7 @@
 import Foundation
 import Firebase
 
-public class Localization {
+public class LocalizationService {
 
     public static func localize(for error: Error) -> String {
         var resultError = ""
