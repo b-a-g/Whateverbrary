@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -16,17 +17,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mainBackgroundImage" translatesAutoresizingMaskIntoConstraints="NO" id="7Ah-Oa-42c">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" image="mainBackgroundImage" translatesAutoresizingMaskIntoConstraints="NO" id="7Ah-Oa-42c">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="7Ah-Oa-42c" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="4qD-S6-dyg"/>
-                            <constraint firstItem="7Ah-Oa-42c" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="RGi-r9-42P"/>
-                            <constraint firstItem="7Ah-Oa-42c" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="RJ0-gc-on7"/>
-                            <constraint firstItem="7Ah-Oa-42c" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Xa5-4c-gMJ"/>
+                            <constraint firstItem="7Ah-Oa-42c" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="JIb-m3-ZJa"/>
+                            <constraint firstItem="7Ah-Oa-42c" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="P3O-gy-VcL"/>
+                            <constraint firstItem="7Ah-Oa-42c" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="WBS-hO-SjM"/>
+                            <constraint firstAttribute="bottom" secondItem="7Ah-Oa-42c" secondAttribute="bottom" id="XKK-Ek-Uaf"/>
                         </constraints>
                     </view>
                 </viewController>
