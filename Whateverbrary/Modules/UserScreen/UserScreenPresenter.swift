@@ -20,11 +20,11 @@ class UserScreenPresenter: IUserScreenPresenter {
 
     func viewDidLoad(view: IUserScreenView) {
         self.view = view
-        self.view?.setUser(user: self.user)
+        self.view?.setUser(user: user)
     }
 
     func onCollectionButtonTap(user: UserModel) {
-        self.router.openCollectionScreen(user: user)
+        router.openCollectionScreen(user: user)
     }
 
     func onFriendsButtonTap() {
@@ -45,7 +45,7 @@ class UserScreenPresenter: IUserScreenPresenter {
 
     func onLogoutButtonTap() {
         AuthService.authService.signOut()
-        self.router.openLoginScreen()
+        router.openLoginScreen()
     }
 
     func onAvatarTap() {

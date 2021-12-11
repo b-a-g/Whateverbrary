@@ -13,10 +13,10 @@ class EditItemScreenViewController: UIViewController {
 
     init(presenter: IEditItemScreenPresenter) {
         self.presenter = presenter
-        self.ui = EditItemScreenView()
+        ui = EditItemScreenView()
         super.init(nibName: nil, bundle: nil)
-        self.view = self.ui
-        self.presenter.setUI(view: self.ui)
+        view = ui
+        self.presenter.setUI(view: ui)
     }
 
     required init?(coder: NSCoder) {

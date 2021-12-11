@@ -18,7 +18,7 @@ class Navigator {
 extension Navigator {
     func openUserScreen(user: UserModel) {
         let viewController = UserScreenAssembly().build(navigator: self, user: user)
-        self.navigationController.setViewControllers([viewController], animated: true)
+        navigationController.setViewControllers([viewController], animated: true)
     }
 }
 
@@ -26,7 +26,7 @@ extension Navigator {
 extension Navigator {
     func openCollectionScreen(user: UserModel) {
         let viewController = CollectionScreenAssembly().build(navigator: self, user: user)
-        self.navigationController.viewControllers.append(viewController)
+        navigationController.viewControllers.append(viewController)
     }
 
     func openFriendsScreen() {
@@ -47,7 +47,7 @@ extension Navigator {
 
     func openLoginScreen() {
         let viewController = LoginScreenAssembly().build(navigator: self)
-        self.navigationController.setViewControllers([viewController], animated: true)
+        navigationController.setViewControllers([viewController], animated: true)
     }
 }
 
@@ -55,11 +55,11 @@ extension Navigator {
 extension Navigator {
     func openNewItemScreen(user: UserModel) {
         let viewController = NewItemScreenAssembly().build(navigator: self, user: user)
-        self.navigationController.pushViewController(viewController, animated: true)
+        navigationController.pushViewController(viewController, animated: true)
     }
 
     func openEditItemScreen(user: UserModel) {
         let viewController = EditItemScreenAssembly().build(navigator: self, user: user)
-        self.navigationController.pushViewController(viewController, animated: true)
+        navigationController.pushViewController(viewController, animated: true)
     }
 }

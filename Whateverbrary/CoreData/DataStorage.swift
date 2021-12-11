@@ -30,7 +30,7 @@ final class DataStorage {
     }()
 
     private lazy var context: NSManagedObjectContext = {
-        return container.viewContext
+        container.viewContext
     }()
 
     private func saveContext() {
@@ -46,7 +46,7 @@ final class DataStorage {
     }
 
     private func fetch<T>(_ request: NSFetchRequest<T>) -> [T] {
-        return (try? self.context.fetch(request)) ?? []
+        (try? context.fetch(request)) ?? []
     }
 }
 
@@ -59,7 +59,7 @@ extension DataStorage: IItemStorage {
     }
     
     func createItem(item: ItemModel) {
-        self.container.performBackgroundTask { _ in
+        container.performBackgroundTask { _ in
             let fetchRequest: NSFetchRequest<AppUser> = AppUser.fetchRequest()
 
             guard let user = self.fetch(fetchRequest).first else { return }
@@ -75,7 +75,7 @@ extension DataStorage: IItemStorage {
     }
 
     func editItem(item: ItemModel) {
-        self.container.performBackgroundTask { _ in
+        container.performBackgroundTask { _ in
             let fetchRequest: NSFetchRequest<Item> = Item.fetchRequest()
             fetchRequest.predicate = NSPredicate(format: "FIRST uid = '\(item.uid)'")
             guard let oldItem = self.fetch(fetchRequest).first else {return}
@@ -118,10 +118,10 @@ extension DataStorage: IUserStorage {
 
     func saveUser(user: UserModel, completion: (() -> Void)?) {
         //        self.container.performBackgroundTask { context in
-        let object = AppUser(context: self.context)
+        let object = AppUser(context: context)
         object.uid = user.uid
         object.email = user.email
-        self.saveContext()
+        saveContext()
         //            DispatchQueue.main.async {
         //                if let completion = completion {
         //                    completion()

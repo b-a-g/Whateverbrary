@@ -20,10 +20,10 @@ final class UserDefaultsStorage: IUserDefaultsStorage {
     }
     
     func setCurrentUser(email: String) {
-        self.userDefaults.setValue(email, forKey: Keys.lastOpenedUser)
+        userDefaults.setValue(email, forKey: Keys.lastOpenedUser)
     }
 
     func lastEnteredPerson() -> String? {
-        return self.userDefaults.string(forKey: Keys.lastOpenedUser)
+        userDefaults.string(forKey: Keys.lastOpenedUser)
     }
 }

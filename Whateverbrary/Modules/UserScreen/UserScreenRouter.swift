@@ -18,27 +18,27 @@ class UserScreenRouter: IUserScreenRouter {
     }
 
     func openCollectionScreen(user: UserModel) {
-        self.navigator.openCollectionScreen(user: user)
+        navigator.openCollectionScreen(user: user)
     }
 
     func openFriendsScreen() {
-        self.navigator.openFriendsScreen()
+        navigator.openFriendsScreen()
     }
 
     func openOwedScreen() {
-        self.navigator.openOwedScreen()
+        navigator.openOwedScreen()
     }
 
     func openBorrowedScreen() {
-        self.navigator.openBorrowedScreen()
+        navigator.openBorrowedScreen()
     }
 
     func openNotificationsScreen() {
-        self.navigator.openNotificationsScreen()
+        navigator.openNotificationsScreen()
     }
     
     func openLoginScreen() {
-        self.navigator.openLoginScreen()
+        navigator.openLoginScreen()
     }
 
 }

@@ -15,6 +15,6 @@ class LoginScreenRouter: ILoginScreenRouter {
     }
 
     func openUserScreen(user: UserModel) {
-        self.navigator.openUserScreen(user: user)
+        navigator.openUserScreen(user: user)
     }
 }

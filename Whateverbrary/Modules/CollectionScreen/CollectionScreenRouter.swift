@@ -18,10 +18,10 @@ class CollectionScreenRouter: ICollectionScreenRouter {
     }
 
     func openNewItemScreen() {
-        self.navigator.openNewItemScreen(user: self.user)
+        navigator.openNewItemScreen(user: user)
     }
 
     func openEditItemScreen(item: ItemModel) {
-        self.navigator.openEditItemScreen(user: self.user)
+        navigator.openEditItemScreen(user: user)
     }
 }

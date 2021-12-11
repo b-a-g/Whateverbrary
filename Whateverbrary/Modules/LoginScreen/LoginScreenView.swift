@@ -62,9 +62,9 @@ class LoginScreenView: UIView {
 
     override init(frame: CGRect = CGRect.zero) {
         super.init(frame: frame)
-        self.backgroundColor = .white
-        self.addSubviews()
-        self.makeConstraints()
+        backgroundColor = .white
+        addSubviews()
+        makeConstraints()
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -72,40 +72,40 @@ class LoginScreenView: UIView {
     }
     
     func setUserName(username: String) {
-        self.loginTextView.text = username
+        loginTextView.text = username
     }
 
     func setPassword() {
-        self.passwordTextView.text = "123456"
+        passwordTextView.text = "123456"
     }
 }
 
 private extension LoginScreenView {
 
     private func addSubviews() {
-        self.addSubview(self.backgroundImage)
-        self.addSubview(self.container)
-        self.container.addArrangedSubview(self.loginTextView)
-        self.container.addArrangedSubview(self.passwordTextView)
-        self.container.addArrangedSubview(self.signInButton)
-        self.container.addArrangedSubview(self.signUpButton)
+        addSubview(backgroundImage)
+        addSubview(container)
+        container.addArrangedSubview(loginTextView)
+        container.addArrangedSubview(passwordTextView)
+        container.addArrangedSubview(signInButton)
+        container.addArrangedSubview(signUpButton)
     }
 
     private func makeConstraints() {
-        self.backgroundImage.snp.makeConstraints { make in
+        backgroundImage.snp.makeConstraints { make in
             make.top.left.right.bottom.equalToSuperview()
         }
-        self.container.snp.makeConstraints { maker in
+        container.snp.makeConstraints { maker in
             maker.center.equalToSuperview()
             maker.left.right.equalToSuperview().inset(50)
         }
     }
 
     @objc func onLoginClick() {
-        self.delegate?.login(login: self.loginTextView.text, password: self.passwordTextView.text)
+        delegate?.login(login: loginTextView.text, password: passwordTextView.text)
     }
 
     @objc func onSigninClick() {
-        self.delegate?.signUp(login: self.loginTextView.text, password: self.passwordTextView.text)
+        delegate?.signUp(login: loginTextView.text, password: passwordTextView.text)
     }
 }

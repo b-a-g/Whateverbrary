@@ -19,6 +19,6 @@ final class StorageFactory: IStorageFactory {
     }
     
     func generatedStorage() -> IItemStorage & IUserStorage {
-        return DataStorage()
+        DataStorage()
     }
 }

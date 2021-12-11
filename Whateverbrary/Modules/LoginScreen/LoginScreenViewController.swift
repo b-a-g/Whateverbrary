@@ -15,9 +15,9 @@ class LoginScreenViewController: UIViewController, ILoginScreenView {
     
     init(presenter: ILoginScreenPresenter) {
         self.presenter = presenter
-        self.loginView = LoginScreenView()
+        loginView = LoginScreenView()
         super.init(nibName: nil, bundle: nil)
-        self.loginView.delegate = self.presenter
+        loginView.delegate = self.presenter
     }
     
     required init?(coder: NSCoder) {
@@ -25,13 +25,13 @@ class LoginScreenViewController: UIViewController, ILoginScreenView {
     }
 
     override func loadView() {
-        self.view = loginView
+        view = loginView
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.presenter.viewDidLoad(view: self)
-        if let navController = self.navigationController {
+        presenter.viewDidLoad(view: self)
+        if let navController = navigationController {
             navController.navigationBar.isHidden = true
         }
     }
@@ -39,14 +39,14 @@ class LoginScreenViewController: UIViewController, ILoginScreenView {
     func showAlert(message: String) {
         let alert = UIAlertController(title: "Внимание", message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
+        present(alert, animated: true, completion: nil)
     }
     
     func setUserName(username: String) {
-        self.loginView.setUserName(username: username)
+        loginView.setUserName(username: username)
     }
 
     func setPassword() {
-        self.loginView.setPassword()
+        loginView.setPassword()
     }
 }

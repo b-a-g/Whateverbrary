@@ -39,6 +39,6 @@ public class LocalizationService {
     }
 
     public static func localize(for string: String) -> String {
-        return NSLocalizedString(string, comment: "")
+        NSLocalizedString(string, comment: "")
     }
 }

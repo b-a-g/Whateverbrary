@@ -14,9 +14,9 @@ class UserScreenViewController: UIViewController {
     
     init(presenter: IUserScreenPresenter) {
         self.presenter = presenter
-        self.userView = UserScreenView()
+        userView = UserScreenView()
         super.init(nibName: nil, bundle: nil)
-        self.userView.delegate = self.presenter
+        userView.delegate = self.presenter
     }
     
     required init?(coder: NSCoder) {
@@ -24,11 +24,11 @@ class UserScreenViewController: UIViewController {
     }
     
     override func loadView() {
-        self.view = userView
+        view = userView
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.presenter.viewDidLoad(view: self.userView)
+        presenter.viewDidLoad(view: userView)
     }
 }

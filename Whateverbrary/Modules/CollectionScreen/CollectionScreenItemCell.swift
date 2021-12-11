@@ -19,34 +19,34 @@ final class CollectionScreenItemCell: UICollectionViewCell {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.backgroundColor = .lightGray
+        backgroundColor = .lightGray
         configureCell()
         makeConstraints()
     }
 
     private func configureCell() {
-        self.addSubview(self.cover)
-        self.addSubview(self.author)
-        self.addSubview(self.name)
+        addSubview(cover)
+        addSubview(author)
+        addSubview(name)
     }
 
     private func makeConstraints() {
-        self.cover.snp.makeConstraints { make in
+        cover.snp.makeConstraints { make in
             make.top.bottom.left.right.equalToSuperview()
         }
-        self.name.snp.makeConstraints { make in
+        name.snp.makeConstraints { make in
             make.left.top.right.equalToSuperview()
             make.height.equalToSuperview().dividedBy(5)
         }
-        self.author.snp.makeConstraints { make in
+        author.snp.makeConstraints { make in
             make.left.bottom.right.equalToSuperview()
             make.height.equalToSuperview().dividedBy(10)
         }
     }
 
     func update(viewModel: ItemViewModel) {
-        self.cover.image = UIImage(named: viewModel.cover)
-        self.author.text = viewModel.author
-        self.name.text = viewModel.name
+        cover.image = UIImage(named: viewModel.cover)
+        author.text = viewModel.author
+        name.text = viewModel.name
     }
 }

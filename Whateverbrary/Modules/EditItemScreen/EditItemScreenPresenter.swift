@@ -29,7 +29,7 @@ class EditItemScreenPresenter: IEditItemScreenPresenter {
     }
 
     internal func saveItem(item: ItemViewModel) {
-        let itemModel = ModelConverters.convertViewModelToModel(item: item, user: self.user)
-        self.itemStorage.editItem(item: itemModel)
+        let itemModel = ModelConverters.convertViewModelToModel(item: item, user: user)
+        itemStorage.editItem(item: itemModel)
     }
 }

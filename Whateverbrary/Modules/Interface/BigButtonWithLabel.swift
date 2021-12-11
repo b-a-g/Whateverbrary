@@ -34,7 +34,7 @@ class BigButtonWithLabel: UIView {
         stack.alignment = .center
         stack.axis = .vertical
         self.stack = stack
-        self.addSubview(stack)
+        addSubview(stack)
     }
     
     private func createButton(imageName: String, target: Any, action: Selector) {
@@ -45,7 +45,7 @@ class BigButtonWithLabel: UIView {
         button.addTarget(target, action: action, for: .touchUpInside)
         
         self.button = button
-        self.stack?.addArrangedSubview(button)
+        stack?.addArrangedSubview(button)
     }
     
     private func createLabel(title: String) {
@@ -53,26 +53,26 @@ class BigButtonWithLabel: UIView {
         label.text = title
         
         self.label = label
-        self.stack?.addArrangedSubview(label)
+        stack?.addArrangedSubview(label)
     }
     
     private func makeConstraints() {
-        self.stack?.snp.makeConstraints({ make in
+        stack?.snp.makeConstraints({ make in
             make.leading.trailing.top.bottom.equalToSuperview()
         })
     }
     
     public func setBackgrooundColor(color: UIColor) {
-        self.button?.backgroundColor = color
+        button?.backgroundColor = color
     }
     
     public func setLabelText(text: String?) {
         if let text = text {
-            self.label?.text = text
+            label?.text = text
         }
     }
     
     public func setImage(image: UIImage, state: UIControl.State) {
-        self.button?.setImage(image, for: state)
+        button?.setImage(image, for: state)
     }
 }

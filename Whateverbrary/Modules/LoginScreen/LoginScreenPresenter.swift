@@ -22,7 +22,7 @@ class LoginScreenPresenter: ILoginScreenPresenter {
 
     func viewDidLoad(view: ILoginScreenView) {
         self.view = view
-        self.view?.setUserName(username: self.userDefaultsStorage.lastEnteredPerson() ?? "")
+        self.view?.setUserName(username: userDefaultsStorage.lastEnteredPerson() ?? "")
         self.view?.setPassword()
     }
 

@@ -20,15 +20,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         AppDelegate.initDependencies()
         FirebaseApp.configure()
-        self.window = UIWindow(frame: UIScreen.main.bounds)
-        self.window?.rootViewController = self.naviagtor.navigationController
-        self.window?.makeKeyAndVisible()
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.rootViewController = naviagtor.navigationController
+        window?.makeKeyAndVisible()
         return true
     }
 
     static func initDependencies() {
         AppDelegate.container.register(IUserDefaultsStorage.self) { _ in
-            return UserDefaultsStorage(userDefaults: .standard)
+            UserDefaultsStorage(userDefaults: .standard)
         }
         AppDelegate.container.register(IConfigurationReader.self) { _ in
             ConfigurationReader()
@@ -36,10 +36,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let configurationReader = AppDelegate.container.resolve(IConfigurationReader.self)!
         let storage = StorageFactory(reader: configurationReader).generatedStorage()
         AppDelegate.container.register(IItemStorage.self) { _ in
-            return storage
+            storage
         }.inObjectScope(.container)
         AppDelegate.container.register(IUserStorage.self) { _ in
-            return storage
+            storage
         }.inObjectScope(.container)
     }
 }

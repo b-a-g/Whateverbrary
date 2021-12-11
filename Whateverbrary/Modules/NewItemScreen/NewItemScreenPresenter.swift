@@ -29,7 +29,7 @@ class NewItemScreenPresenter: INewItemScreenPresenter {
     }
 
     internal func saveItem(item: ItemViewModel) {
-        let itemModel = ModelConverters.convertViewModelToModel(item: item, user: self.user)
-        self.itemStorage.createItem(item: itemModel)
+        let itemModel = ModelConverters.convertViewModelToModel(item: item, user: user)
+        itemStorage.createItem(item: itemModel)
     }
 }

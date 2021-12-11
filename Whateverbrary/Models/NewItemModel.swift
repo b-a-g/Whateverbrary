@@ -14,7 +14,7 @@ public final class ItemModel {
     private(set) var author: String
 
     init(owner: String, name: String, author: String) {
-        self.uid = UUID().uuidString
+        uid = UUID().uuidString
         self.owner = owner
         self.name = name
         self.author = author

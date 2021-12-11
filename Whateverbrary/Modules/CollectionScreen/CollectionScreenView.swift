@@ -21,7 +21,7 @@ class CollectionScreenView: UICollectionView, ICollectionScreenView {
     }()
 
     init() {
-        super.init(frame: .zero, collectionViewLayout: self.layout)
+        super.init(frame: .zero, collectionViewLayout: layout)
         backgroundColor = UIColor(rgb: 0x4959aa)
         delegate = self
         dataSource = self
@@ -34,26 +34,26 @@ class CollectionScreenView: UICollectionView, ICollectionScreenView {
 
     public func updateCollection(items: [ItemViewModel]) {
         self.items = items
-        self.reloadData()
-        self.setNeedsLayout()
-        self.layoutIfNeeded()
+        reloadData()
+        setNeedsLayout()
+        layoutIfNeeded()
     }
 }
 
 extension CollectionScreenView: UICollectionViewDelegate, UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.items.count
+        items.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let item = self.items[indexPath.row]
+        let item = items[indexPath.row]
         let cell = dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
         (cell as? CollectionScreenItemCell)?.update(viewModel: item)
         return cell
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.collectionScreenDelegate?.onCollectionItemTap(index: indexPath.row)
+        collectionScreenDelegate?.onCollectionItemTap(index: indexPath.row)
     }
 }

@@ -59,18 +59,18 @@ class UserScreenView: UIView, IUserScreenView {
         return view
     }()
 
-    private lazy var collectionButton = BigButtonWithLabel(title: InterfaceConstants.collectionButtonTitle, imageName: "collection", target: self, action: #selector(self.onCollectionButtonTap))
-    private lazy var friendsButton = BigButtonWithLabel(title: InterfaceConstants.friendsButtonTitle, imageName: "friends", target: self, action: #selector(self.onFriendsButtonTap))
-    private lazy var owedButton = BigButtonWithLabel(title: InterfaceConstants.owedButtonTitle, imageName: "rent", target: self, action: #selector(self.onOwedButtonTap))
-    private lazy var borrowedButton = BigButtonWithLabel(title: InterfaceConstants.borrowedButtonTitle, imageName: "rent", target: self, action: #selector(self.onBorrowedButtonTap))
-    private lazy var notificationsButton = BigButtonWithLabel(title: InterfaceConstants.notificationsButtonTitle, imageName: "notification", target: self, action: #selector(self.onNotificationsButtonTap))
-    private lazy var logoutButton = BigButtonWithLabel(title: InterfaceConstants.signOutButtonTitle, imageName: "logout", target: self, action: #selector(self.onLogoutButtonTap))
+    private lazy var collectionButton = BigButtonWithLabel(title: InterfaceConstants.collectionButtonTitle, imageName: "collection", target: self, action: #selector(onCollectionButtonTap))
+    private lazy var friendsButton = BigButtonWithLabel(title: InterfaceConstants.friendsButtonTitle, imageName: "friends", target: self, action: #selector(onFriendsButtonTap))
+    private lazy var owedButton = BigButtonWithLabel(title: InterfaceConstants.owedButtonTitle, imageName: "rent", target: self, action: #selector(onOwedButtonTap))
+    private lazy var borrowedButton = BigButtonWithLabel(title: InterfaceConstants.borrowedButtonTitle, imageName: "rent", target: self, action: #selector(onBorrowedButtonTap))
+    private lazy var notificationsButton = BigButtonWithLabel(title: InterfaceConstants.notificationsButtonTitle, imageName: "notification", target: self, action: #selector(onNotificationsButtonTap))
+    private lazy var logoutButton = BigButtonWithLabel(title: InterfaceConstants.signOutButtonTitle, imageName: "logout", target: self, action: #selector(onLogoutButtonTap))
 
     override init(frame: CGRect = CGRect.zero) {
         super.init(frame: frame)
-        self.backgroundColor = .white
-        self.addSubviews()
-        self.makeConstraints()
+        backgroundColor = .white
+        addSubviews()
+        makeConstraints()
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -81,79 +81,79 @@ class UserScreenView: UIView, IUserScreenView {
 extension UserScreenView {
 
     func addSubviews() {
-        self.addSubview(self.backgroundImage)
-        self.addSubview(self.userAvatar)
-        self.addSubview(self.nicknameLabel)
-        self.addSubview(self.mainButtonContainer)
-        self.mainButtonContainer.addArrangedSubview(self.leftButtonContainer)
-        self.mainButtonContainer.addArrangedSubview(self.rightButtonContainer)
-        self.leftButtonContainer.addArrangedSubview(self.collectionButton)
-        self.leftButtonContainer.addArrangedSubview(self.owedButton)
-        self.leftButtonContainer.addArrangedSubview(self.notificationsButton)
-        self.rightButtonContainer.addArrangedSubview(self.friendsButton)
-        self.rightButtonContainer.addArrangedSubview(self.borrowedButton)
-        self.rightButtonContainer.addArrangedSubview(self.logoutButton)
+        addSubview(backgroundImage)
+        addSubview(userAvatar)
+        addSubview(nicknameLabel)
+        addSubview(mainButtonContainer)
+        mainButtonContainer.addArrangedSubview(leftButtonContainer)
+        mainButtonContainer.addArrangedSubview(rightButtonContainer)
+        leftButtonContainer.addArrangedSubview(collectionButton)
+        leftButtonContainer.addArrangedSubview(owedButton)
+        leftButtonContainer.addArrangedSubview(notificationsButton)
+        rightButtonContainer.addArrangedSubview(friendsButton)
+        rightButtonContainer.addArrangedSubview(borrowedButton)
+        rightButtonContainer.addArrangedSubview(logoutButton)
     }
 
     func makeConstraints() {
-        self.backgroundImage.snp.makeConstraints { make in
+        backgroundImage.snp.makeConstraints { make in
             make.top.left.right.bottom.equalToSuperview()
         }
-        self.userAvatar.snp.makeConstraints { make in
-            make.top.equalTo(self.safeAreaLayoutGuide.snp.top).offset(InterfaceConstants.defaultSpacing)
-            make.centerX.equalTo(self.safeAreaLayoutGuide.snp.centerX)
-            make.width.height.equalTo(self.safeAreaLayoutGuide.snp.width).multipliedBy(0.5)
+        userAvatar.snp.makeConstraints { make in
+            make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(InterfaceConstants.defaultSpacing)
+            make.centerX.equalTo(safeAreaLayoutGuide.snp.centerX)
+            make.width.height.equalTo(safeAreaLayoutGuide.snp.width).multipliedBy(0.5)
         }
-        self.nicknameLabel.snp.makeConstraints { make in
-            make.top.equalTo(self.userAvatar.snp.bottom).offset(InterfaceConstants.defaultSpacing)
-            make.centerX.equalTo(self.safeAreaLayoutGuide.snp.centerX)
+        nicknameLabel.snp.makeConstraints { make in
+            make.top.equalTo(userAvatar.snp.bottom).offset(InterfaceConstants.defaultSpacing)
+            make.centerX.equalTo(safeAreaLayoutGuide.snp.centerX)
             make.height.equalTo(50)
-            make.width.equalTo(self.userAvatar.snp.width)
+            make.width.equalTo(userAvatar.snp.width)
         }
-        self.mainButtonContainer.snp.makeConstraints { make in
-            make.top.equalTo(self.nicknameLabel.snp.bottom).offset(InterfaceConstants.defaultSpacing)
-            make.left.equalTo(self.safeAreaLayoutGuide.snp.left).offset(InterfaceConstants.defaultSpacing)
-            make.bottom.equalTo(self.safeAreaLayoutGuide.snp.bottom).offset(-InterfaceConstants.defaultSpacing)
-            make.right.equalTo(self.safeAreaLayoutGuide.snp.right).offset(-InterfaceConstants.defaultSpacing)
+        mainButtonContainer.snp.makeConstraints { make in
+            make.top.equalTo(nicknameLabel.snp.bottom).offset(InterfaceConstants.defaultSpacing)
+            make.left.equalTo(safeAreaLayoutGuide.snp.left).offset(InterfaceConstants.defaultSpacing)
+            make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom).offset(-InterfaceConstants.defaultSpacing)
+            make.right.equalTo(safeAreaLayoutGuide.snp.right).offset(-InterfaceConstants.defaultSpacing)
         }
     }
 
     @objc func onCollectionButtonTap() {
-        if let user = self.user {
-            self.delegate?.onCollectionButtonTap(user: user)
+        if let user = user {
+            delegate?.onCollectionButtonTap(user: user)
         }
     }
 
     @objc func onFriendsButtonTap() {
-        self.delegate?.onFriendsButtonTap()
+        delegate?.onFriendsButtonTap()
     }
 
     @objc func onOwedButtonTap() {
-        self.delegate?.onOwedButtonTap()
+        delegate?.onOwedButtonTap()
     }
 
     @objc func onBorrowedButtonTap() {
-        self.delegate?.onBorrowedButtonTap()
+        delegate?.onBorrowedButtonTap()
     }
 
     @objc func onNotificationsButtonTap() {
-        self.delegate?.onNotificationsButtonTap()
+        delegate?.onNotificationsButtonTap()
     }
 
     @objc func onLogoutButtonTap() {
-        self.delegate?.onLogoutButtonTap()
+        delegate?.onLogoutButtonTap()
     }
     
     @objc func onUserAvatarTap() {
-        self.delegate?.onAvatarTap()
+        delegate?.onAvatarTap()
     }
 
     func setUser(user: UserModel) {
         self.user = user
-        self.nicknameLabel.text = self.user?.email
+        nicknameLabel.text = self.user?.email
     }
 
     func setUserImage(image: UIImage) {
-        self.userAvatar.setImage(image: image, state: .normal)
+        userAvatar.setImage(image: image, state: .normal)
     }
 }

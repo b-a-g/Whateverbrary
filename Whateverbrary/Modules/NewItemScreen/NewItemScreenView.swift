@@ -18,8 +18,8 @@ class NewItemScreenView: UIView {
     init() {
         super.init(frame: .zero)
         backgroundColor = UIColor(rgb: 0x4959aa)
-        self.createBlankView()
-        self.makeConstraints()
+        createBlankView()
+        makeConstraints()
     }
 
     required init?(coder: NSCoder) {
@@ -27,27 +27,27 @@ class NewItemScreenView: UIView {
     }
 
     private func createBlankView() {
-        self.author.placeholder = "Автор"
-        self.name.placeholder = "Название"
-        self.submitButton.setTitle("Submit", for: .normal)
-        self.submitButton.addTarget(self, action: #selector(self.submitButtonAction), for: .touchUpInside)
+        author.placeholder = "Автор"
+        name.placeholder = "Название"
+        submitButton.setTitle("Submit", for: .normal)
+        submitButton.addTarget(self, action: #selector(submitButtonAction), for: .touchUpInside)
 
-        addSubview(self.author)
-        addSubview(self.name)
-        addSubview(self.submitButton)
+        addSubview(author)
+        addSubview(name)
+        addSubview(submitButton)
     }
 
     private func makeConstraints() {
-        self.author.snp.makeConstraints { make in
+        author.snp.makeConstraints { make in
             make.top.leading.trailing.equalTo(safeAreaLayoutGuide)
             make.height.equalTo(50)
         }
-        self.name.snp.makeConstraints { make in
-            make.top.equalTo(self.author.snp.bottom).offset(10)
+        name.snp.makeConstraints { make in
+            make.top.equalTo(author.snp.bottom).offset(10)
             make.leading.trailing.equalTo(safeAreaLayoutGuide)
             make.height.equalTo(50)
         }
-        self.submitButton.snp.makeConstraints { make in
+        submitButton.snp.makeConstraints { make in
             make.leading.trailing.bottom.equalTo(safeAreaLayoutGuide)
             make.height.equalTo(50)
         }
@@ -55,7 +55,7 @@ class NewItemScreenView: UIView {
 
     @objc
     private func submitButtonAction() {
-        let item = ItemViewModel(uid: UUID().uuidString, author: self.author.text ?? "", name: self.name.text ?? "", cover: "")
-        self.saveDataHandler?(item)
+        let item = ItemViewModel(uid: UUID().uuidString, author: author.text ?? "", name: name.text ?? "", cover: "")
+        saveDataHandler?(item)
     }
 }

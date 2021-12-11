@@ -32,30 +32,30 @@ class CollectionScreenPresenter: ICollectionScreenPresenter {
 
     func viewDidLoad(view: ICollectionScreenView) {
         self.view = view
-        self.updateItemsAndShow()
+        updateItemsAndShow()
     }
 
     func viewWillAppear() {
-        self.updateItemsAndShow()
+        updateItemsAndShow()
     }
 
     private func updateItemsAndShow() {
-        self.getUserItems()
-        let itemVM = ModelConverters.convertItemModelToViewModel(itemModel: self.items)
-        self.view?.updateCollection(items: itemVM)
+        getUserItems()
+        let itemVM = ModelConverters.convertItemModelToViewModel(itemModel: items)
+        view?.updateCollection(items: itemVM)
     }
 
     func onCollectionItemTap(index: Int) {
-        if index < self.items.endIndex {
-            self.router.openEditItemScreen(item: self.items[index])
+        if index < items.endIndex {
+            router.openEditItemScreen(item: items[index])
         }
     }
 
     func onAddButtonTap() {
-        self.router.openNewItemScreen()
+        router.openNewItemScreen()
     }
 
     private func getUserItems() {
-        self.items = self.itemStorage.getItems(for: self.user)
+        items = itemStorage.getItems(for: user)
     }
 }
